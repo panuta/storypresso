@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+
+{% block html_head %}
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.signup_box a.signup').on('click', function (e) {
+                _switch_signup_login_modal('signup');
+            });
+        });
+    </script>
+{% endblock %}
+
+{% block body_content %}
+<div class="page-homepage">
+<div class="container">
+    <div class="tagline">
+        <h1>StoryPresso is a digital content store</h1>
+        <h2>where writers sell (awesome) content to readers, it's that simple.</h2>
+    </div>
+    <div class="registration">
+        <h3>เรายินดีต้อนรับไม่ว่าคุณจะเป็นนักอ่าน หรือว่านักเขียน</h3>
+        <div class="social">
+            <a href="#" class="facebook">Sign-in with Facebook</a><a href="#" class="twitter">Sign-in with Twitter</a>
+        </div>
+        <div class="or">
+            <hr><span>หรือ</span>
+        </div>
+        <div class="email"><a href="#" class="btn">สมัครสมาชิกด้วยอีเมล</a></div>
+    </div>
+    <div class="stories">
+        <h3>เรื่องแนะนำ</h3>
+        <ul>
+            <li class="style-story">
+                <div class="story-container">
+                    <div class="head clearfix">
+                        <div class="avatar"><a href="#"><img src="{{ STATIC_URL }}images/sample/avatars/my.jpg" /></a></div>
+                        <div class="title"><a href="#">ความน่าจะเป็นที่นี่จะเป็นชื่อเรื่อง</a></div>
+                        <div class="author"><a href="#">ภาณุ ตั้งเฉลิมกุล</a></div>
+                    </div>
+                    <div class="summary">โต๋เต๋ วอฟเฟิลมอยส์เจอไรเซอร์ฮอตแคมป์ติ๋ม โค้ชซะ ช็อปเจ๊าะแจ๊ะ อพาร์ทเมนต์ชัวร์สติ๊กเกอร์รองรับว้าว อิเหนาคาวบอยหม่านโถวออเดอร์เคลียร์บุ๋น บุญคุณเซ็กส์มาร์กไลน์ แลนด์ราชานุญาตแอปเปิ้ล</div>
+                    <div class="category"><a href="#">นวนิยาย</a></div>
+                </div>
+
+                <div class="footer">
+                    <div class="price-container"><div class="price">14 บาท</div></div>
+                    <div class="right">
+                        <div class="recommends">
+                            <div class="number"><em>9999 คน</em><span>แนะนำให้อ่าน</span></div>
+                            <div class="faces">
+                                <a href="#"><img src="{{ STATIC_URL }}images/sample/avatars/user1.jpg" /></a>
+                                <a href="#"><img src="{{ STATIC_URL }}images/sample/avatars/user2.jpg" /></a>
+                                <a href="#"><img src="{{ STATIC_URL }}images/sample/avatars/user3.jpg" /></a>
+                                <a href="#"><img src="{{ STATIC_URL }}images/sample/avatars/user4.jpg" /></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="left">
+                        <a href="#" class="btn button-purchase">ซื้ออ่าน</a>
+                        <a href="#" class="read-excerpt">อ่านตัวอย่างเนื้อหา</a>
+                    </div>
+                </div>
+            </li>
+
+            <li class="style-story">
+                <div class="story-container">
+                    <div class="head clearfix">
+                        <div class="avatar"><a href="#"><img src="{{ STATIC_URL }}images/sample/avatars/my.jpg" /></a></div>
+                        <div class="title"><a href="#">ความน่าจะเป็นที่นี่จะเป็นชื่อเรื่อง</a></div>
+                        <div class="author"><a href="#">ภาณุ ตั้งเฉลิมกุล</a></div>
+                    </div>
+                    <div class="summary">โต๋เต๋ วอฟเฟิลมอยส์เจอไรเซอร์ฮอตแคมป์ติ๋ม โค้ชซะ ช็อปเจ๊าะแจ๊ะ อพาร์ทเมนต์ชัวร์สติ๊กเกอร์รองรับว้าว อิเหนาคาวบอยหม่านโถวออเดอร์เคลียร์บุ๋น บุญคุณเซ็กส์มาร์กไลน์ แลนด์ราชานุญาตแอปเปิ้ล</div>
+                    <div class="category"><a href="#">นวนิยาย</a></div>
+                </div>
+
+                <div class="footer">
+                    <div class="price-container"><div class="price">14 บาท</div></div>
+                    <div class="right">
+                        <div class="recommends">
+                            <div class="number"><em>9999 คน</em><span>แนะนำให้อ่าน</span></div>
+                            <div class="faces">
+                                <a href="#"><img src="{{ STATIC_URL }}images/sample/avatars/user1.jpg" /></a>
+                                <a href="#"><img src="{{ STATIC_URL }}images/sample/avatars/user2.jpg" /></a>
+                                <a href="#"><img src="{{ STATIC_URL }}images/sample/avatars/user3.jpg" /></a>
+                                <a href="#"><img src="{{ STATIC_URL }}images/sample/avatars/user4.jpg" /></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="left">
+                        <a href="#" class="btn button-purchase">ซื้ออ่าน</a>
+                        <a href="#" class="read-excerpt">อ่านตัวอย่างเนื้อหา</a>
+                    </div>
+                </div>
+            </li>
+
+            <li class="style-story">
+                <div class="story-container">
+                    <div class="head clearfix">
+                        <div class="avatar"><a href="#"><img src="{{ STATIC_URL }}images/sample/avatars/my.jpg" /></a></div>
+                        <div class="title"><a href="#">ความน่าจะเป็นที่นี่จะเป็นชื่อเรื่อง</a></div>
+                        <div class="author"><a href="#">ภาณุ ตั้งเฉลิมกุล</a></div>
+                    </div>
+                    <div class="summary">โต๋เต๋ วอฟเฟิลมอยส์เจอไรเซอร์ฮอตแคมป์ติ๋ม โค้ชซะ ช็อปเจ๊าะแจ๊ะ อพาร์ทเมนต์ชัวร์สติ๊กเกอร์รองรับว้าว อิเหนาคาวบอยหม่านโถวออเดอร์เคลียร์บุ๋น บุญคุณเซ็กส์มาร์กไลน์ แลนด์ราชานุญาตแอปเปิ้ล</div>
+                    <div class="category"><a href="#">นวนิยาย</a></div>
+                </div>
+
+                <div class="footer">
+                    <div class="price-container"><div class="price">14 บาท</div></div>
+                    <div class="right">
+                        <div class="recommends">
+                            <div class="number"><em>9999 คน</em><span>แนะนำให้อ่าน</span></div>
+                            <div class="faces">
+                                <a href="#"><img src="{{ STATIC_URL }}images/sample/avatars/user1.jpg" /></a>
+                                <a href="#"><img src="{{ STATIC_URL }}images/sample/avatars/user2.jpg" /></a>
+                                <a href="#"><img src="{{ STATIC_URL }}images/sample/avatars/user3.jpg" /></a>
+                                <a href="#"><img src="{{ STATIC_URL }}images/sample/avatars/user4.jpg" /></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="left">
+                        <a href="#" class="btn button-purchase">ซื้ออ่าน</a>
+                        <a href="#" class="read-excerpt">อ่านตัวอย่างเนื้อหา</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+</div>
+{% endblock %}

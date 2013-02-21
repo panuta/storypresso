@@ -1,0 +1,486 @@
+body,
+html {
+  background-color: #f9f5f5;
+}
+em {
+  font-style: normal;
+}
+.btn {
+  font-size: 12px;
+}
+#body-header {
+  padding: 30px 0px 20px;
+}
+#body-header .logo {
+  text-align: center;
+}
+#body-header .logo em {
+  color: #666;
+  display: block;
+  font-family: 'QuarkLight', sans-serif;
+  font-size: 20px;
+  margin-top: 15px;
+}
+#body-footer {
+  text-align: center;
+}
+#body-footer .social {
+  margin-top: 15px;
+  text-align: center;
+}
+#body-footer .social a {
+  background: url(../images/ui/link.socials.png) no-repeat;
+  display: inline-block;
+  height: 32px;
+  margin: 0px 5px;
+  text-indent: -9999px;
+  width: 32px;
+}
+#body-footer .social a.facebook {
+  background-position: 0px 0px;
+}
+#body-footer .social a.facebook:hover {
+  background-position: 0px -32px;
+}
+#body-footer .social a.twitter {
+  background-position: -32px 0px;
+}
+#body-footer .social a.twitter:hover {
+  background-position: -32px -32px;
+}
+#body-footer .links {
+  margin-top: 10px;
+}
+#body-footer .links a {
+  font-size: 13px;
+}
+#body-footer .links a:link,
+#body-footer .links a:active,
+#body-footer .links a:visited {
+  color: #3b91a5;
+  text-decoration: underline;
+}
+#body-footer .links a:hover {
+  background-color: #3b91a5;
+  color: #FFF;
+  text-shadow: none;
+}
+#body-footer .links .separator {
+  color: #CCC;
+  margin: 0px 7px;
+}
+#body-footer .copyright {
+  color: #777;
+  font-size: 12px;
+  margin-top: 5px;
+}
+@font-face {
+  font-family: 'QuarkBold';
+  src: url('../fonts/quark/quark-bold-webfont.eot');
+  src: url('../fonts/quark/quark-bold-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/quark/quark-bold-webfont.woff') format('woff'), url('../fonts/quark/quark-bold-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'QuarkLight';
+  src: url('../fonts/quark/quark-light-webfont.eot');
+  src: url('../fonts/quark/quark-light-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/quark/quark-light-webfont.woff') format('woff'), url('../fonts/quark/quark-light-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'OpenSansLight';
+  src: url('../fonts/opensans/OpenSans-Light-webfont.eot');
+  src: url('../fonts/opensans/OpenSans-Light-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/opensans/OpenSans-Light-webfont.woff') format('woff'), url('../fonts/opensans/OpenSans-Light-webfont.ttf') format('truetype'), url('../fonts/opensans/OpenSans-Light-webfont.svg#OpenSansLight') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'OpenSansLightItalic';
+  src: url('../fonts/opensans/OpenSans-LightItalic-webfont.eot');
+  src: url('../fonts/opensans/OpenSans-LightItalic-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/opensans/OpenSans-LightItalic-webfont.woff') format('woff'), url('../fonts/opensans/OpenSans-LightItalic-webfont.ttf') format('truetype'), url('../fonts/opensans/OpenSans-LightItalic-webfont.svg#OpenSansLightItalic') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'OpenSansRegular';
+  src: url('../fonts/opensans/OpenSans-Regular-webfont.eot');
+  src: url('../fonts/opensans/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/opensans/OpenSans-Regular-webfont.woff') format('woff'), url('../fonts/opensans/OpenSans-Regular-webfont.ttf') format('truetype'), url('../fonts/opensans/OpenSans-Regular-webfont.svg#OpenSansRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'OpenSansItalic';
+  src: url('../fonts/opensans/OpenSans-Italic-webfont.eot');
+  src: url('../fonts/opensans/OpenSans-Italic-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/opensans/OpenSans-Italic-webfont.woff') format('woff'), url('../fonts/opensans/OpenSans-Italic-webfont.ttf') format('truetype'), url('../fonts/opensans/OpenSans-Italic-webfont.svg#OpenSansItalic') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'OpenSansSemibold';
+  src: url('../fonts/opensans/OpenSans-Semibold-webfont.eot');
+  src: url('../fonts/opensans/OpenSans-Semibold-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/opensans/OpenSans-Semibold-webfont.woff') format('woff'), url('../fonts/opensans/OpenSans-Semibold-webfont.ttf') format('truetype'), url('../fonts/opensans/OpenSans-Semibold-webfont.svg#OpenSansSemibold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'OpenSansSemiboldItalic';
+  src: url('../fonts/opensans/OpenSans-SemiboldItalic-webfont.eot');
+  src: url('../fonts/opensans/OpenSans-SemiboldItalic-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/opensans/OpenSans-SemiboldItalic-webfont.woff') format('woff'), url('../fonts/opensans/OpenSans-SemiboldItalic-webfont.ttf') format('truetype'), url('../fonts/opensans/OpenSans-SemiboldItalic-webfont.svg#OpenSansSemiboldItalic') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'OpenSansBold';
+  src: url('../fonts/opensans/OpenSans-Bold-webfont.eot');
+  src: url('../fonts/opensans/OpenSans-Bold-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/opensans/OpenSans-Bold-webfont.woff') format('woff'), url('../fonts/opensans/OpenSans-Bold-webfont.ttf') format('truetype'), url('../fonts/opensans/OpenSans-Bold-webfont.svg#OpenSansBold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'OpenSansBoldItalic';
+  src: url('../fonts/opensans/OpenSans-BoldItalic-webfont.eot');
+  src: url('../fonts/opensans/OpenSans-BoldItalic-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/opensans/OpenSans-BoldItalic-webfont.woff') format('woff'), url('../fonts/opensans/OpenSans-BoldItalic-webfont.ttf') format('truetype'), url('../fonts/opensans/OpenSans-BoldItalic-webfont.svg#OpenSansBoldItalic') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'OpenSansExtrabold';
+  src: url('../fonts/opensans/OpenSans-ExtraBold-webfont.eot');
+  src: url('../fonts/opensans/OpenSans-ExtraBold-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/opensans/OpenSans-ExtraBold-webfont.woff') format('woff'), url('../fonts/opensans/OpenSans-ExtraBold-webfont.ttf') format('truetype'), url('../fonts/opensans/OpenSans-ExtraBold-webfont.svg#OpenSansExtrabold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'OpenSansExtraboldItalic';
+  src: url('../fonts/opensans/OpenSans-ExtraBoldItalic-webfont.eot');
+  src: url('../fonts/opensans/OpenSans-ExtraBoldItalic-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/opensans/OpenSans-ExtraBoldItalic-webfont.woff') format('woff'), url('../fonts/opensans/OpenSans-ExtraBoldItalic-webfont.ttf') format('truetype'), url('../fonts/opensans/OpenSans-ExtraBoldItalic-webfont.svg#OpenSansExtraboldItalic') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'ChiangSaenBold';
+  src: url('../fonts/chiangsaen/tf_chiangsaen_bol-webfont.eot');
+  src: url('../fonts/chiangsaen/tf_chiangsaen_bol-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/chiangsaen/tf_chiangsaen_bol-webfont.woff') format('woff'), url('../fonts/chiangsaen/tf_chiangsaen_bol-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'ChiangSaenItalic';
+  src: url('../fonts/chiangsaen/tf_chiangsaen_ita-webfont.eot');
+  src: url('../fonts/chiangsaen/tf_chiangsaen_ita-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/chiangsaen/tf_chiangsaen_ita-webfont.woff') format('woff'), url('../fonts/chiangsaen/tf_chiangsaen_ita-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'ChiangSaenRegular';
+  src: url('../fonts/chiangsaen/tf_chiangsaen-webfont.eot');
+  src: url('../fonts/chiangsaen/tf_chiangsaen-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/chiangsaen/tf_chiangsaen-webfont.woff') format('woff'), url('../fonts/chiangsaen/tf_chiangsaen-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'CircularBold';
+  src: url('../fonts/circular/circularbold-webfont.eot');
+  src: url('../fonts/circular/circularbold-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/circular/circularbold-webfont.woff') format('woff'), url('../fonts/circular/circularbold-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'CircularRegular';
+  src: url('../fonts/circular/circular-webfont.eot');
+  src: url('../fonts/circular/circular-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/circular/circular-webfont.woff') format('woff'), url('../fonts/circular/circular-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'ThaiSansLiteRegular';
+  src: url('../fonts/thaisanslite/thaisanslite_r1-webfont.eot');
+  src: url('../fonts/thaisanslite/thaisanslite_r1-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/thaisanslite/thaisanslite_r1-webfont.woff') format('woff'), url('../fonts/thaisanslite/thaisanslite_r1-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PimpakarnRegular';
+  src: url('../fonts/pimpakarn/tf_pimpakarn-webfont.eot');
+  src: url('../fonts/pimpakarn/tf_pimpakarn-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/pimpakarn/tf_pimpakarn-webfont.woff') format('woff'), url('../fonts/pimpakarn/tf_pimpakarn-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PimpakarnBold';
+  src: url('../fonts/pimpakarn/tf_pimpakarn_bol-webfont.eot');
+  src: url('../fonts/pimpakarn/tf_pimpakarn_bol-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/pimpakarn/tf_pimpakarn_bol-webfont.woff') format('woff'), url('../fonts/pimpakarn/tf_pimpakarn_bol-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'UthongRegular';
+  src: url('../fonts/uthong/tf_uthong-webfont.eot');
+  src: url('../fonts/uthong/tf_uthong-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/uthong/tf_uthong-webfont.woff') format('woff'), url('../fonts/uthong/tf_uthong-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'UthongItalic';
+  src: url('../fonts/uthong/tf_uthong_ita-webfont.eot');
+  src: url('../fonts/uthong/tf_uthong_ita-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/uthong/tf_uthong_ita-webfont.woff') format('woff'), url('../fonts/uthong/tf_uthong_ita-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'UthongBold';
+  src: url('../fonts/uthong/tf_uthong_bol-webfont.eot');
+  src: url('../fonts/uthong/tf_uthong_bol-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/uthong/tf_uthong_bol-webfont.woff') format('woff'), url('../fonts/uthong/tf_uthong_bol-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SuperMarketRegular';
+  src: url('../fonts/supermarket/supermarket-webfont.eot');
+  src: url('../fonts/supermarket/supermarket-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/supermarket/supermarket-webfont.woff') format('woff'), url('../fonts/supermarket/supermarket-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+.page-homepage .tagline {
+  border-top: 1px solid #DDD;
+  padding: 20px 0px 0px;
+}
+.page-homepage .tagline h1 {
+  color: #e93b5f;
+  font-family: 'QuarkLight', sans-serif;
+  font-size: 46px;
+  font-weight: normal;
+  text-align: center;
+}
+.page-homepage .tagline h2 {
+  color: #555;
+  font-family: 'QuarkLight', sans-serif;
+  font-size: 30px;
+  font-weight: normal;
+  margin-top: 15px;
+  text-align: center;
+}
+.page-homepage .registration {
+  margin: 45px auto 0px;
+  width: 500px;
+}
+.page-homepage .registration h3 {
+  color: #666;
+  font-family: 'QuarkLight', sans-serif;
+  font-size: 24px;
+  font-weight: normal;
+  line-height: normal;
+  margin-bottom: 18px;
+  text-align: center;
+}
+.page-homepage .registration .social {
+  text-align: center;
+}
+.page-homepage .registration .social .facebook {
+  background: url(../images/ui/login.facebook.en.png);
+  display: inline-block;
+  height: 32px;
+  margin: 0px 10px;
+  text-indent: -9999px;
+  width: 182px;
+}
+.page-homepage .registration .social .twitter {
+  background: url(../images/ui/login.twitter.en.png);
+  display: inline-block;
+  height: 32px;
+  margin: 0px 10px;
+  text-indent: -9999px;
+  width: 182px;
+}
+.page-homepage .registration .or {
+  line-height: 10px;
+  margin-top: 15px;
+  text-align: center;
+}
+.page-homepage .registration .or hr {
+  border: none;
+  border-bottom: 1px solid #DDD;
+  margin: 5px 0px;
+}
+.page-homepage .registration .or span {
+  background-color: #f9f5f5;
+  color: #777;
+  font-size: 12px;
+  display: inline-block;
+  padding: 0 10px;
+  position: relative;
+  top: -13px;
+}
+.page-homepage .registration .email {
+  text-align: center;
+}
+.page-homepage .registration .email .btn {
+  color: #555;
+  font-weight: bold;
+  width: 160px;
+}
+.page-homepage .stories {
+  margin-top: 50px;
+}
+.page-homepage .stories h3 {
+  color: #666;
+  font-family: 'QuarkLight', sans-serif;
+  font-size: 24px;
+  font-weight: normal;
+  line-height: normal;
+  text-align: center;
+}
+.page-homepage .stories ul {
+  margin: 0px;
+}
+.page-homepage .stories ul li {
+  list-style: none;
+}
+.page-homepage .stories li.style-story {
+  background-color: #fff;
+  border: 1px solid #DDD;
+  -webkit-box-shadow: 0 0 60px 10px rgba(0, 0, 0, 0) inset, 0 5px 0 -4px #ffffff, 0 5px 0 -3px #dddddd, 0 11px 0 -8px #ffffff, 0 11px 0 -7px #dddddd, 0 17px 0 -12px #ffffff, 0 17px 0 -11px #dddddd;
+  -moz-box-shadow: 0 0 60px 10px rgba(0, 0, 0, 0) inset, 0 5px 0 -4px #ffffff, 0 5px 0 -3px #dddddd, 0 11px 0 -8px #ffffff, 0 11px 0 -7px #dddddd, 0 17px 0 -12px #ffffff, 0 17px 0 -11px #dddddd;
+  box-shadow: 0 0 60px 10px rgba(0, 0, 0, 0) inset, 0 5px 0 -4px #ffffff, 0 5px 0 -3px #dddddd, 0 11px 0 -8px #ffffff, 0 11px 0 -7px #dddddd, 0 17px 0 -12px #ffffff, 0 17px 0 -11px #dddddd;
+  background-color: #FCFCFC;
+  margin-bottom: 40px;
+}
+.page-homepage .stories li.style-story .story-container {
+  padding: 0px 25px;
+}
+.page-homepage .stories li.style-story .head {
+  margin-top: 20px;
+}
+.page-homepage .stories li.style-story .head .avatar {
+  background-color: #FFF;
+  display: inline-block;
+  float: left;
+  height: 65px;
+  margin-right: 10px;
+  vertical-align: middle;
+  width: 65px;
+}
+.page-homepage .stories li.style-story .head .title {
+  margin-left: 85px;
+  padding-top: 6px;
+}
+.page-homepage .stories li.style-story .head .title a {
+  color: #444;
+  font-family: 'UthongBold', serif;
+  font-size: 34px;
+}
+.page-homepage .stories li.style-story .head .author {
+  margin-left: 85px;
+  margin-top: 12px;
+}
+.page-homepage .stories li.style-story .head .author a {
+  color: #666;
+  font-family: 'UthongRegular', serif;
+  font-size: 24px;
+}
+.page-homepage .stories li.style-story .summary {
+  color: #555;
+  font-family: 'ChiangSaenRegular', sans-serif;
+  font-size: 24px;
+  line-height: 31px;
+  margin-top: 15px;
+}
+.page-homepage .stories li.style-story .category {
+  margin-top: 10px;
+}
+.page-homepage .stories li.style-story .category a {
+  color: #555;
+  display: inline-block;
+  font-size: 14px;
+  background-color: #EEE;
+  padding: 4px 15px;
+}
+.page-homepage .stories li.style-story .category a:hover {
+  background-color: #3b91a5;
+  color: #FFF;
+  text-decoration: none;
+}
+.page-homepage .stories li.style-story .footer {
+  background-color: #F7F7F7;
+  border-top: 1px solid #EEE;
+  height: 65px;
+  margin-top: 15px;
+}
+.page-homepage .stories li.style-story .footer .price-container {
+  background: url(../images/component/ribbon.png) left center no-repeat;
+  clear: both;
+  float: left;
+  height: 35px;
+  margin: 13px 20px 0px -10px;
+  padding: 0px 0px 10px 8px;
+}
+.page-homepage .stories li.style-story .footer .price-container .price {
+  background: #e93b5f;
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+  color: #FFF;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 35px;
+  padding: 0px 20px 0px 15px;
+  text-shadow: 0 -1px #d0284b, 0 1px #f96080;
+}
+.page-homepage .stories li.style-story .footer .left {
+  margin-left: 35px;
+  padding: 13px 0px 16px;
+}
+.page-homepage .stories li.style-story .footer .right {
+  float: right;
+}
+.page-homepage .stories li.style-story .footer .button-purchase {
+  color: #444;
+  font-family: 'QuarkLight', sans-serif;
+  font-size: 21px;
+  padding: 10px 40px 4px;
+  vertical-align: middle;
+}
+.page-homepage .stories li.style-story .footer .read-excerpt {
+  margin-left: 10px;
+  vertical-align: middle;
+}
+.page-homepage .stories li.style-story .footer .read-excerpt:link,
+.page-homepage .stories li.style-story .footer .read-excerpt:active,
+.page-homepage .stories li.style-story .footer .read-excerpt:visited {
+  color: #3b91a5;
+  text-decoration: underline;
+}
+.page-homepage .stories li.style-story .footer .read-excerpt:hover {
+  background-color: #3b91a5;
+  color: #FFF;
+  text-shadow: none;
+}
+.page-homepage .stories li.style-story .footer .recommends {
+  border-left: 1px solid #EEE;
+  height: 65px;
+  padding: 0px 15px 0px 20px;
+}
+.page-homepage .stories li.style-story .footer .recommends .number {
+  display: inline-block;
+}
+.page-homepage .stories li.style-story .footer .recommends .number em {
+  color: #555;
+  display: block;
+  font-size: 22px;
+  font-weight: bold;
+  padding: 10px 0px 5px;
+}
+.page-homepage .stories li.style-story .footer .recommends .number span {
+  color: #777;
+  display: block;
+  font-size: 14px;
+}
+.page-homepage .stories li.style-story .footer .recommends .faces {
+  display: inline-block;
+  margin-left: 10px;
+}
+.page-homepage .stories li.style-story .footer .recommends .faces img {
+  float: left;
+  width: 30px;
+  height: 30px;
+  margin: 1px;
+}

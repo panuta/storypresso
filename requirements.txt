@@ -1,0 +1,7 @@
+Django==1.5c2
+PIL==1.1.7
+easy-thumbnails==1.2
+psycopg2==2.4.6
+pytz==2012j
+shortuuid==0.3
+wsgiref==0.1.2
