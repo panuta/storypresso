@@ -2,14 +2,21 @@
 
 .page-homepage {
     .tagline {
-        border-top:  1px solid #DDD;
-        padding: 20px 0px 0px;
+        .is {
+            color: #999;
+            font-family: 'QuarkLight', sans-serif;
+            font-size: 28px;
+            margin: 15px 0px;
+            text-align: center;
+        }
 
         h1 {
             color: #e93b5f;
             font-family: 'QuarkLight', sans-serif;
-            font-size: 46px;
+            font-size: 56px;
             font-weight: normal;
+            line-height: normal;
+            margin: 15px 0px 0px;
             text-align: center;
         }
 
@@ -18,7 +25,8 @@
             font-family: 'QuarkLight', sans-serif;
             font-size: 30px;
             font-weight: normal;
-            margin-top: 15px;
+            line-height: normal;
+            margin: 15px 0px 0px;
             text-align: center;
         }
     }
@@ -93,7 +101,8 @@
     }
 
     .stories {
-        margin-top: 50px;
+        margin: 50px auto 0px;
+        max-width: 900px;
 
         h3 {
             color: #666;
@@ -122,17 +131,8 @@
             }
 
             .head {
+                position: relative;
                 margin-top: 20px;
-
-                .avatar {
-                    background-color: #FFF;
-                    display: inline-block;
-                    float: left;
-                    height: 65px;
-                    margin-right: 10px;
-                    vertical-align: middle;
-                    width: 65px;
-                }
 
                 .title {
                     margin-left: 85px;
@@ -143,6 +143,16 @@
                         font-family: 'UthongBold', serif;
                         font-size: 34px;
                     }
+                }
+
+                .avatar {
+                    background-color: #FFF;
+                    height: 65px;
+                    left: 0px;
+                    margin-right: 10px;
+                    position: absolute;
+                    top: 0px;
+                    width: 65px;
                 }
 
                 .author {
@@ -194,8 +204,7 @@
                     clear: both;
                     float: left;
                     height: 35px;
-                    margin: 13px 20px 0px -10px;
-
+                    margin: 13px 0px 0px -10px;
                     padding: 0px 0px 10px 8px;
 
                     .price {
@@ -211,13 +220,13 @@
                 }
 
                 .left {
-                    margin-left: 35px;
+                    margin-left: 105px;
                     padding: 13px 0px 16px;
                 }
 
                 .right {
                     float: right;
-
+                    margin-top: -65px;
                 }
 
                 .button-purchase {
