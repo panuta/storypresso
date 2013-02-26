@@ -3,7 +3,7 @@
 from django.shortcuts import render
 
 
-def view_user_library(request):
+def view_my_library(request):
     return render(request, 'user/settings/settings_profile.html', {})
 
 

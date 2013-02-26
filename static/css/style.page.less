@@ -1,16 +1,47 @@
 #body-top {
-    background-color: #f9f5f5;
-    border-bottom: 1px solid #efe9e5;
-    height: 50px;
+    background-color: @backgroundColor;
+    border-bottom: 1px solid #EEE;
+    height: 60px;
 
     .container {
-        padding-top: 15px;
+
         text-align: right;
 
-        a {
-            color: #666;
-            font-size: 14px;
-            margin-left: 15px;
+        .logo {
+            float: left;
+            margin-top: 15px;
+        }
+
+        .registration {
+            padding-top: 18px;
+
+            a {
+                color: #555;
+                margin-left: 10px;
+                text-decoration: underline;
+
+                &:hover {
+                    background-color: @linkColor;
+                    color: #FFF;
+                }
+            }
+        }
+
+        .account {
+            padding-top: 10px;
+
+            .menu {
+                display: inline-block;
+                margin-left: 5px;
+                vertical-align: middle;
+
+                .caret {
+                    border-top-color: #555;
+                    border-bottom-color: #555;
+                    margin-top: -1px;
+                    vertical-align: middle;
+                }
+            }
         }
     }
 }
@@ -66,40 +97,33 @@
 }
 
 #body-backend {
-    #body-header {
-        .container {
-            border-bottom: 1px solid #DDD;
-        }
+    .breadcrumbs {
+        color: #BBB;
+        margin-top: 15px;
 
-        .logo {
-            padding: 20px 0px 20px;
+        a {
+            color: #666;
+            font-size: 14px;
+            text-decoration: underline;
 
-            em {
-                color: #666;
-                display: block;
-                font-family: 'QuarkLight', sans-serif;
-                font-size: 20px;
-                margin-top: 15px;
+            &:hover {
+                background-color: @linkColor;
+                color: #FFF;
             }
         }
     }
-}
 
-#body-content {
-    .page-head {
-        margin: 0px;
-        padding: 15px 0px;
-
-        h1 {
-            background: url(../images/header/header.writeroom.png) left center no-repeat;
-            color: #555;
-            font-family: 'QuarkLight', sans-serif;
-            font-size: 32px;
-            font-weight: normal;
-            line-height: normal;
-            margin: 0px;
-            padding-left: 40px;
-        }
+    h1.head1 {
+        background-color: #3b91a5;
+        border-left: 5px solid #52acc1;
+        color: #FFF;
+        display: inline-block;
+        font-family: 'QuarkLight', sans-serif;
+        font-size: 32px;
+        font-weight: normal;
+        line-height: normal;
+        margin: 15px 0px;
+        padding: 7px 60px 2px 20px;
     }
 }
 
@@ -284,8 +308,6 @@
             text-align: center;
         }
     }
-
-
 
     .registration {
         margin: 45px auto 0px;
@@ -691,6 +713,253 @@
     }
 }
 
-.page-workroom {
+.page-publication {
+    padding-top: 40px;
 
+    .type {
+        color: #666;
+        font-family: 'QuarkLight', sans-serif;
+        font-size: 22px;
+        margin-bottom: 7px;
+    }
+
+    h1 {
+        color: @skyColor;
+        font-family: 'QuarkLight', sans-serif;
+        font-size: 42px;
+        font-weight: normal;
+        line-height: normal;
+        margin: 0px 0px 15px;
+    }
+
+    .cover {
+        float: left;
+
+        img {
+            box-shadow: 2px 2px 0px #CCC;
+            width: 250px;
+        }
+    }
+
+    .author {
+        border-bottom: 1px solid #DDD;
+        margin: 0px 0px 20px 280px;
+        padding-bottom: 15px;
+        position: relative;
+
+        .avatar {
+            display: inline-block;
+            height: 50px;
+            margin-right: 10px;
+            vertical-align: middle;
+            width: 50px;
+        }
+
+        .name {
+            display: inline-block;
+            vertical-align: middle;
+
+            a {
+                color: #444;
+                font-family: 'UthongRegular';
+                font-size: 28px;
+            }
+        }
+    }
+
+    .author:after, .author:before {
+        top: 100%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+    }
+
+    .author:after {
+        border-color: rgba(255, 255, 255, 0);
+        border-top-color: #FFF;
+        border-width: 10px;
+        left: 25px;
+        margin-left: -10px;
+    }
+    .author:before {
+        border-color: rgba(221, 221, 221, 0);
+        border-top-color: #DDD;
+        border-width: 11px;
+        left: 25px;
+        margin-left: -11px;
+    }
+
+    .summary {
+        color: #444;
+        font-family: 'ChiangSaenRegular', sans-serif;
+        font-size: 24px;
+        line-height: 31px;
+        margin: 0px 0px 0px 280px;
+    }
+
+    .buy {
+        margin: 30px 0px 0px 280px;
+
+        .price {
+            color: #e06545;
+            font-family: 'QuarkLight', sans-serif;
+            font-size: 24px;
+        }
+
+        .buy-button {
+            background-color: #e06545;
+            border-radius: 4px;
+            box-shadow: 0px 2px 0px #dd532f;
+            color: #FFF;
+            display: inline-block;
+            font-family: 'QuarkLight', sans-serif;
+            font-size: 20px;
+            line-height: 35px;
+            margin-top: 12px;
+            padding: 5px 45px 0px;
+
+            &:hover {
+                background-color: #dd532f;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.page-workroom {
+    .works-box {
+        margin-top: 30px;
+
+        .actions {
+            float: right;
+
+            .btn {
+                width: 160px;
+            }
+        }
+
+        .works-title {
+            border-bottom: 1px solid #DDD;
+            color: #777;
+            font-family: 'QuarkLight', sans-serif;
+            font-size: 24px;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+        }
+
+        ul.works {
+            margin: 0px;
+        }
+
+        li.work {
+            border-bottom: 1px solid #DDD;
+            list-style: none;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+
+            .title {
+                padding-top: 6px;
+
+                a {
+                    color: #444;
+                    font-family: 'UthongBold', serif;
+                    font-size: 34px;
+                }
+            }
+
+            .status {
+                margin-top: 10px;
+
+                .label {
+                    background-color: #bcddbd;
+                    color: #444;
+                    font-size: 13px;
+                    font-weight: normal;
+                    margin-right: 15px;
+                    padding: 5px 15px 7px;
+                    text-shadow: 1px 1px 0px #DDD;
+                }
+
+                .date {
+                    color: #666;
+                }
+            }
+
+            .tools {
+                margin-top: 10px;
+            }
+        }
+    }
+}
+
+.page-workroom-writing {
+
+    .content-title {
+        margin: 50px 0px 20px;
+        text-align: center;
+
+        textarea {
+            background-color: @backgroundColor;
+            border: none;
+            box-shadow: none;
+            color: #444;
+            font-family: 'UthongBold', serif;
+            font-size: 34px;
+            line-height: 45px;
+            margin: 0px auto;
+            resize: none;
+            text-align: center;
+            transition: none;
+            width: 650px;
+        }
+    }
+
+    .content-body-container {
+        margin: 0px auto;
+        width: 650px;
+
+        .content-body {
+            p {
+                color: #444;
+                font-family: 'ChiangSaenRegular', sans-serif;
+                font-size: 22px;
+                line-height: 31px;
+                margin-bottom: 15px;
+            }
+        }
+
+        .redactor_toolbar {
+            border: 1px solid #DDD;
+            border-bottom: 1px solid #BBB;
+        }
+
+        .redactor_box {
+            background-color: @backgroundColor;
+            border: none;
+            font-family: 'ChiangSaenRegular', sans-serif;
+
+            .redactor_editor, .redactor_editor:focus {
+                background-color: @backgroundColor !important;
+                padding: 15px 0px !important;
+            }
+
+            textarea {
+                background-color: @backgroundColor;
+            }
+        }
+
+        .redactor_editor {
+            p, ul, ol, dl, li {
+                color: #444 !important;
+                font-family: 'ChiangSaenRegular', sans-serif !important;
+                font-size: 22px !important;
+                line-height: 31px !important;
+            }
+
+
+        }
+    }
 }

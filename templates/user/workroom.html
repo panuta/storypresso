@@ -1,4 +1,4 @@
-{% extends 'base_backend.html' %}
+{% extends 'base_page.html' %}
 
 {% block html_head_scripts %}
 
@@ -6,13 +6,26 @@
 
 {% block body_content %}
 <div class="page-workroom">
-<div class="page-head">
     <div class="container">
-        <h1>ห้องทำงาน</h1>
-    </div>
-</div>
-<div class="container">
+        <h1 class="head1">ห้องเขียนหนังสือ</h1>
 
-</div>
+        <div class="works-box">
+            <div class="actions"><a href="#" class="btn"><i class="icon-pencil"></i> เขียนงานชิ้นใหม่</a></div>
+            <div class="works-title">ผลงานเขียน</div>
+
+            <ul class="works">
+                <li class="work">
+                    <div class="title"><a href="#">This is title</a></div>
+                    <div class="status"><span class="label">เผยแพร่แล้ว</span><span class="date">เผยแพร่เมื่อวันที่ 14 ก.พ. 2556</span></div>
+                    <div class="tools"><a href="{% url 'write_my_work' %}" class="btn btn-small">แก้ไข</a></div>
+                </li>
+                <li class="work">
+                    <div class="title"><a href="#">This is title</a></div>
+                    <div class="status"><span class="label label-success">เผยแพร่แล้ว</span><span class="date">เผยแพร่เมื่อวันที่ 14 ก.พ. 2556</span></div>
+                    <div class="tools"><a href="#" class="btn btn-small">แก้ไข</a></div>
+                </li>
+            </ul>
+        </div>
+    </div>
 </div>
 {% endblock %}

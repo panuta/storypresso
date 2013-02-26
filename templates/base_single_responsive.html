@@ -1,11 +1,14 @@
-{% extends 'base_responsive.html' %}
+{% extends 'base.html' %}
 
-{% block body_content %}
+{% block html_head_before_userdefined %}
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}libs/bootstrap/css/bootstrap-responsive.css">
+{% endblock %}
+
+{% block body %}
 <div class="page-single">
     <div class="container">
         <div class="logo"><a href="/"><img src="{{ STATIC_URL }}images/logo.black.png" /></a></div>
     </div>
-
     {% block single_content %}{% endblock %}
 </div>
 {% endblock %}

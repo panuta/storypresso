@@ -14,14 +14,14 @@ def view_login(request):
     if request.method == 'POST':
         from django.contrib.auth.views import login
         return login(request, authentication_form=EmailAuthenticationForm,
-                     template_name='accounts/registration/registration_login.html', extra_context={'hide_login': True})
+                     template_name='accounts/registration/registration_login.html')
 
     else:
         form = EmailAuthenticationForm()
         next = request.GET.get(REDIRECT_FIELD_NAME, '')
 
     return render(request, 'accounts/registration/registration_login.html',
-                  {'form': form, 'next': next, 'hide_login': True})
+                  {'form': form, 'next': next})
 
 
 @redirect_if_authenticated
@@ -40,7 +40,7 @@ def view_signup(request):
         form = EmailSignupForm()
 
     return render(request, 'accounts/registration/registration_signup.html',
-                  {'form': form, 'next': next, 'hide_login': True})
+                  {'form': form, 'next': next})
 
 
 @redirect_if_authenticated
@@ -59,7 +59,7 @@ def view_signup_resend(request):
         raise Http404
 
     return render(request, 'accounts/registration/registration_signup.html',
-                  {'form': form, 'next': next, 'hide_login': True})
+                  {'form': form, 'next': next})
 
 
 def login_facebook(request):
@@ -81,7 +81,7 @@ def login_facebook_redirect(request):
 
 @redirect_if_authenticated
 def view_user_signup_done(request):
-    return render(request, 'accounts/registration/registration_signup_done.html', {'hide_login': True})
+    return render(request, 'accounts/registration/registration_signup_done.html', {})
 
 
 @redirect_if_authenticated
@@ -109,4 +109,4 @@ def activate_email_user(request, key):
     else:
         form = EmailUserActivationForm()
 
-    return render(request, 'accounts/registration/registration_activate_email.html', {'form':form, 'hide_login': True})
+    return render(request, 'accounts/registration/registration_activate_email.html', {'form':form})

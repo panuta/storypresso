@@ -42,18 +42,6 @@
     {% block html_head_scripts %}{% endblock %}
 </head>
 <body>
-{% if not hide_login %}
-<div id="body-top">
-    <div class="container">
-        {% if user.is_authenticated %}
-            <a href="{% url 'auth_logout' %}">{{ user.email }}</a>
-        {% else %}
-            <a href="{% url 'view_signup' %}">สมัครสมาชิก</a><a href="{% url 'view_login' %}">เข้าสู่ระบบ</a>
-        {% endif %}
-    </div>
-</div>
-{% endif %}
-
 {% block body %}{% endblock %}
 </body>
 </html>

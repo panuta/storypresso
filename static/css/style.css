@@ -1,6 +1,6 @@
 body,
 html {
-  background-color: #f9f5f5;
+  background-color: #fcfcfc;
 }
 em {
   font-style: normal;
@@ -270,18 +270,42 @@ form .help-block {
   font-style: normal;
 }
 #body-top {
-  background-color: #f9f5f5;
-  border-bottom: 1px solid #efe9e5;
-  height: 50px;
+  background-color: #fcfcfc;
+  border-bottom: 1px solid #EEE;
+  height: 60px;
 }
 #body-top .container {
-  padding-top: 15px;
   text-align: right;
 }
-#body-top .container a {
-  color: #666;
-  font-size: 14px;
-  margin-left: 15px;
+#body-top .container .logo {
+  float: left;
+  margin-top: 15px;
+}
+#body-top .container .registration {
+  padding-top: 18px;
+}
+#body-top .container .registration a {
+  color: #555;
+  margin-left: 10px;
+  text-decoration: underline;
+}
+#body-top .container .registration a:hover {
+  background-color: #3b91a5;
+  color: #FFF;
+}
+#body-top .container .account {
+  padding-top: 10px;
+}
+#body-top .container .account .menu {
+  display: inline-block;
+  margin-left: 5px;
+  vertical-align: middle;
+}
+#body-top .container .account .menu .caret {
+  border-top-color: #555;
+  border-bottom-color: #555;
+  margin-top: -1px;
+  vertical-align: middle;
 }
 #body-account .container {
   position: relative;
@@ -320,32 +344,30 @@ form .help-block {
   font-size: 20px;
   margin-top: 15px;
 }
-#body-backend #body-header .container {
-  border-bottom: 1px solid #DDD;
-}
-#body-backend #body-header .logo {
-  padding: 20px 0px 20px;
-}
-#body-backend #body-header .logo em {
-  color: #666;
-  display: block;
-  font-family: 'QuarkLight', sans-serif;
-  font-size: 20px;
+#body-backend .breadcrumbs {
+  color: #BBB;
   margin-top: 15px;
 }
-#body-content .page-head {
-  margin: 0px;
-  padding: 15px 0px;
+#body-backend .breadcrumbs a {
+  color: #666;
+  font-size: 14px;
+  text-decoration: underline;
 }
-#body-content .page-head h1 {
-  background: url(../images/header/header.writeroom.png) left center no-repeat;
-  color: #555;
+#body-backend .breadcrumbs a:hover {
+  background-color: #3b91a5;
+  color: #FFF;
+}
+#body-backend h1.head1 {
+  background-color: #3b91a5;
+  border-left: 5px solid #52acc1;
+  color: #FFF;
+  display: inline-block;
   font-family: 'QuarkLight', sans-serif;
   font-size: 32px;
   font-weight: normal;
   line-height: normal;
-  margin: 0px;
-  padding-left: 40px;
+  margin: 15px 0px;
+  padding: 7px 60px 2px 20px;
 }
 #body-footer {
   text-align: center;
@@ -553,7 +575,7 @@ form .help-block {
   margin: 5px 0px;
 }
 .page-homepage .registration .or span {
-  background-color: #f9f5f5;
+  background-color: #fcfcfc;
   color: #777;
   font-size: 12px;
   display: inline-block;
@@ -887,6 +909,215 @@ form .help-block {
   background-color: #3b91a5;
   color: #FFF;
   text-shadow: none;
+}
+.page-publication {
+  padding-top: 40px;
+}
+.page-publication .type {
+  color: #666;
+  font-family: 'QuarkLight', sans-serif;
+  font-size: 22px;
+  margin-bottom: 7px;
+}
+.page-publication h1 {
+  color: #3ea59b;
+  font-family: 'QuarkLight', sans-serif;
+  font-size: 42px;
+  font-weight: normal;
+  line-height: normal;
+  margin: 0px 0px 15px;
+}
+.page-publication .cover {
+  float: left;
+}
+.page-publication .cover img {
+  box-shadow: 2px 2px 0px #CCC;
+  width: 250px;
+}
+.page-publication .author {
+  border-bottom: 1px solid #DDD;
+  margin: 0px 0px 20px 280px;
+  padding-bottom: 15px;
+  position: relative;
+}
+.page-publication .author .avatar {
+  display: inline-block;
+  height: 50px;
+  margin-right: 10px;
+  vertical-align: middle;
+  width: 50px;
+}
+.page-publication .author .name {
+  display: inline-block;
+  vertical-align: middle;
+}
+.page-publication .author .name a {
+  color: #444;
+  font-family: 'UthongRegular';
+  font-size: 28px;
+}
+.page-publication .author:after,
+.page-publication .author:before {
+  top: 100%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+.page-publication .author:after {
+  border-color: rgba(255, 255, 255, 0);
+  border-top-color: #FFF;
+  border-width: 10px;
+  left: 25px;
+  margin-left: -10px;
+}
+.page-publication .author:before {
+  border-color: rgba(221, 221, 221, 0);
+  border-top-color: #DDD;
+  border-width: 11px;
+  left: 25px;
+  margin-left: -11px;
+}
+.page-publication .summary {
+  color: #444;
+  font-family: 'ChiangSaenRegular', sans-serif;
+  font-size: 24px;
+  line-height: 31px;
+  margin: 0px 0px 0px 280px;
+}
+.page-publication .buy {
+  margin: 30px 0px 0px 280px;
+}
+.page-publication .buy .price {
+  color: #e06545;
+  font-family: 'QuarkLight', sans-serif;
+  font-size: 24px;
+}
+.page-publication .buy .buy-button {
+  background-color: #e06545;
+  border-radius: 4px;
+  box-shadow: 0px 2px 0px #dd532f;
+  color: #FFF;
+  display: inline-block;
+  font-family: 'QuarkLight', sans-serif;
+  font-size: 20px;
+  line-height: 35px;
+  margin-top: 12px;
+  padding: 5px 45px 0px;
+}
+.page-publication .buy .buy-button:hover {
+  background-color: #dd532f;
+  text-decoration: none;
+}
+.page-workroom .works-box {
+  margin-top: 30px;
+}
+.page-workroom .works-box .actions {
+  float: right;
+}
+.page-workroom .works-box .actions .btn {
+  width: 160px;
+}
+.page-workroom .works-box .works-title {
+  border-bottom: 1px solid #DDD;
+  color: #777;
+  font-family: 'QuarkLight', sans-serif;
+  font-size: 24px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+.page-workroom .works-box ul.works {
+  margin: 0px;
+}
+.page-workroom .works-box li.work {
+  border-bottom: 1px solid #DDD;
+  list-style: none;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+.page-workroom .works-box li.work .title {
+  padding-top: 6px;
+}
+.page-workroom .works-box li.work .title a {
+  color: #444;
+  font-family: 'UthongBold', serif;
+  font-size: 34px;
+}
+.page-workroom .works-box li.work .status {
+  margin-top: 10px;
+}
+.page-workroom .works-box li.work .status .label {
+  background-color: #bcddbd;
+  color: #444;
+  font-size: 13px;
+  font-weight: normal;
+  margin-right: 15px;
+  padding: 5px 15px 7px;
+  text-shadow: 1px 1px 0px #DDD;
+}
+.page-workroom .works-box li.work .status .date {
+  color: #666;
+}
+.page-workroom .works-box li.work .tools {
+  margin-top: 10px;
+}
+.page-workroom-writing .content-title {
+  margin: 50px 0px 20px;
+  text-align: center;
+}
+.page-workroom-writing .content-title textarea {
+  background-color: #fcfcfc;
+  border: none;
+  box-shadow: none;
+  color: #444;
+  font-family: 'UthongBold', serif;
+  font-size: 34px;
+  line-height: 45px;
+  margin: 0px auto;
+  resize: none;
+  text-align: center;
+  transition: none;
+  width: 650px;
+}
+.page-workroom-writing .content-body-container {
+  margin: 0px auto;
+  width: 650px;
+}
+.page-workroom-writing .content-body-container .content-body p {
+  color: #444;
+  font-family: 'ChiangSaenRegular', sans-serif;
+  font-size: 22px;
+  line-height: 31px;
+  margin-bottom: 15px;
+}
+.page-workroom-writing .content-body-container .redactor_toolbar {
+  border: 1px solid #DDD;
+  border-bottom: 1px solid #BBB;
+}
+.page-workroom-writing .content-body-container .redactor_box {
+  background-color: #fcfcfc;
+  border: none;
+  font-family: 'ChiangSaenRegular', sans-serif;
+}
+.page-workroom-writing .content-body-container .redactor_box .redactor_editor,
+.page-workroom-writing .content-body-container .redactor_box .redactor_editor:focus {
+  background-color: #fcfcfc !important;
+  padding: 15px 0px !important;
+}
+.page-workroom-writing .content-body-container .redactor_box textarea {
+  background-color: #fcfcfc;
+}
+.page-workroom-writing .content-body-container .redactor_editor p,
+.page-workroom-writing .content-body-container .redactor_editor ul,
+.page-workroom-writing .content-body-container .redactor_editor ol,
+.page-workroom-writing .content-body-container .redactor_editor dl,
+.page-workroom-writing .content-body-container .redactor_editor li {
+  color: #444 !important;
+  font-family: 'ChiangSaenRegular', sans-serif !important;
+  font-size: 22px !important;
+  line-height: 31px !important;
 }
 @media (max-width: 767px) {
   .page-homepage .tagline .is {

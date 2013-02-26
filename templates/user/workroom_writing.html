@@ -1,0 +1,67 @@
+{% extends 'base_page.html' %}
+
+{% block html_head_scripts %}
+<link rel="stylesheet" href="{{ STATIC_URL }}libs/redactor/redactor.css" />
+<script src="{{ STATIC_URL }}libs/redactor/redactor.min.js"></script>
+
+<script src="{{ STATIC_URL }}libs/autosize/jquery.autosize-min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#outline-textarea').redactor({minHeight: 200});
+    $('.content-body').redactor({
+        minHeight: 200,
+        focus: true,
+        fixed: true,
+        fixedBox: true
+    });
+
+    $('.content-title textarea').autosize().trigger('autosize');
+
+    $('.writing-nav a').on('click', function() {
+        $(this).closest('ul').find('li').removeClass('active');
+        $(this).closest('li').addClass('active');
+
+        $('.writing-body .body').hide();
+        $('.writing-body .body-' + $(this).attr('class')).show();
+        return false;
+    });
+});
+</script>
+{% endblock %}
+
+{% block body_content %}
+<div class="page-workroom-writing">
+    <div class="container">
+        <div class="breadcrumbs"><a href="{% url 'view_my_works' %}">ห้องเขียนหนังสือ</a> /</div>
+        <h1 class="head1">เขียนงานชิ้นใหม่</h1>
+
+        <div class="content-title"><textarea>เอ็นเตอร์เทนกัมมันตะตุ๊กตุ๊ก เมี่ยงคำอพาร์ทเมนท์</textarea></div>
+
+        <div class="content-body-container">
+            <div class="content-body">
+                <p>อุตสาหการ เวสต์ มาร์ก แฟรนไชส์ลีเมอร์ตุ๊ดเอ็กซ์เพรสพุทธศตวรรษ ปิกอัพชิฟฟอนพุทโธเกย์ยิวอีแต๋น คันยิเซ็นเซอร์แบคโฮสเต็ป แหม็บ ง่าวเด้อรัมสไตล์ว้อดก้า ดีมานด์ปิยมิตรรัม บริกรไฮไลท์เพรียวบางภคันทลาพาธวาทกรรม ตังค์ สแตนดาร์ด ก๋ากั่นเบิร์ด เปเปอร์ไอติมผลไม้ซัพพลายกษัตริยาธิราชมหาอุปราชา สะเด่า คอปเตอร์ป๊อปไลฟ์ลาเต้</p>
+                <p>พาสตาเกย์ พลานุภาพแกสโซฮอล์เทปคำตอบไทม์ บูติก ไดเอ็ตเอาท์ลีเมอร์โบว์ฮิปฮอป บัสเท็กซ์ ปาสคาลซีนีเพล็กซ์ซ้อ เซ็นเซอร์ช็อคแพลน รากหญ้า โปรเจ็กต์ชาร์ตซาดิสต์แบ็กโฮ แมกกาซีนบาบูนขั้นตอนซาฟารี ไทม์ติ๋ม เยอร์บีร่าแล็บเอ็กซ์เพรส ซิงซื่อบื้อเอสเปรสโซคาเฟ่ตรวจทานออร์แกน จิ๊กโก๋มาราธอน เทรนด์สตรอว์เบอร์รีสตาร์ทริคเตอร์วืด หลวงปู่ครูเสดเอเซียกลาสกษัตริยาธิราช</p>
+                <p>รายชื่อชัตเตอร์มาร์เก็ตติ้งกระดี๊กระด๊าโบ้ยมาเฟีย โปลิศพุทธศตวรรษโดมิโนกระดี๊กระด๊า แฟ้บแซมบ้าเบอร์เกอร์จีดีพีกษัตริยาธิราชเที่ยงคืน แทงกั๊ก มาราธอนคูลเลอร์ตี๋แอคทีฟเฮียจ๊อกกี้ ซันตาคลอสไฮเทคเอเซียเฟรช บ็อกซ์ห่วยเทรลเล่อร์โทร แมกกาซีนหยวนคอนเซปต์เสือโคร่งล็อบบี้ กรีนเซ่นไหว้ตู้เซฟแจ็กพอต จีดีพีโทร ต้าอ่วยสามช่าซาดิสต์ความหมายเท็กซ์สถาปัตย์ มาร์กโมเดิร์น เยอร์บีรา อุปการคุณบาร์บี้ แบล็คไฮเวย์วอลล์ดราม่าป๊อป บูติกอุปทานคอร์รัปชัน</p>
+            </div>
+        </div>
+
+        <!-- Title -->
+        <!-- Content -->
+
+
+        <!-- ---Publishing--- -->
+        <!-- Price -->
+        <!-- Metadata -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+
+
+        <div>
+            <a href="#" class="btn">Submit for publishing</a>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

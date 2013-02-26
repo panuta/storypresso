@@ -3,5 +3,5 @@
 from django.shortcuts import render
 
 
-def view_user_safebox(request):
+def view_my_safebox(request):
     return render(request, 'user/safebox.html', {})
