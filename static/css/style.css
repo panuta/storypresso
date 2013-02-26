@@ -91,6 +91,16 @@ select:focus:invalid:focus {
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.16);
   -webkit-font-smoothing: antialiased;
 }
+form ul.errorlist {
+  list-style: none;
+  margin: 0px 0px 5px;
+  color: #C30;
+}
+form .help-block {
+  color: #666;
+  font-size: 0.9em;
+  margin-top: 3px !important;
+}
 @font-face {
   font-family: 'QuarkBold';
   src: url('../fonts/quark/quark-bold-webfont.eot');
@@ -259,85 +269,30 @@ select:focus:invalid:focus {
   font-weight: normal;
   font-style: normal;
 }
-#body-login {
-  background-color: #3b91a5;
-  padding: 30px 0px;
-  text-align: center;
+#body-top {
+  background-color: #f9f5f5;
+  border-bottom: 1px solid #efe9e5;
+  height: 50px;
 }
-#body-login .social {
-  text-align: center;
+#body-top .container {
+  padding-top: 15px;
+  text-align: right;
 }
-#body-login .social .facebook {
-  background: url(../images/ui/login.socials.en.png) center 0px no-repeat;
-  display: inline-block;
-  height: 38px;
-  text-indent: -9999px;
-  width: 230px;
-  border-radius: 2px;
-  box-shadow: 0px 2px 0px #b0d9e3;
-  margin: 0px 10px;
-}
-#body-login .social .twitter {
-  background: url(../images/ui/login.socials.en.png) center -38px no-repeat;
-  display: inline-block;
-  height: 38px;
-  text-indent: -9999px;
-  width: 230px;
-  border-radius: 2px;
-  box-shadow: 0px 2px 0px #b0d9e3;
-  margin: 0px 10px;
-}
-#body-login .or {
-  line-height: 10px;
-  margin: 30px auto 0px;
-  width: 400px;
-  text-align: center;
-}
-#body-login .or hr {
-  border: none;
-  border-bottom: 1px solid #52acc1;
-  margin: 5px 0px;
-}
-#body-login .or span {
-  background-color: #3b91a5;
-  color: #b0d9e3;
-  font-size: 13px;
-  display: inline-block;
-  padding: 0 10px;
-  position: relative;
-  top: -13px;
-}
-#body-login .email {
-  margin-top: 10px;
-}
-#body-login .email .text-input {
-  margin-bottom: 7px;
-}
-#body-login .email .text-input input {
-  font-size: 16px;
-  height: 26px;
-  text-align: center;
-  width: 300px;
-}
-#body-login .email .button .btn {
+#body-top .container a {
+  color: #666;
   font-size: 14px;
-  padding: 6px 65px;
+  margin-left: 15px;
 }
-#body-login .signup a {
-  color: #EEE;
-  font-size: 16px;
-  text-decoration: underline;
-}
-#body-header .container {
+#body-account .container {
   position: relative;
 }
-#body-header .account {
+#body-account .account {
   position: absolute;
   right: 0px;
   top: 0px;
 }
-#body-header .account .button-login {
-  background-color: #888;
+#body-account .account .button-login {
+  background-color: #777;
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
   color: #FFF;
@@ -345,25 +300,52 @@ select:focus:invalid:focus {
   font-size: 13px;
   padding: 5px 15px 3px;
 }
-#body-header .account .button-login:hover {
+#body-account .account .button-login:hover {
   background-color: #3b91a5;
   padding: 20px 15px 3px;
   text-decoration: none;
 }
-#body-header .account .button-login-active {
+#body-account .account .button-login-active {
   background-color: #3b91a5;
   padding: 20px 15px 3px;
 }
-#body-header .logo {
-  padding: 30px 0px 20px;
+#body-responsive #body-header .logo {
+  padding: 60px 0px 20px;
   text-align: center;
 }
-#body-header .logo em {
+#body-responsive #body-header .logo em {
   color: #666;
   display: block;
   font-family: 'QuarkLight', sans-serif;
   font-size: 20px;
   margin-top: 15px;
+}
+#body-backend #body-header .container {
+  border-bottom: 1px solid #DDD;
+}
+#body-backend #body-header .logo {
+  padding: 20px 0px 20px;
+}
+#body-backend #body-header .logo em {
+  color: #666;
+  display: block;
+  font-family: 'QuarkLight', sans-serif;
+  font-size: 20px;
+  margin-top: 15px;
+}
+#body-content .page-head {
+  margin: 0px;
+  padding: 15px 0px;
+}
+#body-content .page-head h1 {
+  background: url(../images/header/header.writeroom.png) left center no-repeat;
+  color: #555;
+  font-family: 'QuarkLight', sans-serif;
+  font-size: 32px;
+  font-weight: normal;
+  line-height: normal;
+  margin: 0px;
+  padding-left: 40px;
 }
 #body-footer {
   text-align: center;
@@ -418,29 +400,104 @@ select:focus:invalid:focus {
   font-size: 12px;
   margin-top: 5px;
 }
-.page-homepage .tagline .is {
-  color: #999;
+.page-single .logo {
+  margin: 0px auto;
+  padding-top: 45px;
+  text-align: center;
+}
+.page-homepage .pane-title {
+  /*background: url(../images/8.jpg) no-repeat;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;*/
+
+  background-color: #d46a80;
+  min-height: 480px;
+  padding: 100px 0px 0px;
+}
+.page-homepage .pane-title .logo {
+  text-align: center;
+}
+.page-homepage .pane-title .is {
+  color: #EEE;
   font-family: 'QuarkLight', sans-serif;
   font-size: 28px;
-  margin: 15px 0px;
+  margin-top: 60px;
   text-align: center;
 }
-.page-homepage .tagline h1 {
-  color: #e93b5f;
+.page-homepage .pane-title h1 {
+  color: #FFF;
   font-family: 'QuarkLight', sans-serif;
-  font-size: 56px;
+  font-size: 66px;
   font-weight: normal;
   line-height: normal;
-  margin: 15px 0px 0px;
+  margin-top: 30px;
   text-align: center;
 }
-.page-homepage .tagline h2 {
-  color: #555;
-  font-family: 'QuarkLight', sans-serif;
-  font-size: 30px;
+.page-homepage .pane-title .tagline {
+  color: #333;
   font-weight: normal;
   line-height: normal;
-  margin: 15px 0px 0px;
+  text-align: center;
+}
+.page-homepage .pane-title .tagline1 {
+  font-family: 'QuarkLight', sans-serif;
+  font-size: 34px;
+  margin-top: 25px;
+}
+.page-homepage .pane-title .tagline2 {
+  font-family: 'QuarkBold', sans-serif;
+  font-size: 38px;
+  margin-top: 15px;
+}
+.page-homepage .pane-writers {
+  padding: 100px 0px;
+}
+.page-homepage .pane-writers .stat {
+  color: #333;
+  font-family: 'QuarkLight', sans-serif;
+  text-align: center;
+}
+.page-homepage .pane-writers .stat em {
+  font-family: 'QuarkBold', sans-serif;
+}
+.page-homepage .pane-writers .stat1 {
+  font-size: 40px;
+}
+.page-homepage .pane-writers .stat2 {
+  font-size: 36px;
+  margin-top: 60px;
+}
+.page-homepage .pane-writers .writers {
+  margin: 60px 0px 0px;
+  text-align: center;
+}
+.page-homepage .pane-writers .writers .writer {
+  display: inline-block;
+  list-style: none;
+  width: 160px;
+}
+.page-homepage .pane-writers .writers .writer .avatar img {
+  height: 100px;
+  width: 100px;
+}
+.page-homepage .pane-writers .writers .writer .name {
+  margin-top: 14px;
+}
+.page-homepage .pane-writers .writers .writer .name a {
+  color: #444;
+  font-size: 15px;
+}
+.page-homepage .pane-registration {
+  background-color: #3b91a5;
+  padding: 80px 0px;
+}
+.page-homepage .pane-registration .title {
+  color: #666;
+  font-family: 'QuarkLight', sans-serif;
+  font-size: 24px;
+  margin-bottom: 18px;
   text-align: center;
 }
 .page-homepage .registration {
@@ -460,24 +517,30 @@ select:focus:invalid:focus {
   text-align: center;
 }
 .page-homepage .registration .social .facebook {
-  background: url(../images/ui/login.socials.en.png) center 0px no-repeat;
+  background: url(../images/ui/login.socials.en.png) 0px 0px no-repeat;
   display: inline-block;
-  height: 38px;
+  height: 40px;
   text-indent: -9999px;
   width: 230px;
   border-radius: 2px;
   box-shadow: 0px 2px 0px #DDD;
   margin: 0px 10px;
 }
+.page-homepage .registration .social .facebook:hover {
+  background-position: -230px 0px;
+}
 .page-homepage .registration .social .twitter {
-  background: url(../images/ui/login.socials.en.png) center -38px no-repeat;
+  background: url(../images/ui/login.socials.en.png) 0px -40px no-repeat;
   display: inline-block;
-  height: 38px;
+  height: 40px;
   text-indent: -9999px;
   width: 230px;
   border-radius: 2px;
   box-shadow: 0px 2px 0px #DDD;
   margin: 0px 10px;
+}
+.page-homepage .registration .social .twitter:hover {
+  background-position: -230px -40px;
 }
 .page-homepage .registration .or {
   line-height: 10px;
@@ -671,6 +734,159 @@ select:focus:invalid:focus {
   width: 30px;
   height: 30px;
   margin: 1px;
+}
+.page-registration {
+  padding-top: 60px;
+}
+.page-registration h1 {
+  color: #666;
+  font-family: 'QuarkLight', sans-serif;
+  font-size: 34px;
+  font-weight: normal;
+  line-height: normal;
+  margin: 0px 0px 20px 0px;
+  text-align: center;
+}
+.page-registration .title {
+  color: #e93b5f;
+  font-family: 'QuarkLight', sans-serif;
+  font-size: 54px;
+  font-weight: normal;
+  line-height: normal;
+  margin: 0px 0px 20px 0px;
+  text-align: center;
+}
+.page-registration .subtitle {
+  color: #666;
+  font-family: 'QuarkLight', sans-serif;
+  font-size: 30px;
+  font-weight: normal;
+  line-height: normal;
+  margin: 0px 0px 20px 0px;
+  text-align: center;
+}
+.page-registration .registration {
+  background-color: #FFF;
+  border: 1px solid #DDD;
+  box-shadow: 0px 0px 2px #EEE;
+  border-radius: 5px;
+  margin: 0px auto;
+  padding-bottom: 30px;
+  width: 600px;
+}
+.page-registration .registration .social {
+  padding-top: 35px;
+  text-align: center;
+}
+.page-registration .registration .social .facebook {
+  background: url(../images/ui/login.socials.en.png) 0px 0px no-repeat;
+  display: inline-block;
+  height: 40px;
+  text-indent: -9999px;
+  width: 230px;
+}
+.page-registration .registration .social .facebook:hover {
+  background-position: -230px 0px;
+}
+.page-registration .registration .social .twitter {
+  background: url(../images/ui/login.socials.en.png) 0px -40px no-repeat;
+  display: inline-block;
+  height: 40px;
+  text-indent: -9999px;
+  width: 230px;
+  margin-top: 25px;
+}
+.page-registration .registration .social .twitter:hover {
+  background-position: -230px -40px;
+}
+.page-registration .registration .or {
+  line-height: 10px;
+  margin-top: 40px;
+  text-align: center;
+}
+.page-registration .registration .or hr {
+  border: none;
+  border-bottom: 1px solid #EEE;
+  margin: 5px 0px;
+}
+.page-registration .registration .or span {
+  background-color: #FFF;
+  color: #999;
+  font-size: 13px;
+  display: inline-block;
+  padding: 0 10px;
+  position: relative;
+  top: -13px;
+}
+.page-registration .registration .text-input {
+  margin-top: 10px;
+}
+.page-registration .registration .text-input input {
+  text-align: center;
+  width: 250px;
+}
+.page-registration .registration .button {
+  margin-top: 10px;
+}
+.page-registration .registration .button .btn {
+  color: #555;
+  font-size: 14px;
+  height: 40px;
+  vertical-align: middle;
+  width: 180px;
+}
+.page-registration .registration .button .cancel {
+  color: #888;
+  font-size: 13px;
+  margin-left: 10px;
+  text-decoration: underline;
+  vertical-align: middle;
+}
+.page-registration .registration .button .cancel:hover {
+  background-color: #3b91a5;
+  color: #FFF;
+}
+.page-registration .registration .email {
+  margin-top: 15px;
+  text-align: center;
+}
+.page-registration .registration .activation {
+  margin-top: 35px;
+  text-align: center;
+}
+.page-registration .registration .activation label {
+  color: #e93b5f;
+  font-family: 'QuarkLight', sans-serif;
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+.page-registration .registration .activation .text-input {
+  margin-bottom: 30px;
+}
+.page-registration .registration .activation .name-input input {
+  font-size: 16px;
+  height: 27px;
+  width: 350px;
+}
+.page-registration .registration .activation .avatar-input {
+  margin-bottom: 30px;
+}
+.page-registration .registration .signup {
+  text-align: center;
+}
+.page-registration .registration .signup a {
+  color: #555;
+}
+.page-registration .registration .signup a:link,
+.page-registration .registration .signup a:active,
+.page-registration .registration .signup a:visited {
+  color: #3b91a5;
+  text-decoration: underline;
+}
+.page-registration .registration .signup a:hover {
+  background-color: #3b91a5;
+  color: #FFF;
+  text-shadow: none;
 }
 @media (max-width: 767px) {
   .page-homepage .tagline .is {

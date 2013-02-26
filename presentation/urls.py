@@ -30,7 +30,7 @@ urlpatterns += patterns(
 
 urlpatterns += patterns(
     'presentation.views.user.safebox_views',
-    url(r'^my/balance/$', 'view_user_safebox', name='view_user_safebox'),
+    url(r'^my/safebox/$', 'view_user_safebox', name='view_user_safebox'),
 )
 
 urlpatterns += patterns(

@@ -1,0 +1,31 @@
+{% extends 'base_single_responsive.html' %}
+
+{% block single_content %}
+<div class="page-registration">
+    <div class="container">
+        <h1>เข้าสู่ระบบ</h1>
+        <div class="registration">
+            <div class="social">
+                <div><a href="#" class="facebook">Sign-in with Facebook</a></div>
+                <div><a href="#" class="twitter">Sign-in with Twitter</a></div>
+            </div>
+            <div class="or">
+                <hr><span>หรือ</span>
+            </div>
+            <div class="email">
+                <form method="post" action=".">
+                    {% csrf_token %}
+                    {{ form.non_field_errors }}
+                    <div class="text-input">{{ form.email }}{{ form.email.errors }}</div>
+                    <div class="text-input">{{ form.password }}{{ form.password.errors }}</div>
+                    <input type="hidden" value="{{ next }}" name="next" />
+                    <div class="button"><input type="submit" value="เข้าสู่ระบบ" class="btn btn-dark" /></div>
+                </form>
+            </div>
+            <div class="signup"><a href="{% url 'view_signup' %}">สมัครสมาชิก</a></div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+

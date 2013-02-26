@@ -3,9 +3,9 @@
 from django.shortcuts import render
 
 
-def view_user_settings_profile(request):
+def view_user_library(request):
     return render(request, 'user/settings/settings_profile.html', {})
 
 
-def view_user_settings_account(request):
+def read_publication(request):
     return render(request, 'user/settings/settings_account.html', {})

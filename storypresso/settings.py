@@ -23,6 +23,10 @@ DATABASES = {
     }
 }
 
+WEBSITE_NAME = 'StoryPresso'
+WEBSITE_URL = 'http://127.0.0.1:8000'
+WEBSITE_DOMAIN = '127.0.0.1:8000'
+
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en//ref/settings/#allowed-hosts
 ALLOWED_HOSTS = []
@@ -104,6 +108,7 @@ INSTALLED_APPS = (
     'django.contrib.markup',
 
     'easy_thumbnails',
+    'social_auth',
 
     'accounts',
     'domain',
@@ -144,7 +149,20 @@ LOGGING = {
 # EMAIL ################################################################################################################
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-NOREPLY_EMAIL = 'noreply@localhost'
+EMAIL_DOMAIN = 'storypresso.com'
+
+EMAIL_FROM_BOT = 'bot@%s' % EMAIL_DOMAIN
+
+EMAIL_MAILBOXES = {
+    'bot': {
+        'title': 'StoryPresso',
+        'address': 'bot@%s' % EMAIL_DOMAIN,
+    },
+    'message': {
+        'title': 'StoryPresso Message',
+        'address': 'reply@%s' % EMAIL_DOMAIN,
+    },
+}
 
 # THUMBNAILS ###########################################################################################################
 
@@ -156,8 +174,27 @@ THUMBNAIL_ALIASES = {
         'avatar_small': {'size': (75, 75), 'crop': True},
         'avatar_smaller': {'size': (45, 45), 'crop': True},
         'avatar_tiny': {'size': (30, 30), 'crop': True},
-        },
-    }
+    },
+}
+
+# SOCIAL AUTH ##########################################################################################################
+
+SOCIAL_AUTH_SESSION_EXPIRATION = False
+SOCIAL_AUTH_ASSOCIATE_BY_MAIL = True
+
+FACEBOOK_APP_ID = '354182418027622'
+FACEBOOK_API_SECRET = '19713524e8e29d4fb7ef6b0ff7f8a62c'
+FACEBOOK_EXTENDED_PERMISSIONS = ['email']
+
+LOGIN_ERROR_URL = '/accounts/error/'
+
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/accounts/redirect/'
+
+SOCIAL_AUTH_NEW_USER_REDIRECT_URL = '/accounts/redirect/'
+SOCIAL_AUTH_NEW_ASSOCIATION_REDIRECT_URL = '/accounts/redirect/'
+
+SOCIAL_AUTH_COMPLETE_URL_NAME = 'socialauth_complete'
+SOCIAL_AUTH_ASSOCIATE_URL_NAME = 'socialauth_associate_complete'
 
 # STORYPRESSO SETTINGS ##################################################################################################
 

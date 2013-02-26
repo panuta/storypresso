@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div id="body-backend">
+    <div id="body-header">
+        <div class="container">
+            <div class="logo">
+                <a href="/"><img src="{{ STATIC_URL }}images/logo.home.png" /></a>
+                <!--<em>where a finest story is brewed and served</em>-->
+            </div>
+        </div>
+    </div>
+    <div id="body-content">{% block body_content %}{% endblock %}</div>
+
+    <div id="body-footer">
+        <div class="container">
+            <div class="social">
+                <a href="http://www.facebook.com" class="facebook">Facebook Page</a>
+                <a href="http://www.twitter.com" class="twitter">Twitter</a>
+            </div>
+            <div class="links">
+                <a href="#">Home</a><span class="separator">|</span><a href="#">About Us</a><span class="separator">|</span><a href="#">Our Policy</a>
+            </div>
+            <div class="copyright">©2012 StoryPresso</div>
+        </div>
+    </div>
+</div>
+{% endblock %}

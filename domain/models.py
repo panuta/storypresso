@@ -1,15 +1,20 @@
 # -*- encoding: utf-8 -*-
 
+import random
+
 from django.conf import settings
 from django.contrib.auth.models import BaseUserManager, AbstractBaseUser
 from django.core.urlresolvers import reverse
 from django.db import models
+from django.template.loader import render_to_string
 from django.utils import timezone
+from django.utils.crypto import salted_hmac
 from django.utils.translation import ugettext_lazy as _
 
 import shortuuid
 from easy_thumbnails.fields import ThumbnailerImageField
 from easy_thumbnails.files import get_thumbnailer
+from common.email import send_bot_email
 
 SHORTUUID_ALPHABETS_FOR_ID = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
 
@@ -138,4 +143,40 @@ class UserAccount(AbstractBaseUser):
         if self.avatar:
             return get_thumbnailer(self.avatar)['avatar_tiny'].url
         return '%simages/%s' % (settings.STATIC_URL, settings.USER_AVATAR_DEFAULT_TINY)
+
+
+class UserRegistrationManager(models.Manager):
+    def create_registration(self, email):
+        key_salt = 'accounts.models.UserRegistrationManager_%d' % random.randint(1, 99999999)
+        email = email.encode('utf-8')
+        value = email
+        registration_key = salted_hmac(key_salt, value).hexdigest()
+
+        return self.create(email=email, registration_key=registration_key)
+
+
+class UserRegistration(models.Model):
+    email = models.CharField(max_length=254)
+    registration_key = models.CharField(max_length=200, unique=True, db_index=True)
+    registered = models.DateTimeField(auto_now_add=True)
+
+    objects = UserRegistrationManager()
+
+    def send_registration_request(self):
+        email_context = {'settings': settings, 'registration': self}
+
+        subject = _('StoryPresso Registration Confirmation')
+        text_email_body = render_to_string('accounts/emails/registration_email.txt', email_context)
+        html_email_body = render_to_string('accounts/emails/registration_email.html', email_context)
+
+        send_bot_email([self.email], subject, text_email_body, html_email_body)
+
+        return True
+
+    def claim_registration(self, name, password):
+        user_account = UserAccount.objects.create_user(self.email, name, password)
+        return user_account
+
+    def __unicode__(self):
+        return '%s has key %s' % (self.email, self.registration_key)
 

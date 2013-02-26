@@ -17,19 +17,27 @@
 }
 
 .facebook_button() {
-    background: url(../images/ui/login.socials.en.png) center 0px no-repeat;
+    background: url(../images/ui/login.socials.en.png) 0px 0px no-repeat;
     display: inline-block;
-    height: 38px;
+    height: 40px;
     text-indent: -9999px;
     width: 230px;
+
+    &:hover {
+        background-position: -230px 0px;
+    }
 }
 
 .twitter_button() {
-    background: url(../images/ui/login.socials.en.png) center -38px no-repeat;
+    background: url(../images/ui/login.socials.en.png) 0px -40px no-repeat;
     display: inline-block;
-    height: 38px;
+    height: 40px;
     text-indent: -9999px;
     width: 230px;
+
+    &:hover {
+        background-position: -230px -40px;
+    }
 }
 
 .paper_stack() {

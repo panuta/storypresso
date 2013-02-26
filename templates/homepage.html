@@ -1,23 +1,94 @@
 {% extends 'base.html' %}
 
-{% block html_head %}
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('.signup_box a.signup').on('click', function (e) {
-                _switch_signup_login_modal('signup');
-            });
-        });
-    </script>
+{% block html_head_before_userdefined %}
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}libs/bootstrap/css/bootstrap-responsive.css">
 {% endblock %}
 
-{% block body_content %}
+{% block body %}
+<div class="page-homepage">
+    <div class="pane-title">
+        <div class="container">
+            <div class="logo">
+                <a href="/"><img src="{{ STATIC_URL }}images/logo.black.png" /></a>
+                <!--<em>where a finest story is brewed and served</em>-->
+            </div>
+            <div class="is">is</div>
+            <h1>digital content store</h1>
+            <div class="tagline tagline1">where writers sell content to readers</div>
+            <div class="tagline tagline2">it's that simple</div>
+        </div>
+    </div>
+    <div class="pane-writers">
+        <div class="container">
+            <div class="stat stat1">We have already published <em>300 content</em> (and counting)</div>
+            <div class="stat stat2">from <em>20 writers</em>, including</div>
+            <ul class="writers clearfix">
+                <li class="writer">
+                    <div class="avatar"><a href="#"><img src="{{ STATIC_URL }}images/sample/avatars/user1.jpg"/></a></div>
+                    <div class="name"><a href="#">Writer 1</a></div>
+                </li>
+                <li class="writer">
+                    <div class="avatar"><a href="#"><img src="{{ STATIC_URL }}images/sample/avatars/user2.jpg"/></a></div>
+                    <div class="name"><a href="#">Writer 2</a></div>
+                </li>
+                <li class="writer">
+                    <div class="avatar"><a href="#"><img src="{{ STATIC_URL }}images/sample/avatars/user3.jpg"/></a></div>
+                    <div class="name"><a href="#">Writer 3</a></div>
+                </li>
+                <li class="writer">
+                    <div class="avatar"><a href="#"><img src="{{ STATIC_URL }}images/sample/avatars/user4.jpg"/></a></div>
+                    <div class="name"><a href="#">Writer 4</a></div>
+                </li>
+                <li class="writer">
+                    <div class="avatar"><a href="#"><img src="{{ STATIC_URL }}images/sample/avatars/user5.jpg"/></a></div>
+                    <div class="name"><a href="#">Writer 5</a></div>
+                </li>
+            </ul>
+            <div class="help">We are helping them with</div>
+            <ul class="features">
+                <li class="feature">Distribution</li>
+                <li class="feature">Payment</li>
+                <li class="feature">Marketing</li>
+            </ul>
+        </div>
+    </div>
+    <div class="pane-registration">
+        <div class="title">เรายินดีต้อนรับไม่ว่าคุณจะเป็นนักอ่าน หรือว่านักเขียน</div>
+        <div class="social">
+            <a href="#" class="facebook">Sign-in with Facebook</a><a href="#" class="twitter">Sign-in with Twitter</a>
+        </div>
+        <div class="or">
+            <hr><span>หรือ</span>
+        </div>
+        <div class="email"><a href="#" class="btn">สมัครสมาชิกด้วยอีเมล</a></div>
+    </div>
+    <div class="pane-publication">
+
+    </div>
+
+
+    <div id="body-content">{% block body_content %}{% endblock %}</div>
+
+    <div id="body-footer">
+        <div class="container">
+            <div class="social">
+                <a href="http://www.facebook.com" class="facebook">Facebook Page</a>
+                <a href="http://www.twitter.com" class="twitter">Twitter</a>
+            </div>
+            <div class="links">
+                <a href="#">Home</a><span class="separator">|</span><a href="#">About Us</a><span class="separator">|</span><a href="#">Our Policy</a>
+            </div>
+            <div class="copyright">©2012 StoryPresso</div>
+        </div>
+    </div>
+</div>
+
+
+
+
 <div class="page-homepage">
 <div class="container">
-    <div class="tagline">
-        <div class="is">is</div>
-        <h1>digital content store</h1>
-        <h2>where writers sell (awesome) content to readers, it's that simple.</h2>
-    </div>
+
     <div class="registration">
         <h3>เรายินดีต้อนรับไม่ว่าคุณจะเป็นนักอ่าน หรือว่านักเขียน</h3>
         <div class="social">

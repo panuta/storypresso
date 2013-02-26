@@ -1,83 +1,21 @@
-#body-login {
-    background-color: @linkColor;
-    padding: 30px 0px;
-    text-align: center;
+#body-top {
+    background-color: #f9f5f5;
+    border-bottom: 1px solid #efe9e5;
+    height: 50px;
 
-    .social {
-        text-align: center;
+    .container {
+        padding-top: 15px;
+        text-align: right;
 
-        .facebook {
-            .facebook_button;
-            border-radius: 2px;
-            box-shadow: 0px 2px 0px #b0d9e3;
-            margin: 0px 10px;
-        }
-
-        .twitter {
-            .twitter_button;
-            border-radius: 2px;
-            box-shadow: 0px 2px 0px #b0d9e3;
-            margin: 0px 10px;
-        }
-    }
-
-    .or {
-        line-height: 10px;
-        margin: 30px auto 0px;
-
-        width: 400px;
-        text-align: center;
-
-        hr {
-            border: none;
-            border-bottom: 1px solid #52acc1;
-            margin: 5px 0px;
-        }
-
-        span {
-            background-color: @linkColor;
-            color: #b0d9e3;
-            font-size: 13px;
-            display: inline-block;
-            padding: 0 10px;
-            position: relative;
-            top: -13px;
-        }
-    }
-
-    .email {
-        margin-top: 10px;
-
-        .text-input {
-            margin-bottom: 7px;
-
-            input {
-                font-size: 16px;
-                height: 26px;
-                text-align: center;
-                width: 300px;
-            }
-        }
-
-        .button {
-            .btn {
-                font-size: 14px;
-                padding: 6px 65px;
-            }
-        }
-    }
-
-    .signup {
         a {
-            color: #EEE;
-            font-size: 16px;
-            text-decoration: underline;
+            color: #666;
+            font-size: 14px;
+            margin-left: 15px;
         }
     }
 }
 
-#body-header {
-
+#body-account {
     .container {
         position: relative;
     }
@@ -88,7 +26,7 @@
         top: 0px;
 
         .button-login {
-            background-color: #888;
+            background-color: #777;
             border-bottom-left-radius: 4px;
             border-bottom-right-radius: 4px;
             color: #FFF;
@@ -108,17 +46,59 @@
             padding: 20px 15px 3px;
         }
     }
+}
 
-    .logo {
-        padding: 30px 0px 20px;
-        text-align: center;
+#body-responsive {
+    #body-header {
+        .logo {
+            padding: 60px 0px 20px;
+            text-align: center;
 
-        em {
-            color: #666;
-            display: block;
+            em {
+                color: #666;
+                display: block;
+                font-family: 'QuarkLight', sans-serif;
+                font-size: 20px;
+                margin-top: 15px;
+            }
+        }
+    }
+}
+
+#body-backend {
+    #body-header {
+        .container {
+            border-bottom: 1px solid #DDD;
+        }
+
+        .logo {
+            padding: 20px 0px 20px;
+
+            em {
+                color: #666;
+                display: block;
+                font-family: 'QuarkLight', sans-serif;
+                font-size: 20px;
+                margin-top: 15px;
+            }
+        }
+    }
+}
+
+#body-content {
+    .page-head {
+        margin: 0px;
+        padding: 15px 0px;
+
+        h1 {
+            background: url(../images/header/header.writeroom.png) left center no-repeat;
+            color: #555;
             font-family: 'QuarkLight', sans-serif;
-            font-size: 20px;
-            margin-top: 15px;
+            font-size: 32px;
+            font-weight: normal;
+            line-height: normal;
+            margin: 0px;
+            padding-left: 40px;
         }
     }
 }
@@ -177,36 +157,135 @@
     }
 }
 
+.page-single {
+    .logo {
+        margin: 0px auto;
+        padding-top: 45px;
+        text-align: center;
+    }
+}
+
 .page-homepage {
-    .tagline {
+    .pane-title {
+        /*background: url(../images/8.jpg) no-repeat;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;*/
+        background-color: #d46a80;
+
+        min-height: 480px;
+        padding: 100px 0px 0px;
+
+        // http://css-tricks.com/perfect-full-page-background-image/
+
+        .logo {
+            text-align: center;
+        }
+
         .is {
-            color: #999;
+            color: #EEE;
             font-family: 'QuarkLight', sans-serif;
             font-size: 28px;
-            margin: 15px 0px;
+            margin-top: 60px;
             text-align: center;
         }
 
         h1 {
-            color: #e93b5f;
+            color: #FFF;
             font-family: 'QuarkLight', sans-serif;
-            font-size: 56px;
+            font-size: 66px;
             font-weight: normal;
             line-height: normal;
-            margin: 15px 0px 0px;
+            margin-top: 30px;
             text-align: center;
         }
 
-        h2 {
-            color: #555;
-            font-family: 'QuarkLight', sans-serif;
-            font-size: 30px;
+        .tagline {
+            color: #333;
             font-weight: normal;
             line-height: normal;
-            margin: 15px 0px 0px;
+            text-align: center;
+        }
+
+        .tagline1 {
+            font-family: 'QuarkLight', sans-serif;
+            font-size: 34px;
+            margin-top: 25px;
+        }
+
+        .tagline2 {
+            font-family: 'QuarkBold', sans-serif;
+            font-size: 38px;
+            margin-top: 15px;
+
+        }
+    }
+
+    .pane-writers {
+        padding: 100px 0px;
+
+        .stat {
+            color: #333;
+            font-family: 'QuarkLight', sans-serif;
+            text-align: center;
+
+            em {
+                font-family: 'QuarkBold', sans-serif;
+            }
+        }
+
+        .stat1 {
+            font-size: 40px;
+        }
+
+        .stat2 {
+            font-size: 36px;
+            margin-top: 60px;
+        }
+
+        .writers {
+            margin: 60px 0px 0px;
+            text-align: center;
+
+            .writer {
+                display: inline-block;
+                list-style: none;
+                width: 160px;
+
+                .avatar {
+                    img {
+                        height: 100px;
+                        width: 100px;
+                    }
+                }
+
+                .name {
+                    margin-top: 14px;
+
+                    a {
+                        color: #444;
+                        font-size: 15px;
+                    }
+                }
+            }
+        }
+    }
+
+    .pane-registration {
+        background-color: @linkColor;
+        padding: 80px 0px;
+
+        .title {
+            color: #666;
+            font-family: 'QuarkLight', sans-serif;
+            font-size: 24px;
+            margin-bottom: 18px;
             text-align: center;
         }
     }
+
+
 
     .registration {
         margin: 45px auto 0px;
@@ -453,4 +532,165 @@
             }
         }
     }
+}
+
+.page-registration {
+    padding-top: 60px;
+
+    h1 {
+        color: #666;
+        font-family: 'QuarkLight', sans-serif;
+        font-size: 34px;
+        font-weight: normal;
+        line-height: normal;
+        margin: 0px 0px 20px 0px;
+        text-align: center;
+    }
+
+    .title {
+        color: #e93b5f;
+        font-family: 'QuarkLight', sans-serif;
+        font-size: 54px;
+        font-weight: normal;
+        line-height: normal;
+        margin: 0px 0px 20px 0px;
+        text-align: center;
+    }
+
+    .subtitle {
+        color: #666;
+        font-family: 'QuarkLight', sans-serif;
+        font-size: 30px;
+        font-weight: normal;
+        line-height: normal;
+        margin: 0px 0px 20px 0px;
+        text-align: center;
+    }
+
+    .registration {
+        background-color: #FFF;
+        border: 1px solid #DDD;
+        box-shadow: 0px 0px 2px #EEE;
+        border-radius: 5px;
+        margin: 0px auto;
+        padding-bottom: 30px;
+        width: 600px;
+
+        .social {
+            padding-top: 35px;
+            text-align: center;
+
+            .facebook {
+                .facebook_button;
+            }
+
+            .twitter {
+                .twitter_button;
+                margin-top: 25px;
+            }
+        }
+
+        .or {
+            line-height: 10px;
+            margin-top: 40px;
+            text-align: center;
+
+            hr {
+                border: none;
+                border-bottom: 1px solid #EEE;
+                margin: 5px 0px;
+            }
+
+            span {
+                background-color: #FFF;
+                color: #999;
+                font-size: 13px;
+                display: inline-block;
+                padding: 0 10px;
+                position: relative;
+                top: -13px;
+            }
+        }
+
+        .text-input {
+            margin-top: 10px;
+
+            input {
+                text-align: center;
+                width: 250px;
+            }
+        }
+
+        .button {
+            margin-top: 10px;
+
+            .btn {
+                color: #555;
+                font-size: 14px;
+                height: 40px;
+                vertical-align: middle;
+                width: 180px;
+            }
+
+            .cancel {
+                color: #888;
+                font-size: 13px;
+                margin-left: 10px;
+                text-decoration: underline;
+                vertical-align: middle;
+
+                &:hover {
+                    background-color: @linkColor;
+                    color: #FFF;
+                }
+            }
+        }
+
+        .email {
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .activation {
+            margin-top: 35px;
+            text-align: center;
+
+            label {
+                color: #e93b5f;
+                font-family: 'QuarkLight', sans-serif;
+                font-size: 26px;
+                margin-bottom: 10px;
+            }
+
+            .text-input {
+                margin-bottom: 30px;
+            }
+
+            .name-input {
+                input {
+                    font-size: 16px;
+                    height: 27px;
+                    width: 350px;
+                }
+            }
+
+            .avatar-input {
+                margin-bottom: 30px;
+            }
+        }
+
+        .signup {
+            text-align: center;
+
+            a {
+                .content_link;
+                color: #555;
+            }
+
+        }
+    }
+}
+
+.page-workroom {
+
 }

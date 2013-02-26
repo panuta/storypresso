@@ -1,0 +1,36 @@
+{% extends 'base_single_responsive.html' %}
+
+{% block single_content %}
+<div class="page-registration">
+    <div class="container">
+        <h1>บอกความเป็นตัวคุณให้เรารู้สักนิด</h1>
+        <div class="registration">
+            <div class="activation">
+                <form method="post" action=".">
+                    {% csrf_token %}
+                    {{ form.non_field_errors }}
+
+                    <div class="text-input name-input">
+                        <label for="id_name">ชื่อ/นามปากกา</label>
+                        {{ form.name }}{{ form.name.errors }}
+                    </div>
+
+                    <div class="text-input">
+                        <label for="id_password">ตั้งรหัสผ่าน</label>
+                        {{ form.password }}{{ form.password.errors }}
+                    </div>
+
+                    <div class="avatar-input">
+                        <label for="id_avatar">รูปผู้ใช้</label>
+                        {{ form.avatar }}{{ form.avatar.errors }}
+                    </div>
+
+                    <div class="button">
+                        <input type="submit" value="ยืนยันการสมัครสมาชิก" class="btn btn-dark" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

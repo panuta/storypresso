@@ -1,0 +1,5 @@
+{% block email_content %}{% endblock %}
+
+---------------------------------------------------
+StoryPresso | where a finest story is brewed and served
+{{ settings.WEBSITE_DOMAIN }}
