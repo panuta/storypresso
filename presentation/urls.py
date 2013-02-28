@@ -8,6 +8,7 @@ urlpatterns = patterns(
 urlpatterns += patterns(
     'presentation.views.publication_views',
     url(r'^publication/view/$', 'view_publication', name='view_publication'),
+    url(r'^publication/read/$', 'read_publication', name='read_publication'),
 )
 
 urlpatterns += patterns(
@@ -21,6 +22,7 @@ urlpatterns += patterns(
     'presentation.views.user.works_views',
     url(r'^my/works/$', 'view_my_works', name='view_my_works'),
     url(r'^my/works/writing/$', 'write_my_work', name='write_my_work'),
+    url(r'^my/works/publishing/$', 'publish_my_work', name='publish_my_work'),
 )
 
 urlpatterns += patterns(

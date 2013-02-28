@@ -6,26 +6,72 @@
 
 {% block body_content %}
 <div class="page-workroom">
-    <div class="container">
-        <h1 class="head1">ห้องเขียนหนังสือ</h1>
-
-        <div class="works-box">
-            <div class="actions"><a href="#" class="btn"><i class="icon-pencil"></i> เขียนงานชิ้นใหม่</a></div>
-            <div class="works-title">ผลงานเขียน</div>
-
-            <ul class="works">
-                <li class="work">
-                    <div class="title"><a href="#">This is title</a></div>
-                    <div class="status"><span class="label">เผยแพร่แล้ว</span><span class="date">เผยแพร่เมื่อวันที่ 14 ก.พ. 2556</span></div>
-                    <div class="tools"><a href="{% url 'write_my_work' %}" class="btn btn-small">แก้ไข</a></div>
-                </li>
-                <li class="work">
-                    <div class="title"><a href="#">This is title</a></div>
-                    <div class="status"><span class="label label-success">เผยแพร่แล้ว</span><span class="date">เผยแพร่เมื่อวันที่ 14 ก.พ. 2556</span></div>
-                    <div class="tools"><a href="#" class="btn btn-small">แก้ไข</a></div>
-                </li>
-            </ul>
+    <div class="page-header-title">
+        <div class="container">
+            <h1>ห้องเขียนหนังสือ</h1>
         </div>
+    </div>
+    <div class="page-stats">
+        <div class="stat_bar">
+            <div class="container">
+                <div class="stat">
+                    <div class="title">ผลงานเผยแพร่แล้ว</div>
+                    <div class="number"><em>5</em> ชิ้นงาน</div>
+                </div>
+                <div class="stat">
+                    <div class="title">ยอดซื้อสัปดาห์นี้</div>
+                    <div class="number"><em>500</em> ชิ้นงาน</div>
+                </div>
+                <div class="stat">
+                    <div class="title">รายได้สัปดาห์นี้</div>
+                    <div class="number"><em>500</em> บาท</div>
+                </div>
+                <div class="stat">
+                    <div class="title">ขายดีที่สุดในสัปดาห์นี้</div>
+                    <div class="number"><a href="#">Publication title</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="stat_footer">
+            <div class="container">
+                <span class="weekly">ข้อมูลสัปดาห์ตั้งแต่วันที่ 12 ก.พ. 2556 - 19 ก.พ. 2556</span>
+                <span class="separator">|</span>
+                <a href="#">ดูสถิติทั้งหมด</a>
+            </div>
+        </div>
+    </div>
+    <div class="page-actions">
+        <div class="container">
+            <a href="{% url 'write_my_work' %}" class="btn btn-orange"><i class="icon-pencil icon-white"></i> เขียนงานชิ้นใหม่</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="page-style-content-title">ผลงานเขียน</div>
+        <ul class="works">
+            <li class="work">
+                <div class="title"><a href="#">This is title</a></div>
+                <div class="tools">
+                    <a href="{% url 'write_my_work' %}" class="btn btn-small"><i class="icon-pencil"></i> แก้ไข</a>
+                </div>
+                <div class="footer">
+                    <span class="status status-published">สถานะ: <em>เผยแพร่แล้ว</em></span>
+                    <span class="separator">/</span>
+                    <span class="date">เผยแพร่เมื่อวันที่ 14 ก.พ. 2556</span>
+                </div>
+            </li>
+            <li class="work">
+                <div class="title"><a href="#">This is title</a></div>
+                <div class="tools">
+                    <a href="{% url 'write_my_work' %}" class="btn btn-small"><i class="icon-pencil"></i> แก้ไข</a>
+                </div>
+                <div class="footer">
+                    <span class="status status-published">สถานะ: <em>เผยแพร่แล้ว</em></span>
+                    <span class="separator">/</span>
+                    <span class="date">เผยแพร่เมื่อวันที่ 14 ก.พ. 2556</span>
+                </div>
+            </li>
+        </ul>
     </div>
 </div>
 {% endblock %}
