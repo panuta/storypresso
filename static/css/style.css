@@ -459,7 +459,7 @@ form .help-block {
   text-align: right;
 }
 #body-page .page-stats .stat_footer .weekly {
-  color: #666;
+  color: #888;
   font-size: 13px;
 }
 #body-page .page-stats .stat_footer .separator {
@@ -1333,6 +1333,7 @@ form .help-block {
   margin-bottom: 20px;
 }
 .page-workroom-publishing .pub-price input {
+  text-align: right;
   width: 60px;
 }
 .page-workroom-publishing .pub-price .unit {
