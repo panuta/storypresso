@@ -31,8 +31,8 @@ urlpatterns += patterns(
 )
 
 urlpatterns += patterns(
-    'presentation.views.user.safebox_views',
-    url(r'^my/safebox/$', 'view_my_safebox', name='view_my_safebox'),
+    'presentation.views.user.passbook_views',
+    url(r'^my/passbook/$', 'view_my_passbook', name='view_my_passbook'),
 )
 
 urlpatterns += patterns(
