@@ -1,0 +1,4 @@
+<ul>
+    <li{% if active_setting == 'profile' %} class="active"{% endif %}><a href="{% url 'view_my_settings_profile' %}">โปรไฟล์สาธารณะ</a></li>
+    <li{% if active_setting == 'account' %} class="active"{% endif %}><a href="{% url 'view_my_settings_account' %}">บัญชีผู้ใช้</a></li>
+</ul>

@@ -3,24 +3,7 @@
 {% block html_head_scripts %}
 <script type="text/javascript">
 $(document).ready(function() {
-    $('#outline-textarea').redactor({minHeight: 200});
-    $('.content-body').redactor({
-        minHeight: 200,
-        focus: true,
-        fixed: true,
-        fixedBox: true
-    });
 
-    //$('.content-title textarea').autosize().trigger('autosize');
-
-    $('.writing-nav a').on('click', function() {
-        $(this).closest('ul').find('li').removeClass('active');
-        $(this).closest('li').addClass('active');
-
-        $('.writing-body .body').hide();
-        $('.writing-body .body-' + $(this).attr('class')).show();
-        return false;
-    });
 });
 </script>
 {% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'base_page.html' %}
+
+{% block body_content %}
+<div class="page-settings">
+    <div class="page-header-title">
+        <div class="container">
+            <h1>ตั้งค่าการใช้งาน</h1>
+        </div>
+    </div>
+    <div class="container">
+        <div class="settings-nav">
+            {% block settings_nav %}{% endblock %}
+        </div>
+        <div class="settings-content">
+            {% block settings_content %}{% endblock %}
+        </div>
+    </div>
+</div>
+{% endblock %}

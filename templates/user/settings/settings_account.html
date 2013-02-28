@@ -1,0 +1,51 @@
+{% extends 'user/settings/settings_base.html' %}
+
+{% block settings_nav %}{% include 'user/settings/settings_nav.html' with active_setting='account' %}{% endblock %}
+
+{% block settings_content %}
+<div class="page-settings-account">
+    <form method="post" action="." class="form">
+        {% csrf_token %}
+        <fieldset>
+            <legend>เปลี่ยนอีเมล</legend>
+            <div class="control-group">
+                <label class="control-label" for="id_email">อีเมล</label>
+                <div class="controls">
+                    {{ email_form.email }}{{ email_form.email.errors }}
+                </div>
+            </div>
+            <div class="form-actions">
+                <button type="submit" name="submit" value="email" class="btn btn-orange">ยืนยันเปลี่ยนอีเมล</button>
+            </div>
+        </fieldset>
+    </form>
+
+    <form method="post" action="" class="form">
+        {% csrf_token %}
+        <fieldset>
+            <legend>เปลี่ยนรหัสผ่าน</legend>
+            <div class="control-group">
+                <label class="control-label" for="id_old_password">รหัสผ่านเก่า</label>
+                <div class="controls">
+                    {{ password_form.old_password }}{{ password_form.old_password.errors }}
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="new_password1">รหัสผ่านใหม่</label>
+                <div class="controls">
+                    {{ password_form.new_password1 }}{{ password_form.new_password1.errors }}
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="new_password2">ป้อนรหัสผ่านใหม่อีกครั้ง</label>
+                <div class="controls">
+                    {{ password_form.new_password2 }}{{ password_form.new_password2.errors }}
+                </div>
+            </div>
+            <div class="form-actions">
+                <button type="submit" name="submit" value="password" class="btn btn-orange">ยืนยันเปลี่ยนรหัสผ่าน</button>
+            </div>
+        </fieldset>
+    </form>
+</div>
+{% endblock %}

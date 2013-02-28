@@ -141,7 +141,53 @@ form ul.errorlist {
 form .help-block {
   color: #666;
   font-size: 0.9em;
-  margin-top: 3px !important;
+  margin: 3px 0px 0px;
+}
+form.form legend {
+  color: #444;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: normal;
+  margin-bottom: 0px;
+  padding-bottom: 6px;
+}
+form.form .control-group {
+  margin-bottom: 20px;
+}
+form.form .control-group label.control-label {
+  color: #444;
+  display: inline;
+  font-weight: bold;
+}
+form.form .control-group label.control-label .required {
+  color: #777;
+  font-weight: normal;
+}
+form.form .control-group input {
+  margin: 0px;
+}
+form.form .control-group .controls {
+  margin-top: 4px;
+}
+form.form .avatar-controls {
+  margin-bottom: 25px;
+}
+form.form .avatar-controls img.avatar {
+  border: 1px solid #999;
+  float: left;
+}
+form.form .avatar-controls .tools {
+  margin-left: 100px;
+}
+form.form .avatar-controls .tools input {
+  margin-bottom: 5px;
+}
+form.form .avatar-controls .tools .delete-tool {
+  margin-top: 5px;
+}
+form.form .avatar-controls .errorlist {
+  margin-left: 100px;
+  margin-top: 5px;
 }
 @font-face {
   font-family: 'QuarkBold';
@@ -1344,38 +1390,36 @@ form .help-block {
   height: 100px;
   width: 98%;
 }
-.page-workroom-publishing .cover {
+.page-settings .settings-nav {
   float: left;
+  padding-top: 30px;
+  width: 180px;
 }
-.page-workroom-publishing .cover img {
-  box-shadow: 2px 2px 0px #CCC;
-  width: 250px;
+.page-settings .settings-nav ul {
+  background-color: #EEE;
+  margin: 0px;
 }
-.page-workroom-publishing .author {
-  border-bottom: 1px solid #DDD;
-  margin: 0px 0px 20px 280px;
-  padding-bottom: 15px;
+.page-settings .settings-nav li {
+  list-style: none;
+}
+.page-settings .settings-nav li a {
+  color: #555;
+  display: block;
+  font-size: 14px;
+  padding: 10px 0px 10px 15px;
+  width: 165px;
   position: relative;
 }
-.page-workroom-publishing .author .avatar {
-  display: inline-block;
-  height: 50px;
-  margin-right: 10px;
-  vertical-align: middle;
-  width: 50px;
+.page-settings .settings-nav li a:hover {
+  text-decoration: underline;
 }
-.page-workroom-publishing .author .name {
-  display: inline-block;
-  vertical-align: middle;
+.page-settings .settings-nav li.active a {
+  background-color: #666;
+  border-bottom: none;
+  color: #FFF;
 }
-.page-workroom-publishing .author .name a {
-  color: #444;
-  font-family: 'UthongRegular';
-  font-size: 28px;
-}
-.page-workroom-publishing .author:after,
-.page-workroom-publishing .author:before {
-  top: 100%;
+.page-settings .settings-nav li.active a:after {
+  left: 100%;
   border: solid transparent;
   content: " ";
   height: 0;
@@ -1383,50 +1427,16 @@ form .help-block {
   position: absolute;
   pointer-events: none;
 }
-.page-workroom-publishing .author:after {
-  border-color: rgba(255, 255, 255, 0);
-  border-top-color: #FFF;
-  border-width: 10px;
-  left: 25px;
-  margin-left: -10px;
+.page-settings .settings-nav li.active a:after {
+  border-color: rgba(83, 107, 121, 0);
+  border-left-color: #666;
+  border-width: 20px;
+  top: 50%;
+  margin-top: -20px;
 }
-.page-workroom-publishing .author:before {
-  border-color: rgba(221, 221, 221, 0);
-  border-top-color: #DDD;
-  border-width: 11px;
-  left: 25px;
-  margin-left: -11px;
-}
-.page-workroom-publishing .summary {
-  color: #444;
-  font-family: 'ChiangSaenRegular', sans-serif;
-  font-size: 24px;
-  line-height: 31px;
-  margin: 0px 0px 0px 280px;
-}
-.page-workroom-publishing .buy {
-  margin: 30px 0px 0px 280px;
-}
-.page-workroom-publishing .buy .price {
-  color: #e06545;
-  font-family: 'QuarkLight', sans-serif;
-  font-size: 24px;
-}
-.page-workroom-publishing .buy .buy-button {
-  background-color: #e06545;
-  border-radius: 4px;
-  box-shadow: 0px 2px 0px #dd532f;
-  color: #FFF;
-  display: inline-block;
-  font-family: 'QuarkLight', sans-serif;
-  font-size: 20px;
-  line-height: 35px;
-  margin-top: 12px;
-  padding: 5px 45px 0px;
-}
-.page-workroom-publishing .buy .buy-button:hover {
-  background-color: #dd532f;
-  text-decoration: none;
+.page-settings .settings-content {
+  margin-left: 230px;
+  padding-top: 30px;
 }
 @media (max-width: 767px) {
   .page-homepage .tagline .is {

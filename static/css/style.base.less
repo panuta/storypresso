@@ -167,6 +167,66 @@ form {
     .help-block {
         color: #666;
         font-size: 0.9em;
-        margin-top: 3px !important;
+        margin: 3px 0px 0px;
+    }
+}
+
+form.form {
+    legend {
+        color: #444;
+        font-size: 24px;
+        font-weight: bold;
+        line-height: normal;
+        margin-bottom: 0px;
+        padding-bottom: 6px;
+    }
+
+    .control-group {
+        margin-bottom: 20px;
+
+        label.control-label {
+            color: #444;
+            display: inline;
+            font-weight: bold;
+
+            .required {
+                color: #777;
+                font-weight: normal;
+            }
+        }
+
+        input {
+            margin: 0px;
+        }
+
+        .controls {
+            margin-top: 4px;
+        }
+    }
+
+    .avatar-controls {
+        margin-bottom: 25px;
+
+        img.avatar {
+            border: 1px solid #999;
+            float: left;
+        }
+
+        .tools {
+            margin-left: 100px;
+
+            input {
+                margin-bottom: 5px;
+            }
+
+            .delete-tool {
+                margin-top: 5px;
+            }
+        }
+
+        .errorlist {
+            margin-left: 100px;
+            margin-top: 5px;
+        }
     }
 }

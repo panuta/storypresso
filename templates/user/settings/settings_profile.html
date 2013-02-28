@@ -1,0 +1,77 @@
+{% extends 'user/settings/settings_base.html' %}
+
+{% block settings_nav %}{% include 'user/settings/settings_nav.html' with active_setting='profile' %}{% endblock %}
+
+{% block settings_content %}
+<div class="page-settings-profile">
+    <form method="post" action="." class="form" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <fieldset>
+            <legend>โปรไฟล์สาธารณะ</legend>
+
+            <div class="control-group">
+                <label class="control-label" for="id_avatar">รูปภาพ</label>
+                <div class="controls avatar-controls clearfix">
+                    <img src="{{ user.get_small_avatar_url }}" class="avatar" {% if not user.avatar %}title="No picture"{% endif %}/>
+                    <div class="tools">
+                        {{ form.avatar }}
+                        {% if user.avatar %}<div class="delete-tool"><button class="btn btn-mini remove-avatar" type="submit" name="submit" value="remove-avatar">ลบรูปภาพ</button></div>{% endif %}
+                    </div>
+                    {{ form.avatar.errors }}
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="id_name">ชื่อหรือนามปากกา</label>
+                <div class="controls">
+                    {{ form.name }}{{ form.name.errors }}
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="id_url_name">URL name</label>
+                <div class="controls">
+                    {{ form.url_name }}{{ form.url_name.errors }}
+                </div>
+                <div class="help-block">http://{{ request.get_host }}/profile/__your url name__/</div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="id_bio">บรรยายความเป็นตัวคุณ</label>
+                <div class="controls">
+                    {{ form.bio }}{{ form.bio.errors }}
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="id_website_url">เว็บไซต์ของคุณ</label>
+                <div class="controls">
+                    {{ form.website_url }}{{ form.website_url.errors }}
+                </div>
+                <div class="help-block">ใส่ URL ของเว็บส่วนตัว เช่น http://www.example.com/</div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="id_facebook_url">Facebook URL</label>
+                <div class="controls">
+                    {{ form.facebook_url }}{{ form.facebook_url.errors }}
+                </div>
+                <div class="help-block">ใส่ URL ของหน้า Facebook profile เช่น http://www.facebook.com/username</div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="id_twitter_url">Twitter URL</label>
+                <div class="controls">
+                    {{ form.twitter_url }}{{ form.twitter_url.errors }}
+                </div>
+                <div class="help-block">ใส่ URL ของหน้า Twitter profile เช่น http://www.twitter.com/username</div>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn btn-orange">บันทึกการเปลี่ยนแปลง</button>
+            </div>
+        </fieldset>
+    </form>
+</div>
+{% endblock %}

@@ -1184,103 +1184,65 @@
             width: 98%;
         }
     }
+}
 
-
-
-
-    .cover {
+.page-settings {
+    .settings-nav {
         float: left;
+        padding-top: 30px;
+        width: 180px;
 
-        img {
-            box-shadow: 2px 2px 0px #CCC;
-            width: 250px;
-        }
-    }
-
-    .author {
-        border-bottom: 1px solid #DDD;
-        margin: 0px 0px 20px 280px;
-        padding-bottom: 15px;
-        position: relative;
-
-        .avatar {
-            display: inline-block;
-            height: 50px;
-            margin-right: 10px;
-            vertical-align: middle;
-            width: 50px;
+        ul {
+            background-color: #EEE;
+            margin: 0px;
         }
 
-        .name {
-            display: inline-block;
-            vertical-align: middle;
+        li {
+            list-style: none;
 
             a {
-                color: #444;
-                font-family: 'UthongRegular';
-                font-size: 28px;
+                color: #555;
+                display: block;
+                font-size: 14px;
+                padding: 10px 0px 10px 15px;
+                width: 165px;
+                position: relative;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
+            &.active {
+                a {
+                    background-color: #666;
+                    border-bottom: none;
+                    color: #FFF;
+                }
+
+                a:after {
+                    left: 100%;
+                    border: solid transparent;
+                    content: " ";
+                    height: 0;
+                    width: 0;
+                    position: absolute;
+                    pointer-events: none;
+                }
+
+                a:after {
+                    border-color: rgba(83, 107, 121, 0);
+                    border-left-color: #666;
+                    border-width: 20px;
+                    top: 50%;
+                    margin-top: -20px;
+                }
             }
         }
     }
 
-    .author:after, .author:before {
-        top: 100%;
-        border: solid transparent;
-        content: " ";
-        height: 0;
-        width: 0;
-        position: absolute;
-        pointer-events: none;
-    }
-
-    .author:after {
-        border-color: rgba(255, 255, 255, 0);
-        border-top-color: #FFF;
-        border-width: 10px;
-        left: 25px;
-        margin-left: -10px;
-    }
-    .author:before {
-        border-color: rgba(221, 221, 221, 0);
-        border-top-color: #DDD;
-        border-width: 11px;
-        left: 25px;
-        margin-left: -11px;
-    }
-
-    .summary {
-        color: #444;
-        font-family: 'ChiangSaenRegular', sans-serif;
-        font-size: 24px;
-        line-height: 31px;
-        margin: 0px 0px 0px 280px;
-    }
-
-    .buy {
-        margin: 30px 0px 0px 280px;
-
-        .price {
-            color: #e06545;
-            font-family: 'QuarkLight', sans-serif;
-            font-size: 24px;
-        }
-
-        .buy-button {
-            background-color: #e06545;
-            border-radius: 4px;
-            box-shadow: 0px 2px 0px #dd532f;
-            color: #FFF;
-            display: inline-block;
-            font-family: 'QuarkLight', sans-serif;
-            font-size: 20px;
-            line-height: 35px;
-            margin-top: 12px;
-            padding: 5px 45px 0px;
-
-            &:hover {
-                background-color: #dd532f;
-                text-decoration: none;
-            }
-        }
+    .settings-content {
+        margin-left: 230px;
+        padding-top: 30px;
     }
 }
