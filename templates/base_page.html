@@ -6,29 +6,7 @@
         <div class="logo">
             <a href="/"><img src="{{ STATIC_URL }}images/logo.black.small.png" /></a>
         </div>
-
-        {% if user.is_authenticated %}
-            <div class="account">
-                <a href="{% url 'auth_logout' %}"><img src="{{ user.get_tiny_avatar_url }}" /></a>
-                <div class="menu btn-group">
-                    <a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
-                    <ul class="dropdown-menu pull-right">
-                        <li><a href="{% url 'view_my_profile' %}">โปรไฟล์</a></li>
-                        <li class="divider"></li>
-                        <li><a href="{% url 'view_my_works' %}">ห้องเขียนหนังสือ</a></li>
-                        <li><a href="{% url 'view_my_messages' %}">กล่องจดหมาย</a></li>
-                        <li><a href="{% url 'view_my_passbook' %}">สมุดบัญชี</a></li>
-                        <li><a href="{% url 'view_my_settings_profile' %}">ตั้งค่าการใช้งาน</a></li>
-                        <li class="divider"></li>
-                        <li><a href="{% url 'auth_logout' %}">ออกจากระบบ</a></li>
-                    </ul>
-                </div>
-            </div>
-        {% else %}
-            <div class="registration">
-                <a href="{% url 'view_signup' %}">สมัครสมาชิก</a><a href="{% url 'view_login' %}">เข้าสู่ระบบ</a>
-            </div>
-        {% endif %}
+        {% include 'snippets/top_account.html' %}
     </div>
 </div>
 <div id="body-page">

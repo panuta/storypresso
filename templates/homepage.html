@@ -7,91 +7,88 @@
 {% block body %}
 <div id="body-top">
     <div class="container">
-        <div class="account">
-            {% if user.is_authenticated %}
-                <a href="{% url 'auth_logout' %}">{{ user.email }}</a>
-            {% else %}
-                <a href="{% url 'view_signup' %}">สมัครสมาชิก</a><a href="{% url 'view_login' %}">เข้าสู่ระบบ</a>
-            {% endif %}
-        </div>
+        {% include 'snippets/top_account.html' %}
     </div>
 </div>
 
 <div class="page-homepage">
-    <div class="pane-title">
+    <div class="block-title">
         <div class="container">
             <div class="logo">
-                <a href="/"><img src="{{ STATIC_URL }}images/logo.black.png" /></a>
+                <a href="/"><img src="{{ STATIC_URL }}images/logo.white.png" /></a>
                 <!--<em>where a finest story is brewed and served</em>-->
             </div>
             <div class="is">is</div>
-            <h1>digital content store</h1>
-            <div class="tagline tagline1">where writers sell content to readers</div>
-            <div class="tagline tagline2">it's that simple</div>
+            <h1>a digital content store</h1>
+            <div class="where">where</div>
+            <div class="users clearfix">
+                <div class="tagline tagline1"><em>readers</em> have the best <b>reading experience</b></div>
+                <div class="heart"></div>
+                <div class="tagline tagline2"><em>writers</em> have the future <b>publishing platform</b></div>
+            </div>
         </div>
     </div>
-    <div class="pane-writers">
+    <div class="block-writers">
         <div class="container">
-            <div class="stat stat1">We have already published <em>300 content</em> (and counting)</div>
+            <div class="stat stat1">We have already published <em>300 contents</em> (and counting)</div>
             <div class="stat stat2">from <em>20 writers</em>, including</div>
             <ul class="writers clearfix">
                 <li class="writer">
                     <div class="avatar"><a href="#"><img src="{{ STATIC_URL }}images/sample/avatars/user1.jpg"/></a></div>
-                    <div class="name"><a href="#">Writer 1</a></div>
+                    <div class="name"><a href="#">Penname</a></div>
                 </li>
                 <li class="writer">
                     <div class="avatar"><a href="#"><img src="{{ STATIC_URL }}images/sample/avatars/user2.jpg"/></a></div>
-                    <div class="name"><a href="#">Writer 2</a></div>
+                    <div class="name"><a href="#">Firstname Lastname</a></div>
                 </li>
                 <li class="writer">
                     <div class="avatar"><a href="#"><img src="{{ STATIC_URL }}images/sample/avatars/user3.jpg"/></a></div>
-                    <div class="name"><a href="#">Writer 3</a></div>
+                    <div class="name"><a href="#">Awesome Writer</a></div>
                 </li>
                 <li class="writer">
                     <div class="avatar"><a href="#"><img src="{{ STATIC_URL }}images/sample/avatars/user4.jpg"/></a></div>
-                    <div class="name"><a href="#">Writer 4</a></div>
+                    <div class="name"><a href="#">Shortname</a></div>
                 </li>
                 <li class="writer">
                     <div class="avatar"><a href="#"><img src="{{ STATIC_URL }}images/sample/avatars/user5.jpg"/></a></div>
-                    <div class="name"><a href="#">Writer 5</a></div>
+                    <div class="name"><a href="#">Good Writing</a></div>
                 </li>
             </ul>
-            <div class="help">We are helping them with</div>
-            <ul class="features">
-                <li class="feature">Distribution</li>
-                <li class="feature">Payment</li>
-                <li class="feature">Marketing</li>
-            </ul>
+            <div class="helping">
+                <div class="title">as we are helping them with</div>
+                <ul class="features">
+                    <li class="feature-first">
+                        <em>Distribution</em>
+                        <div class="text">ช็อคคอปเตอร์บาลานซ์สเตอริโอธุหร่ำ วันเวย์บอกซ์เชฟซังเต เซ่นไหว้ฟอยล์ปฏิสัมพันธ์สะบึมส์อีแต๋นเด้อ พาร์ตเนอร์วาไรตี้แพ็คเทวาธิราช</div>
+                    </li>
+                    <li class="feature-second">
+                        <em>Payment</em>
+                        <div class="text">ช็อคคอปเตอร์บาลานซ์สเตอริโอธุหร่ำ วันเวย์บอกซ์เชฟซังเต เซ่นไหว้ฟอยล์ปฏิสัมพันธ์สะบึมส์อีแต๋นเด้อ พาร์ตเนอร์วาไรตี้แพ็คเทวาธิราช</div>
+                    </li>
+                    <li class="feature-third">
+                        <em>Marketing</em>
+                        <div class="text">ช็อคคอปเตอร์บาลานซ์สเตอริโอธุหร่ำ วันเวย์บอกซ์เชฟซังเต เซ่นไหว้ฟอยล์ปฏิสัมพันธ์สะบึมส์อีแต๋นเด้อ พาร์ตเนอร์วาไรตี้แพ็คเทวาธิราช</div>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
-    <div class="pane-registration">
-        <div class="title">เรายินดีต้อนรับไม่ว่าคุณจะเป็นนักอ่าน หรือว่านักเขียน</div>
-        <div class="social">
-            <a href="#" class="facebook">Sign-in with Facebook</a><a href="#" class="twitter">Sign-in with Twitter</a>
-        </div>
-        <div class="or">
-            <hr><span>หรือ</span>
-        </div>
-        <div class="email"><a href="#" class="btn">สมัครสมาชิกด้วยอีเมล</a></div>
-    </div>
-    <div class="pane-publication">
-
-    </div>
-
-
-    <div id="body-content">{% block body_content %}{% endblock %}</div>
-
-    <div id="body-footer">
-        <div class="container">
+    <div class="block-registration">
+        <div class="title">ไม่ว่าคุณจะเป็นนักอ่าน หรือว่านักเขียน</div>
+        <div class="subtitle">ก็สามารถเริ่มใช้งาน StoryPresso ได้ฟรีทันที</div>
+        <div class="box">
             <div class="social">
-                <a href="http://www.facebook.com" class="facebook">Facebook Page</a>
-                <a href="http://www.twitter.com" class="twitter">Twitter</a>
+                <a href="#" class="facebook">Sign-in with Facebook</a>
+                <a href="#" class="twitter">Sign-in with Twitter</a>
             </div>
-            <div class="links">
-                <a href="#">Home</a><span class="separator">|</span><a href="#">About Us</a><span class="separator">|</span><a href="#">Our Policy</a>
+            <div class="or">
+                <hr><span>หรือ</span>
             </div>
-            <div class="copyright">©2012 StoryPresso</div>
+            <div class="email"><a href="#" class="btn">สมัครสมาชิกด้วยอีเมล</a></div>
         </div>
+    </div>
+    <div class="block-publication">
+
     </div>
 </div>
 
@@ -101,16 +98,6 @@
 <div class="page-homepage">
 <div class="container">
 
-    <div class="registration">
-        <h3>เรายินดีต้อนรับไม่ว่าคุณจะเป็นนักอ่าน หรือว่านักเขียน</h3>
-        <div class="social">
-            <a href="#" class="facebook">Sign-in with Facebook</a><a href="#" class="twitter">Sign-in with Twitter</a>
-        </div>
-        <div class="or">
-            <hr><span>หรือ</span>
-        </div>
-        <div class="email"><a href="#" class="btn">สมัครสมาชิกด้วยอีเมล</a></div>
-    </div>
     <div class="stories">
         <h3>เรื่องแนะนำ</h3>
         <ul>
@@ -119,7 +106,7 @@
                     <div class="head clearfix">
                         <div class="title"><a href="#">ความน่าจะเป็นที่นี่จะเป็นชื่อเรื่อง</a></div>
                         <div class="avatar"><a href="#"><img src="{{ STATIC_URL }}images/sample/avatars/my.jpg" /></a></div>
-                        <div class="author"><a href="#">ภาณุ ตั้งเฉลิมกุล</a></div>
+                        <div class="author">นวนิยาย โดย <a href="#">ภาณุ ตั้งเฉลิมกุล</a></div>
                     </div>
                     <div class="summary">โต๋เต๋ วอฟเฟิลมอยส์เจอไรเซอร์ฮอตแคมป์ติ๋ม โค้ชซะ ช็อปเจ๊าะแจ๊ะ อพาร์ทเมนต์ชัวร์สติ๊กเกอร์รองรับว้าว อิเหนาคาวบอยหม่านโถวออเดอร์เคลียร์บุ๋น บุญคุณเซ็กส์มาร์กไลน์ แลนด์ราชานุญาตแอปเปิ้ล</div>
                     <div class="category"><a href="#">นวนิยาย</a></div>
