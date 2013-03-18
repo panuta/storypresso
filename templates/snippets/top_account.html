@@ -1,3 +1,7 @@
+<ul class="navigation">
+    <li><a href="#">Explore content</a></li>
+    <li><a href="#">Publish yours</a></li>
+</ul>
 {% if user.is_authenticated %}
     <div class="account">
         <a href="{% url 'auth_logout' %}" class="avatar"><img src="{{ user.get_tiny_avatar_url }}" /></a>
@@ -17,6 +21,6 @@
     </div>
 {% else %}
     <div class="registration">
-        <a href="{% url 'view_signup' %}">สมัครสมาชิก</a><a href="{% url 'view_login' %}">เข้าสู่ระบบ</a>
+        <a href="{% url 'view_signup' %}" class="left">สมัครสมาชิก</a><a href="{% url 'view_login' %}" class="right">เข้าสู่ระบบ</a>
     </div>
 {% endif %}

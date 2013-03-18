@@ -8,15 +8,47 @@
 
         .logo {
             float: left;
-            margin-top: 15px;
+            margin-top: 8px;
+        }
+
+        .navigation {
+            border-right: 1px solid #E7E7E7;
+            display: inline-block;
+            margin: 0px;
+
+            li {
+                float: left;
+                list-style: none;
+
+                a {
+                    border-left: 1px solid #E7E7E7;
+                    color: #666;
+                    font-family: 'QuarkLight', sans-serif;
+                    font-size: 20px;
+                    display: inline-block;
+                    line-height: 59px;
+                    height: 55px;
+                    padding: 5px 20px 0px;
+
+                    &:hover {
+                        background-color: @linkColor;
+                        color: #FFF;
+                    }
+                }
+            }
         }
 
         .registration {
-            padding-top: 18px;
+            background-color: #edede2;
+            border-radius: 4px;
+            float: right;
+            margin: 10px 0px 0px 30px;
+            padding: 10px 12px 10px;
 
             a {
-                color: #555;
-                margin-left: 10px;
+                color: #666;
+                font-size: 13px;
+                margin: 0px 6px;
                 text-decoration: underline;
 
                 &:hover {
@@ -27,6 +59,8 @@
         }
 
         .account {
+            float: right;
+            margin-left: 30px;
             padding-top: 14px;
 
             .avatar {
@@ -252,89 +286,37 @@
 
 .page-homepage {
     .block-title {
-        background-color: @skyColor;
-        padding: 80px 0px;
-
-        .logo {
-            text-align: center;
-        }
-
-        .is {
-            color: #a4d8d3;
-            font-family: 'QuarkLight', sans-serif;
-            font-size: 28px;
-            margin: 40px 0px 10px;
-            text-align: center;
-        }
+        background: url(../images/ui/bg.png) repeat;
+        padding: 40px 0px 55px;
 
         h1 {
-            color: #a4d8d3;
+            color: #FFF;
             font-family: 'QuarkLight', sans-serif;
-            font-size: 80px;
+            font-size: 54px;
             font-weight: normal;
             line-height: normal;
             margin: 0px;
             text-align: center;
-            text-shadow: 0px 2px 0px #FFF;
+            text-shadow: -1px -1px 0px #888;
         }
 
-        .where {
-            color: #a4d8d3;
+        .subtitle {
+            color: #daefed;
             font-family: 'QuarkLight', sans-serif;
-            font-size: 28px;
-            margin: 20px 0px 30px;
+            font-size: 34px;
+            margin: 20px 0px 0px;
             text-align: center;
-        }
-
-        .users {
-            text-align: center;
-
-            em {
-                display: block;
-                font-family: 'QuarkBold', sans-serif;
-                font-size: 42px;
-            }
-
-            b {
-                display: block;
-                font-weight: normal;
-            }
-
-            .heart {
-                background: url(../images/homepage/heart.red.png) no-repeat;
-                display: inline-block;
-                height: 32px;
-                margin: 0px 30px;
-                vertical-align: middle;
-                width: 32px;
-            }
-
-            .tagline {
-                color: #FFF;
-                display: inline-block;
-                font-family: 'QuarkLight', sans-serif;
-                font-size: 34px;
-                font-weight: normal;
-                line-height: normal;
-                vertical-align: middle;
-            }
-
-            .tagline1 {
-                text-align: right;
-            }
-
-            .tagline2 {
-                text-align: left;
-            }
+            text-shadow: -1px -1px 0px #999;
         }
     }
 
     .block-writers {
-        padding: 100px 0px 80px;
+        padding: 60px 0px 80px;
 
         .stat {
-            color: #444;
+            color: #555;
             font-family: 'QuarkLight', sans-serif;
+            font-size: 28px;
             text-align: center;
 
             em {
@@ -342,17 +324,8 @@
             }
         }
 
-        .stat1 {
-            font-size: 40px;
-        }
-
-        .stat2 {
-            font-size: 36px;
-            margin-top: 60px;
-        }
-
         .writers {
-            margin: 60px 0px 0px;
+            margin: 40px 0px 0px;
             text-align: center;
 
             .writer {
@@ -362,9 +335,11 @@
 
                 .avatar {
                     img {
+                        border: 7px solid #FFF;
                         border-radius: 100px;
                         height: 100px;
                         width: 100px;
+                        box-shadow: 1px 1px 1px #BBB;
                     }
                 }
 
@@ -372,172 +347,241 @@
                     margin-top: 14px;
 
                     a {
-                        color: @skyColor;
+                        color: #444;
                         font-size: 16px;
                         font-weight: bold;
                     }
                 }
             }
         }
+    }
 
-        .helping {
-            text-align: center;
+    .block-stories {
+        padding-bottom: 80px;
+
+        ul {
+            margin: 0px;
+        }
+
+        li.story {
+            background-color: #F7F7F7;
+            border: 1px solid #DDD;
+            box-shadow: 0px 0px 2px #DDD;
+            float: left;
+            list-style: none;
+            margin-bottom: 46px;
+            padding: 0px;
+            width: 560px;
+
+            .cover {
+                position: relative;
+
+                img {
+                    height: 140px;
+                    width: 560px;
+                }
+
+                .type {
+                    bottom: 0px;
+                    color: #EEE;
+                    font-size: 13px;
+                    height: 30px;
+                    line-height: 30px;
+                    right: 10px;
+                    position: absolute;
+                    text-align: right;
+                    width: 550px;
+                }
+            }
+
+            .details {
+                padding: 15px 15px;
+
+                .type {
+                    color: @skyColor;
+                    font-size: 13px;
+                }
+
+                .title {
+                    margin-top: 12px;
+
+                    a {
+                        color: #444;
+                        font-family: 'UthongBold', serif;
+                        font-size: 28px;
+                    }
+                }
+
+                .summary {
+                    color: #555;
+                    font-family: 'ChiangSaenRegular', sans-serif;
+                    font-size: 21px;
+                    line-height: 27px;
+                    margin-top: 10px;
+                }
+
+                .author {
+                    margin-top: 15px;
+
+                    .avatar {
+                        display: inline-block;
+                        height: 50px;
+                        margin-right: 10px;
+                        vertical-align: middle;
+                        width: 50px;
+
+                        img {
+                            border-radius: 50px;
+                        }
+                    }
+
+                    .name {
+                        display: inline-block;
+                        color: #555;
+                        font-family: 'UthongRegular';
+                        font-size: 24px;
+                        vertical-align: middle;
+                    }
+                }
+            }
+
+            .footer {
+                border-top: 1px dashed #DDD;
+
+                .buy {
+                    float: left;
+                    padding: 15px;
+
+                    .button-buy {
+                        font-size: 14px;
+                        margin-top: 3px;
+                        padding: 9px 40px;
+                        vertical-align: middle;
+                    }
+
+                    .price {
+                        color: #555;
+                        font-family: 'UthongBold', serif;
+                        font-size: 30px;
+                        margin-left: 10px;
+                        vertical-align: middle;
+                    }
+                }
+
+                .recommends {
+                    float: right;
+                    padding: 10px 15px;
+                    text-align: right;
+
+                    .number {
+                        a {
+                            color: #555;
+                            font-size: 13px;
+                            font-weight: bold;
+                        }
+                    }
+
+                    .faces {
+                        margin-top: 4px;
+
+                        a {
+                            img {
+                                border-radius: 30px;
+                                height: 30px;
+                                margin-left: 3px;
+                                width: 30px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            /*
+            background-color: #F7F7F7;
+            border: 1px solid #DDD;
+            box-shadow: 0px 0px 2px #DDD;
+            float: left;
+            list-style: none;
+            margin-bottom: 46px;
+            padding: 15px;
+            width: 530px;
+
+            .right {
+                margin-left: 170px;
+            }
+
+            .cover {
+                float: left;
+
+                img {
+                    height: 200px;
+                    width: 150px;
+                }
+            }
 
             .title {
-                color: #444;
-                display: block;
-                font-family: 'QuarkLight', sans-serif;
-                font-size: 32px;
-                margin: 70px 0px 50px;
-            }
+                margin-top: 5px;
 
-            ul {
-                margin: 0px;
-            }
-
-            li {
-                display: inline-block;
-                list-style: none;
-                padding: 95px 0px 0px 0px;
-                width: 280px;
-
-                &.feature-first {
-                    background: url(../images/homepage/149.png) center top no-repeat;
-                }
-
-                &.feature-second {
-                    background: url(../images/homepage/62.png) center top no-repeat;
-                    padding-left: 60px;
-                    padding-right: 60px;
-                }
-
-                &.feature-third {
-                    background: url(../images/homepage/333.png) center top no-repeat;
-                }
-
-                em {
+                a {
                     color: #444;
-                    display: block;
-                    font-family: 'QuarkBold', sans-serif;
+                    font-family: 'UthongBold', serif;
                     font-size: 26px;
-                    margin-bottom: 8px;
-                }
-
-                .text {
-                    color: #555;
-                    font-size: 15px;
-                    line-height: 30px;
                 }
             }
-        }
-    }
 
-    .block-registration {
-        background-color: @linkColor;
-        padding: 60px 0px;
-
-        .title {
-            color: #FFF;
-            font-family: 'QuarkLight', sans-serif;
-            font-size: 32px;
-            margin-bottom: 40px;
-            text-align: center;
-        }
-
-        .subtitle {
-            color: #FFF;
-            font-family: 'QuarkLight', sans-serif;
-            font-size: 28px;
-            margin-bottom: 18px;
-            text-align: center;
-        }
-
-        .box {
-            background-color: #EEE;
-            border: 1px solid #DDD;
-            border-radius: 5px;
-            box-shadow: 0px 3px 0px #6eb8d8;
-            margin: 40px auto 0px;
-            padding: 30px 0px;
-            width: 450px;
-        }
-
-        .social {
-            text-align: center;
-
-            .facebook {
-                .facebook_button;
-                border-radius: 2px;
-                box-shadow: 0px 2px 0px #DDD;
-                display: block;
-                margin: 0px auto 25px;
-            }
-
-            .twitter {
-                .twitter_button;
-                border-radius: 2px;
-                box-shadow: 0px 2px 0px #DDD;
-                display: block;
-                margin: 0px auto;
-            }
-        }
-
-        .or {
-            line-height: 10px;
-            margin-top: 30px;
-            text-align: center;
-
-            hr {
-                border: none;
-                border-bottom: 1px solid #DDD;
-                margin: 5px 0px;
-            }
-
-            span {
-                background-color: #EEE;
-                color: #777;
-                font-size: 12px;
-                display: inline-block;
-                padding: 0 10px;
-                position: relative;
-                top: -13px;
-            }
-        }
-
-        .email {
-            margin-top: 10px;
-            text-align: center;
-
-            .btn {
+            .summary {
                 color: #555;
-                width: 160px;
+                font-family: 'ChiangSaenRegular', sans-serif;
+                font-size: 21px;
+                line-height: 28px;
+                margin-top: 10px;
             }
+
+            .comments {
+                margin-top: 15px;
+
+                a {
+                    color: #666;
+                    font-weight: bold;
+                }
+            }
+
+            .type {
+                display: inline-block;
+                padding: 3px 15px;
+                font-size: 12px;
+                font-weight: bold;
+                margin-bottom: 10px;
+                color: #FFF;
+            }
+
+            .type1 {
+                background-color: @skyColor;
+            }
+
+            .type2 {
+                background-color: @redColor;
+            }
+
+            .type3 {
+                background-color: #e87d43;
+            }
+
+            .type4 {
+                background-color: #38b6c2;
+            }*/
+        }
+
+        li.story-left {
+            margin-right: 46px;
+        }
+
+        li.story-right {
+
         }
     }
 
-    .block-publication {
-
-    }
-
-    .registration {
-        margin: 45px auto 0px;
-        width: 500px;
-
-        h3 {
-            color: #666;
-            font-family: 'QuarkLight', sans-serif;
-            font-size: 24px;
-            font-weight: normal;
-            line-height: normal;
-            margin-bottom: 18px;
-            text-align: center;
-        }
-
-
-
-
-    }
-
+    /*
     .stories {
         margin: 50px auto 0px;
         max-width: 900px;
@@ -718,7 +762,7 @@
                 }
             }
         }
-    }
+    }*/
 }
 
 .page-registration {
@@ -1025,8 +1069,12 @@
             color: #444;
             font-family: 'ChiangSaenRegular', sans-serif;
             font-size: 22px;
-            line-height: 31px;
-            margin-bottom: 15px;
+            line-height: 30px;
+            margin-bottom: 20px;
+
+            p {
+                margin-bottom: 20px;
+            }
         }
     }
 
