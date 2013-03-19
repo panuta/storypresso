@@ -42,6 +42,51 @@
     {% block html_head_scripts %}{% endblock %}
 </head>
 <body>
+<div id="body-top">
+    <div class="container">
+        <div class="logo">
+            <a href="/"><img src="{{ STATIC_URL }}images/logo.black.small.2.png" /></a>
+        </div>
+        <ul class="navigation">
+            <li><a href="#">Explore content</a></li>
+            <li><a href="#">Publish yours</a></li>
+        </ul>
+        {% if user.is_authenticated %}
+            <div class="account">
+                <a href="{% url 'auth_logout' %}" class="avatar"><img src="{{ user.get_tiny_avatar_url }}" /></a>
+                <div class="menu btn-group">
+                    <a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+                    <ul class="dropdown-menu pull-right">
+                        <li><a href="{% url 'view_my_profile' %}">โปรไฟล์</a></li>
+                        <li class="divider"></li>
+                        <li><a href="{% url 'view_my_works' %}">ห้องเขียนหนังสือ</a></li>
+                        <li><a href="{% url 'view_my_messages' %}">กล่องจดหมาย</a></li>
+                        <li><a href="{% url 'view_my_passbook' %}">สมุดบัญชี</a></li>
+                        <li><a href="{% url 'view_my_settings_profile' %}">ตั้งค่าการใช้งาน</a></li>
+                        <li class="divider"></li>
+                        <li><a href="{% url 'auth_logout' %}">ออกจากระบบ</a></li>
+                    </ul>
+                </div>
+            </div>
+        {% else %}
+            <div class="registration">
+                <a href="{% url 'view_signup' %}" class="left">สมัครสมาชิก</a><a href="{% url 'view_login' %}" class="right">เข้าสู่ระบบ</a>
+            </div>
+        {% endif %}
+    </div>
+</div>
 {% block body %}{% endblock %}
+<div id="body-footer">
+    <div class="container">
+        <div class="social">
+            <a href="http://www.facebook.com" class="facebook">Facebook Page</a>
+            <a href="http://www.twitter.com" class="twitter">Twitter</a>
+        </div>
+        <div class="links">
+            <a href="#">Home</a><span class="separator">|</span><a href="#">About Us</a><span class="separator">|</span><a href="#">Our Policy</a>
+        </div>
+        <div class="copyright">©2012 StoryPresso</div>
+    </div>
+</div>
 </body>
 </html>

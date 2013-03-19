@@ -1,292 +1,6 @@
-#body-top {
-    background-color: @backgroundColor;
-    border-bottom: 1px solid #EEE;
-    height: 60px;
-
-    .container {
-        text-align: right;
-
-        .logo {
-            float: left;
-            margin-top: 8px;
-        }
-
-        .navigation {
-            border-right: 1px solid #E7E7E7;
-            display: inline-block;
-            margin: 0px;
-
-            li {
-                float: left;
-                list-style: none;
-
-                a {
-                    border-left: 1px solid #E7E7E7;
-                    color: #666;
-                    font-family: 'QuarkLight', sans-serif;
-                    font-size: 20px;
-                    display: inline-block;
-                    line-height: 59px;
-                    height: 55px;
-                    padding: 5px 20px 0px;
-
-                    &:hover {
-                        background-color: @linkColor;
-                        color: #FFF;
-                    }
-                }
-            }
-        }
-
-        .registration {
-            background-color: #edede2;
-            border-radius: 4px;
-            float: right;
-            margin: 10px 0px 0px 30px;
-            padding: 10px 12px 10px;
-
-            a {
-                color: #666;
-                font-size: 13px;
-                margin: 0px 6px;
-                text-decoration: underline;
-
-                &:hover {
-                    background-color: @linkColor;
-                    color: #FFF;
-                }
-            }
-        }
-
-        .account {
-            float: right;
-            margin-left: 30px;
-            padding-top: 14px;
-
-            .avatar {
-                img {
-                    border-radius: 30px;
-                }
-            }
-
-            .menu {
-                display: inline-block;
-                margin-left: 5px;
-                vertical-align: middle;
-
-                .caret {
-                    border-top-color: #555;
-                    border-bottom-color: #555;
-                    margin-top: -1px;
-                    vertical-align: middle;
-                }
-            }
-        }
-    }
-}
-
-#body-responsive {
-    #body-header {
-        .logo {
-            padding: 60px 0px 20px;
-            text-align: center;
-
-            em {
-                color: #666;
-                display: block;
-                font-family: 'QuarkLight', sans-serif;
-                font-size: 20px;
-                margin-top: 15px;
-            }
-        }
-    }
-}
-
-#body-page {
-    .page-header-title {
-        background-color: #3EA59B;
-        padding: 5px 0px 0px;
-
-        h1 {
-            color: #FFF;
-            font-family: 'ChiangSaenRegular', serif;
-            float: left;
-            font-size: 36px;
-            font-weight: normal;
-            line-height: normal;
-        }
-
-        .page-breadcrumb {
-            margin: 10px 0px 0px;
-
-            li {
-                display: inline-block;
-                list-style: none;
-
-                a {
-                    color: #EEE;
-                    font-size: 13px;
-                    text-decoration: underline;
-                }
-
-                .divider {
-                    color: #DDD;
-                    margin: 0px 4px;
-                }
-            }
-        }
-    }
-
-    .page-stats {
-        margin-bottom: 10px;
-
-        .stat_bar {
-            border-bottom: 1px solid #DDD;
-            padding: 10px 0px;
-
-            .stat {
-                border-right: 1px solid #EEE;
-                float: left;
-                margin-right: 15px;
-                padding-right: 25px;
-
-                .title {
-                    color: #444;
-                    font-size: 15px;
-                    margin: 5px 0px 10px;
-                }
-
-                .number {
-                    color: #666;
-                    font-size: 15px;
-
-                    em {
-                        color: #444;
-                        font-size: 26px;
-                        font-weight: bold;
-                        margin-right: 5px;
-                    }
-
-                    a {
-                        color: #555;
-                        font-size: 14px;
-                        font-weight: bold;
-                        display: inline-block;
-                        margin-top: 3px;
-                        text-decoration: underline;
-
-                        &:hover {
-                            background-color: @linkColor;
-                            color: #FFF;
-                        }
-                    }
-                }
-            }
-        }
-
-        .stat_footer {
-            margin-top: 8px;
-            text-align: right;
-
-            .weekly {
-                color: #888;
-                font-size: 13px;
-            }
-
-            .separator {
-                color: #BBB;
-                margin: 0px 6px;
-            }
-
-            a {
-                .grey_link;
-                font-size: 13px;
-            }
-        }
-    }
-
-    .page-actions {
-        .btn {
-            font-size: 14px;
-            padding: 7px 45px;
-        }
-    }
-
-    .page-style-content-title {
-        border-bottom: 1px solid #DDD;
-        color: #777;
-        font-family: 'QuarkLight', sans-serif;
-        font-size: 24px;
-        margin-top: 30px;
-        padding-bottom: 8px;
-    }
-}
-
-#body-footer {
-    text-align: center;
-
-    .social {
-        margin-top: 15px;
-        text-align: center;
-
-        a {
-            background: url(../images/ui/link.socials.png) no-repeat;
-            display: inline-block;
-            height: 32px;
-            margin: 0px 5px;
-            text-indent: -9999px;
-            width: 32px;
-
-            &.facebook {
-                background-position: 0px 0px;
-
-                &:hover {
-                    background-position: 0px -32px;
-                }
-            }
-
-            &.twitter {
-                background-position: -32px 0px;
-
-                &:hover {
-                    background-position: -32px -32px;
-                }
-            }
-        }
-    }
-
-    .links {
-        margin-top: 10px;
-
-        a {
-            .content_link;
-            font-size: 13px;
-        }
-
-        .separator {
-            color: #CCC;
-            margin: 0px 7px;
-        }
-    }
-
-    .copyright {
-        color: #777;
-        font-size: 12px;
-        margin-top: 5px;
-    }
-}
-
-.page-single {
-    .logo {
-        margin: 0px auto;
-        padding-top: 45px;
-        text-align: center;
-    }
-}
-
 .page-homepage {
     .block-title {
-        background: url(../images/ui/bg.png) repeat;
+        background: url(../images/ui/bg-green.png) repeat;
         padding: 40px 0px 55px;
 
         h1 {
@@ -363,206 +77,12 @@
             margin: 0px;
         }
 
-        li.story {
-            background-color: #F7F7F7;
-            border: 1px solid #DDD;
-            box-shadow: 0px 0px 2px #DDD;
+        li.style-story {
             float: left;
             list-style: none;
             margin-bottom: 46px;
-            padding: 0px;
-            width: 560px;
-
-            .cover {
-                position: relative;
-
-                img {
-                    height: 140px;
-                    width: 560px;
-                }
-
-                .type {
-                    bottom: 0px;
-                    color: #EEE;
-                    font-size: 13px;
-                    height: 30px;
-                    line-height: 30px;
-                    right: 10px;
-                    position: absolute;
-                    text-align: right;
-                    width: 550px;
-                }
-            }
-
-            .details {
-                padding: 15px 15px;
-
-                .type {
-                    color: @skyColor;
-                    font-size: 13px;
-                }
-
-                .title {
-                    margin-top: 12px;
-
-                    a {
-                        color: #444;
-                        font-family: 'UthongBold', serif;
-                        font-size: 28px;
-                    }
-                }
-
-                .summary {
-                    color: #555;
-                    font-family: 'ChiangSaenRegular', sans-serif;
-                    font-size: 21px;
-                    line-height: 27px;
-                    margin-top: 10px;
-                }
-
-                .author {
-                    margin-top: 15px;
-
-                    .avatar {
-                        display: inline-block;
-                        height: 50px;
-                        margin-right: 10px;
-                        vertical-align: middle;
-                        width: 50px;
-
-                        img {
-                            border-radius: 50px;
-                        }
-                    }
-
-                    .name {
-                        display: inline-block;
-                        color: #555;
-                        font-family: 'UthongRegular';
-                        font-size: 24px;
-                        vertical-align: middle;
-                    }
-                }
-            }
-
-            .footer {
-                border-top: 1px dashed #DDD;
-
-                .buy {
-                    float: left;
-                    padding: 15px;
-
-                    .button-buy {
-                        font-size: 14px;
-                        margin-top: 3px;
-                        padding: 9px 40px;
-                        vertical-align: middle;
-                    }
-
-                    .price {
-                        color: #555;
-                        font-family: 'UthongBold', serif;
-                        font-size: 30px;
-                        margin-left: 10px;
-                        vertical-align: middle;
-                    }
-                }
-
-                .recommends {
-                    float: right;
-                    padding: 10px 15px;
-                    text-align: right;
-
-                    .number {
-                        a {
-                            color: #555;
-                            font-size: 13px;
-                            font-weight: bold;
-                        }
-                    }
-
-                    .faces {
-                        margin-top: 4px;
-
-                        a {
-                            img {
-                                border-radius: 30px;
-                                height: 30px;
-                                margin-left: 3px;
-                                width: 30px;
-                            }
-                        }
-                    }
-                }
-            }
 
             /*
-            background-color: #F7F7F7;
-            border: 1px solid #DDD;
-            box-shadow: 0px 0px 2px #DDD;
-            float: left;
-            list-style: none;
-            margin-bottom: 46px;
-            padding: 15px;
-            width: 530px;
-
-            .right {
-                margin-left: 170px;
-            }
-
-            .cover {
-                float: left;
-
-                img {
-                    height: 200px;
-                    width: 150px;
-                }
-            }
-
-            .title {
-                margin-top: 5px;
-
-                a {
-                    color: #444;
-                    font-family: 'UthongBold', serif;
-                    font-size: 26px;
-                }
-            }
-
-            .summary {
-                color: #555;
-                font-family: 'ChiangSaenRegular', sans-serif;
-                font-size: 21px;
-                line-height: 28px;
-                margin-top: 10px;
-            }
-
-            .comments {
-                margin-top: 15px;
-
-                a {
-                    color: #666;
-                    font-weight: bold;
-                }
-            }
-
-            .type {
-                display: inline-block;
-                padding: 3px 15px;
-                font-size: 12px;
-                font-weight: bold;
-                margin-bottom: 10px;
-                color: #FFF;
-            }
-
-            .type1 {
-                background-color: @skyColor;
-            }
-
-            .type2 {
-                background-color: @redColor;
-            }
-
             .type3 {
                 background-color: #e87d43;
             }
@@ -580,201 +100,18 @@
 
         }
     }
-
-    /*
-    .stories {
-        margin: 50px auto 0px;
-        max-width: 900px;
-
-        h3 {
-            color: #666;
-            font-family: 'QuarkLight', sans-serif;
-            font-size: 24px;
-            font-weight: normal;
-            line-height: normal;
-            text-align: center;
-        }
-
-        ul {
-            margin: 0px;
-
-            li {
-                list-style: none;
-            }
-        }
-
-        li.style-story {
-            .paper_stack;
-            background-color: #FCFCFC;
-            margin-bottom: 40px;
-
-            .story-container {
-                padding: 0px 25px;
-            }
-
-            .head {
-                position: relative;
-                margin-top: 20px;
-
-                .title {
-                    margin-left: 85px;
-                    padding-top: 6px;
-
-                    a {
-                        color: #444;
-                        font-family: 'UthongBold', serif;
-                        font-size: 34px;
-                    }
-                }
-
-                .avatar {
-                    background-color: #FFF;
-                    height: 65px;
-                    left: 0px;
-                    margin-right: 10px;
-                    position: absolute;
-                    top: 0px;
-                    width: 65px;
-                }
-
-                .author {
-                    margin-left: 85px;
-                    margin-top: 12px;
-
-                    a {
-                        color: #666;
-                        font-family: 'UthongRegular', serif;
-                        font-size: 24px;
-                    }
-                }
-            }
-
-            .summary {
-                color: #555;
-                font-family: 'ChiangSaenRegular', sans-serif;
-                font-size: 24px;
-                line-height: 31px;
-                margin-top: 15px;
-            }
-
-            .category {
-                margin-top: 10px;
-
-                a {
-                    color: #555;
-                    display: inline-block;
-                    font-size: 14px;
-                    background-color: #EEE;
-                    padding: 4px 15px;
-
-                    &:hover {
-                        background-color: @linkColor;
-                        color: #FFF;
-                        text-decoration: none;
-                    }
-                }
-            }
-
-            .footer {
-                background-color: #F7F7F7;
-                border-top: 1px solid #EEE;
-                height: 65px;
-                margin-top: 15px;
-
-                .price-container {
-                    background: url(../images/component/ribbon.png) left center no-repeat;
-                    clear: both;
-                    float: left;
-                    height: 35px;
-                    margin: 13px 0px 0px -10px;
-                    padding: 0px 0px 10px 8px;
-
-                    .price {
-                        background: #e93b5f;
-                        box-shadow: 2px 2px 0 rgba(0,0,0,0.1);
-                        color: #FFF;
-                        font-size: 16px;
-                        font-weight: bold;
-                        line-height: 35px;
-                        padding: 0px 20px 0px 15px;
-                        text-shadow:0 -1px #d0284b, 0 1px #f96080;
-                    }
-                }
-
-                .left {
-                    margin-left: 105px;
-                    padding: 13px 0px 16px;
-                }
-
-                .right {
-                    float: right;
-                    margin-top: -65px;
-                }
-
-                .button-purchase {
-                    color: #444;
-                    font-family: 'QuarkLight', sans-serif;
-                    font-size: 21px;
-                    padding: 10px 40px 4px;
-                    vertical-align: middle;
-                }
-
-                .read-excerpt {
-                    .content_link;
-                    margin-left: 10px;
-                    vertical-align: middle;
-                }
-
-                .recommends {
-                    border-left: 1px solid #EEE;
-                    height: 65px;
-                    padding: 0px 15px 0px 20px;
-
-                    .number {
-                        display: inline-block;
-
-                        em {
-                            color: #555;
-                            display: block;
-                            font-size: 22px;
-                            font-weight: bold;
-                            padding: 10px 0px 5px;
-                        }
-
-                        span {
-                            color: #777;
-                            display: block;
-                            font-size: 14px;
-                        }
-                    }
-
-                    .faces {
-                        display: inline-block;
-                        margin-left: 10px;
-
-                        img {
-                            float: left;
-                            width: 30px;
-                            height: 30px;
-                            margin: 1px;
-                        }
-                    }
-                }
-            }
-        }
-    }*/
 }
 
 .page-registration {
-    padding-top: 60px;
+    padding-top: 30px;
 
     h1 {
-        color: #666;
+        color: #555;
         font-family: 'QuarkLight', sans-serif;
-        font-size: 34px;
+        font-size: 40px;
         font-weight: normal;
         line-height: normal;
-        margin: 0px 0px 20px 0px;
+        margin-bottom: 10px;
         text-align: center;
     }
 
@@ -823,7 +160,7 @@
 
         .or {
             line-height: 10px;
-            margin-top: 40px;
+            margin-top: 30px;
             text-align: center;
 
             hr {
@@ -917,98 +254,295 @@
                 .content_link;
                 color: #555;
             }
-
         }
     }
 }
 
 .page-publication-view {
-    padding-top: 40px;
+    padding-top: 20px;
 
-    .type {
-        color: #666;
-        font-family: 'QuarkLight', sans-serif;
-        font-size: 22px;
-        margin-bottom: 7px;
-    }
+    .this-story {
+        border-bottom: 2px solid #999;
+        padding-bottom: 50px;
 
-    h1 {
-        color: @skyColor;
-        font-family: 'QuarkLight', sans-serif;
-        font-size: 42px;
-        font-weight: normal;
-        line-height: normal;
-        margin: 0px 0px 15px;
-    }
+        .cover {
+            margin-bottom: 25px;
 
-    .cover {
-        float: left;
-
-        img {
-            box-shadow: 2px 2px 0px #CCC;
-            width: 250px;
-        }
-    }
-
-    .author {
-        border-bottom: 1px solid #DDD;
-        margin: 0px 0px 20px 280px;
-        padding-bottom: 15px;
-        position: relative;
-
-        .avatar {
-            display: inline-block;
-            height: 50px;
-            margin-right: 10px;
-            vertical-align: middle;
-            width: 50px;
+            img {
+                height: 230px;
+                width: 1170px;
+            }
         }
 
-        .name {
-            display: inline-block;
-            vertical-align: middle;
+        .type {
+            color: @skyColor;
+            font-size: 15px;
+        }
 
+        h1 {
+            color: #444;
+            font-family: 'UthongBold', serif;
+            font-size: 38px;
+            font-weight: normal;
+            line-height: normal;
+            margin: 8px 0px 0px;
+            text-shadow: 1px 1px 0px #FFF;
+        }
+
+        .summary {
+            color: #444;
+            font-family: 'ChiangSaenRegular', sans-serif;
+            font-size: 24px;
+            line-height: 34px;
+        }
+
+        .author {
+            margin-top: 15px;
+
+            .avatar {
+                display: inline-block;
+
+                img {
+                    border-radius: 100px;
+                    height: 70px;
+                    width: 70px;
+                }
+            }
+
+            .name {
+                display: inline-block;
+                margin-left: 15px;
+
+                a {
+                    color: #444;
+                    font-family: 'UthongRegular';
+                    font-size: 28px;
+                }
+            }
+        }
+
+        .buy {
             a {
-                color: #444;
-                font-family: 'UthongRegular';
-                font-size: 28px;
+                border-radius: 4px;
+                display: block;
+                font-size: 15px;
+                line-height: 24px;
+                padding: 14px 0px 10px;
+                text-align: center;
+
+                em {
+                    display: block;
+                    font-weight: bold;
+                }
+            }
+
+            .button-buy {
+                background-color: #e06545;
+                box-shadow: 0px 4px 0px #b04529;
+                color: #FFF;
+
+                &:hover {
+                    background-color: #dd532f;
+                    text-decoration: none;
+                }
+            }
+
+            .or {
+                line-height: 12px;
+                margin: 35px auto 0px;
+                text-align: center;
+                width: 220px;
+
+                hr {
+                    border: none;
+                    border-bottom: 1px solid #DDD;
+                    margin: 5px 0px;
+                }
+
+                span {
+                    background-color: @backgroundColor;
+                    color: #666;
+                    font-size: 12.5px;
+                    display: inline-block;
+                    padding: 0 10px;
+                    position: relative;
+                    top: -13px;
+                }
+            }
+
+            .button-gift {
+                background-color: #E3E3E3;
+                box-shadow: 0px 4px 0px #AAA;
+                color: #555;
+
+                &:hover {
+                    background-color: #D6D6D6;
+                    text-decoration: none;
+                }
+            }
+        }
+
+        .metadata {
+            margin-top: 30px;
+
+            .info {
+                color: #555;
+                font-size: 14px;
+                margin-bottom: 6px;
+                text-align: right;
+            }
+        }
+
+        .convincing {
+            margin-top: 40px;
+
+            .expression {
+                background: url(../images/112-statistics-chart.png) no-repeat;
+                display: inline-block;
+                margin-right: 50px;
+                padding-left: 45px;
+                vertical-align: top;
+
+                .primary-stat {
+                    .number {
+                        color: #444;
+                        display: inline-block;
+                        font-size: 50px;
+                        font-weight: bold;
+                        margin-right: 7px;
+                    }
+
+                    .text {
+                        color: #555;
+                        display: inline-block;
+                        font-size: 16px;
+
+                        em {
+                            color: #444;
+                            display: block;
+                            font-size: 20px;
+                            font-weight: bold;
+                            margin-bottom: 3px;
+                        }
+                    }
+                }
+
+                .stat {
+                    display: inline-block;
+                    margin: 0px 15px 0px 5px;
+                    vertical-align: middle;
+
+                    .icon {
+                        vertical-align: middle;
+                    }
+
+                    span {
+                        color: #666;
+                        font-size: 22px;
+                        vertical-align: middle;
+
+                        em {
+                            color: #666;
+                            font-size: 24px;
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+
+            .social {
+                background: url(../images/basic2-225.png) no-repeat;
+                display: inline-block;
+                padding-left: 45px;
+                vertical-align: top;
+
+            }
+
+            .separator {
+                border-top: 3px solid #CCC;
+                color: #555;
+                font-size: 16px;
+                margin: 10px 0px 15px;
+                vertical-align: middle;
+                width: 200px;
             }
         }
     }
 
-    .author:after, .author:before {
-        top: 100%;
-        border: solid transparent;
-        content: " ";
-        height: 0;
-        width: 0;
-        position: absolute;
-        pointer-events: none;
+    .excerpt {
+        margin-bottom: 50px;
+
+        h2 {
+            border: none;
+            font-size: 28px;
+            margin: 40px 0px 10px;
+            text-align: center;
+        }
+
+        .excerpt-box {
+            background-color: #F7F7F7;
+            border: 1px solid #DDD;
+            box-shadow: 0px 0px 2px #DDD;
+            margin: 0px auto;
+            padding: 30px 0px;
+            width: 750px;
+
+            p {
+                color: #444;
+                font-family: 'ChiangSaenRegular', sans-serif;
+                font-size: 22px;
+                line-height: 30px;
+                padding: 0px 40px;
+            }
+        }
     }
 
-    .author:after {
-        border-color: rgba(255, 255, 255, 0);
-        border-top-color: #FFF;
-        border-width: 10px;
-        left: 25px;
-        margin-left: -10px;
-    }
-    .author:before {
-        border-color: rgba(221, 221, 221, 0);
-        border-top-color: #DDD;
-        border-width: 11px;
-        left: 25px;
-        margin-left: -11px;
+    h2 {
+        border-bottom: 1px solid #DDD;
+        color: #555;
+        font-family: 'QuarkLight', sans-serif;
+        font-size: 32px;
+        font-weight: normal;
+        margin: 30px 0px;
+        text-shadow: 1px 1px 0px #FFF;
     }
 
-    .summary {
-        color: #444;
-        font-family: 'ChiangSaenRegular', sans-serif;
-        font-size: 24px;
-        line-height: 31px;
-        margin: 0px 0px 0px 280px;
+    ul.stories {
+        margin: 0px;
+
+        li.style-story {
+            float: left;
+            list-style: none;
+            margin-bottom: 46px;
+        }
+
+        li.story-left {
+            margin-right: 46px;
+        }
+
+        li.story-right {
+
+        }
     }
 
+    .authored-stories {
+
+    }
+
+    .similar-stories {
+
+    }
+
+
+
+
+
+
+
+
+
+
+/*
     .buy {
         margin: 30px 0px 0px 280px;
 
@@ -1035,7 +569,7 @@
                 text-decoration: none;
             }
         }
-    }
+    }*/
 }
 
 .page-publication-read {
