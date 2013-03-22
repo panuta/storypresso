@@ -10,53 +10,28 @@
 
 {% block body_content %}
 <div class="page-publication-view">
-    <div class="container">
-        <div class="this-story">
-            <div class="cover"><img src="{{ STATIC_URL }}images/sample/covers/cover4.jpg" /></div>
-
-            <div class="type">THRILLER FICTION</div>
-            <h1>ความน่าจะเป็นที่นี่จะเป็นชื่อเรื่อง</h1>
-            <div class="row">
-                <div class="span9">
-                    <div class="summary">คอนโดแฮมเบอร์เกอร์สเปกลิมิต ดีไซน์เนอร์โบว์เซี้ยวนอร์ท บลอนด์ออร์เดอร์เวสต์ซิงอีสต์ แจม เพาเวอร์บลูเบอร์รี่เฟอร์รี่โฟน เอ๋อพิซซ่าเซ็กซ์ออดิชั่น มหาอุปราชาโพลารอยด์เบิร์น โรลออนแคมป์สงบสุขเห่ยซิลเวอร์ แต๋วรีทัชเทรลเล่อร์ตรวจทานคอนแท็คเลดี้</div>
+    <div class="this-story">
+        <div class="container">
+            <div class="cover"><img src="{{ STATIC_URL }}images/sample/covers/cover7.png" /></div>
+            <div class="title">
+                <div class="type">THRILLER FICTION</div>
+                <h1>ความน่าจะเป็นที่นี่จะเป็นชื่อเรื่อง</h1>
+            </div>
+            <div class="blocks clearfix">
+                <div class="block-author">
                     <div class="author">
                         <div class="avatar"><a href="#"><img src="{{ STATIC_URL }}images/sample/avatars/my.jpg" /></a></div>
                         <div class="name"><a href="#">ภาณุ ตั้งเฉลิมกุล</a></div>
                     </div>
-
-                    <div class="convincing">
-                        <div class="expression">
-                            <div class="primary-stat">
-                                <span class="number">99999</span>
-                                <span class="text"><em>People</em>gave a positive feedback for this story</span>
-                            </div>
-                            <div class="separator"></div>
-                            <div class="stat">
-                                <img src="{{ STATIC_URL }}images/basic2-277.png" class="icon" />
-                                <span><em>12</em></span>
-                            </div>
-                            <div class="stat">
-                                <img src="{{ STATIC_URL }}images/basic2-278.png" class="icon" />
-                                <span><em>12</em></span>
-                            </div>
-                            <div class="stat">
-                                <img src="{{ STATIC_URL }}images/basic2-279.png" class="icon" />
-                                <span><em>12</em></span>
-                            </div>
-                            <div class="stat">
-                                <img src="{{ STATIC_URL }}images/basic2-280.png" class="icon" />
-                                <span><em>12</em></span>
-                            </div>
-                        </div>
-
-                        <div class="social">
-                            <div><a href="#" class="btn btn-mini">Like on Facebook</a></div>
-                            <div><a href="#" class="btn btn-mini">Twitter</a></div>
-                            <div><a href="#" class="btn btn-mini">Google+</a></div>
-                        </div>
+                </div>
+                <div class="block-story">
+                    <div class="summary">คอนโดแฮมเบอร์เกอร์สเปกลิมิต ดีไซน์เนอร์โบว์เซี้ยวนอร์ท บลอนด์ออร์เดอร์เวสต์ซิงอีสต์ แจม เพาเวอร์บลูเบอร์รี่เฟอร์รี่โฟน เอ๋อพิซซ่าเซ็กซ์ออดิชั่น มหาอุปราชาโพลารอยด์เบิร์น โรลออนแคมป์สงบสุขเห่ยซิลเวอร์ แต๋วรีทัชเทรลเล่อร์ตรวจทานคอนแท็คเลดี้</div>
+                    <div class="published">
+                        <span>เขียนเมื่อวันที่</span>
+                        <em>14 ก.พ. 2556</em>
                     </div>
                 </div>
-                <div class="span3">
+                <div class="block-tools">
                     <div class="buy">
                         <a href="#" class="button-buy">ซื้ออ่านเองในราคา<em>20 บาท</em></a>
                         <div class="or">
@@ -64,31 +39,79 @@
                         </div>
                         <a href="#" class="button-gift">ซื้อให้ตัวเองและเพื่อนในราคา<em>25 บาท</em></a>
                     </div>
-                    <div class="metadata">
-                        <div class="info">
-                            <span>เขียนเมื่อวันที่</span>
-                            <em>14 ก.พ. 2556</em>
-                        </div>
-                        <div class="info">
-                            <span>ความยาว</span>
-                            <em>400 ตัวอักษร</em>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- TODO User review from expression -->
+    <div class="expression clearfix">
+        <div class="container">
+            <div class="expression-number">
+                <div class="primary-stat">
+                    <span class="number">99999</span>
+                    <span class="text"><em>People</em>gave a positive feedback for this story</span>
+                </div>
+                <div class="separator"></div>
+                <div class="stat">
+                    <img src="{{ STATIC_URL }}images/basic2-277.png" class="icon" />
+                    <span><em>12</em></span>
+                </div>
+                <div class="stat">
+                    <img src="{{ STATIC_URL }}images/basic2-278.png" class="icon" />
+                    <span><em>12</em></span>
+                </div>
+                <div class="stat">
+                    <img src="{{ STATIC_URL }}images/basic2-279.png" class="icon" />
+                    <span><em>12</em></span>
+                </div>
+                <div class="stat">
+                    <img src="{{ STATIC_URL }}images/basic2-280.png" class="icon" />
+                    <span><em>12</em></span>
+                </div>
+            </div>
+            <div class="expression-text">
+                <ul>
+                    <li>
+                        <a href="#" class="avatar"><img src="{{ STATIC_URL }}images/sample/avatars/user9.jpg" /></a>
+                        <div class="review">คอนโดแฮมเบอร์เกอร์สเปกลิมิต ดีไซน์เนอร์โบว์เซี้ยวนอร์ท บลอนด์ออร์เดอร์เวสต์ซิงอีสต์ แจม เพาเวอร์บลูเบอร์รี่เฟอร์รี่โฟน</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
-        <div class="excerpt">
+        <!-- TODO Share on Social Media -->
+
+        {% comment %}
+        <div class="convincing">
+            <div class="expression">
+
+            </div>
+
+            <div class="social">
+                <div><a href="#" class="btn btn-mini">Like on Facebook</a></div>
+                <div><a href="#" class="btn btn-mini">Twitter</a></div>
+                <div><a href="#" class="btn btn-mini">Google+</a></div>
+            </div>
+        </div>
+        {% endcomment %}
+
+    <div class="excerpt">
+        <div class="container">
             <h2>ส่วนหนึ่งของเรื่อง</h2>
             <div class="excerpt-box">
                 <p>สเตเดียมแฟรีคอลเล็กชั่น ดาวน์ซี้อัลบัมสมาพันธ์ สแควร์สเปกพันธกิจมินต์ อัลมอนด์ราเมน โคโยตีกุนซือโมหจริตยูวีสปายแตงกวา เซนเซอร์เจี๊ยวภูมิทัศน์แฟร์วีไอพี บูม แทกติคเลิฟดีลเลอร์แฟรนไชส์แทกติค แคป อวอร์ดสงบสุขฟาสต์ฟู้ด ชีสแดรี่ติ๋มโจ๋สตาร์ท สไตรค์แดรี่ โชว์รูมสตริงมลภาวะแอ็กชั่น ยากูซ่าสวีทแจมบอยคอตซีน นอร์ทไอเดียไคลแมกซ์ไฮเปอร์ เจ๊เบิร์นกระดี๊กระด๊าคาร์โก้ตังค์</p>
                 <p>ซังเตทอม สเตริโอสังโฆแกรนด์แจ๊กพอตฮิปโปลีเมอร์ ติ๋มโบรชัวร์มาม่าแฟ้บยูวีแอนด์ พาวเวอร์สหัสวรรษกฤษณ์โชว์รูมโยเกิร์ต แบดเยลลี่ ทริปเบอร์รีสติกเกอร์ อึ๋มแชมป์แฟนซีเซอร์โปรโมชั่นโต๋เต๋ บัลลาสต์ปอดแหก จูเนียร์สต๊อก อิเหนาเทคโนเช็กสเตอริโอ เพนกวินแซนด์วิชฟาสต์ฟู้ด มอบตัวกับดัก ติวเตอร์ โจ๋ มอนสเตอร์พาสเจอร์ไรส์เกรย์คอมเมนต์มือถือบึ้ม ฟอร์ม</p>
+                <p>สเตเดียมแฟรีคอลเล็กชั่น ดาวน์ซี้อัลบัมสมาพันธ์ สแควร์สเปกพันธกิจมินต์ อัลมอนด์ราเมน โคโยตีกุนซือโมหจริตยูวีสปายแตงกวา เซนเซอร์เจี๊ยวภูมิทัศน์แฟร์วีไอพี บูม แทกติคเลิฟดีลเลอร์แฟรนไชส์แทกติค แคป อวอร์ดสงบสุขฟาสต์ฟู้ด ชีสแดรี่ติ๋มโจ๋สตาร์ท สไตรค์แดรี่ โชว์รูมสตริงมลภาวะแอ็กชั่น ยากูซ่าสวีทแจมบอยคอตซีน นอร์ทไอเดียไคลแมกซ์ไฮเปอร์ เจ๊เบิร์นกระดี๊กระด๊าคาร์โก้ตังค์</p>
+                <p>ซังเตทอม สเตริโอสังโฆแกรนด์แจ๊กพอตฮิปโปลีเมอร์ ติ๋มโบรชัวร์มาม่าแฟ้บยูวีแอนด์ พาวเวอร์สหัสวรรษกฤษณ์โชว์รูมโยเกิร์ต แบดเยลลี่ ทริปเบอร์รีสติกเกอร์ อึ๋มแชมป์แฟนซีเซอร์โปรโมชั่นโต๋เต๋ บัลลาสต์ปอดแหก จูเนียร์สต๊อก อิเหนาเทคโนเช็กสเตอริโอ เพนกวินแซนด์วิชฟาสต์ฟู้ด มอบตัวกับดัก ติวเตอร์ โจ๋ มอนสเตอร์พาสเจอร์ไรส์เกรย์คอมเมนต์มือถือบึ้ม ฟอร์ม</p>
             </div>
         </div>
+    </div>
 
-        <div class="authored-stories clearfix">
+    <!-- TODO Buy button -->
+
+    <div class="authored-stories clearfix">
+        <div class="container">
             <h2>Stories from the same author</h2>
 
             <ul class="stories">
@@ -151,7 +174,9 @@
                 </li>
             </ul>
         </div>
-        <div class="similar-stories clearfix">
+    </div>
+    <div class="similar-stories clearfix">
+        <div class="container">
             <h2>Similar stories</h2>
             <ul class="stories">
                 <li class="style-story story-left">

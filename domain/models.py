@@ -19,7 +19,7 @@ from common.email import send_bot_email
 SHORTUUID_ALPHABETS_FOR_ID = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
 
 
-# ACCOUNTS #############################################################################################################
+# ACCOUNT ##############################################################################################################
 
 class UserAccountManager(BaseUserManager):
     def create_user(self, email, name, password=None):
@@ -30,9 +30,9 @@ class UserAccountManager(BaseUserManager):
             raise ValueError(_('Users must have a name'))
 
         user = UserAccount.objects.create(
-            email = UserAccountManager.normalize_email(email),
-            name = name,
-            )
+            email=UserAccountManager.normalize_email(email),
+            name=name,
+        )
 
         user.set_password(password)
         user.save()
@@ -55,7 +55,7 @@ class UserAccount(AbstractBaseUser):
     url_name = models.CharField(max_length=100, db_index=True, blank=True, default='')
 
     name = models.CharField(max_length=300)
-    bio = models.CharField(max_length=1000)
+    bio = models.CharField(max_length=2000)
     avatar = ThumbnailerImageField(upload_to=user_image_dir, blank=True, null=True)
 
     website_url = models.CharField(max_length=200, blank=True, default='')
@@ -179,4 +179,53 @@ class UserRegistration(models.Model):
 
     def __unicode__(self):
         return '%s has key %s' % (self.email, self.registration_key)
+
+
+# PUBLICATION ##########################################################################################################
+
+def story_cover_dir(instance, filename):
+    return 'users/%s/stories/%s' % (instance.created_by.user_uid, filename)
+
+
+class Story(models.Model):
+    uid = models.CharField(max_length=50)
+    title = models.CharField(max_length=500)
+    description = models.TextField(blank=True, default='')
+    cover_small = ThumbnailerImageField(upload_to=story_cover_dir, blank=True, null=True)
+    cover_large = ThumbnailerImageField(upload_to=story_cover_dir, blank=True, null=True)
+    excerpt = models.TextField(blank=True, default='')
+    price = models.DecimalField(max_digits=10, decimal_places=2, null=True)
+    is_draft = models.BooleanField(default=True)
+    created_by = models.ForeignKey('UserAccount', related_name='stories_created')
+    created_on = models.DateTimeField(default=timezone.now())
+    modified_on = models.DateTimeField(default=timezone.now())
+    published_on = models.DateTimeField(null=True)
+
+    class Meta:
+        ordering = ['-published_on']
+
+    def save(self, *args, **kwargs):
+        if not self.uid:
+            uuid = None
+
+            while not uuid:
+                shortuuid.set_alphabet(SHORTUUID_ALPHABETS_FOR_ID)
+                uuid = shortuuid.uuid()[:10]
+
+                try:
+                    Story.objects.get(uid=uuid)
+                except Story.DoesNotExist:
+                    pass
+                else:
+                    uuid = None
+
+            self.uid = uuid
+
+        models.Model.save(self, *args, **kwargs)
+
+
+class StoryContent(models.Model):
+    story = models.ForeignKey('Story', related_name='contents')
+    body = models.TextField(blank=True, default='')
+
 

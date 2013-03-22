@@ -1,23 +1,227 @@
 {% extends 'base_backend.html' %}
 
+{% block html_head_before_userdefined %}
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}libs/bootstrap/css/bootstrap-responsive.css">
+{% endblock %}
+
 {% block html_head_scripts %}
 
 {% endblock %}
 
 {% block body_content %}
 <div class="page-publication-read">
+
+<!-- Change reading experience -->
+<!-- Conversation -->
+<!-- Share on Social network -->
+
     <div class="container">
+        <div class="reading-blocks">
+            <div class="cover"><img src="{{ STATIC_URL }}images/sample/covers/cover7.png" /></div>
 
-        <div class="cover"><img src="{{ STATIC_URL }}images/sample/covers/cover4.jpg" /></div>
+            <div class="left">
+                <a href="#" class="arrow_box">Back to Library</a>
+            </div>
+            <div class="center">
+                <div class="author"><a href="#">ภาณุ ตั้งเฉลิมกุล</a></div>
+                <h1>ความน่าจะเป็นที่นี่จะเป็นชื่อเรื่อง</h1>
+                <div class="content-container">
+                    <div class="content">
+                        <p class="first">อุตสาหการ เวสต์ มาร์ก แฟรนไชส์ลีเมอร์ตุ๊ดเอ็กซ์เพรสพุทธศตวรรษ ปิกอัพชิฟฟอนพุทโธเกย์ยิวอีแต๋น คันยิเซ็นเซอร์แบคโฮสเต็ป แหม็บ ง่าวเด้อรัมสไตล์ว้อดก้า ดีมานด์ปิยมิตรรัม บริกรไฮไลท์เพรียวบางภคันทลาพาธวาทกรรม ตังค์ สแตนดาร์ด ก๋ากั่นเบิร์ด เปเปอร์ไอติมผลไม้ซัพพลายกษัตริยาธิราชมหาอุปราชา สะเด่า คอปเตอร์ป๊อปไลฟ์ลาเต้</p>
+                        <p>พาสตาเกย์ พลานุภาพแกสโซฮอล์เทปคำตอบไทม์ บูติก ไดเอ็ตเอาท์ลีเมอร์โบว์ฮิปฮอป บัสเท็กซ์ ปาสคาลซีนีเพล็กซ์ซ้อ เซ็นเซอร์ช็อคแพลน รากหญ้า โปรเจ็กต์ชาร์ตซาดิสต์แบ็กโฮ แมกกาซีนบาบูนขั้นตอนซาฟารี ไทม์ติ๋ม เยอร์บีร่าแล็บเอ็กซ์เพรส ซิงซื่อบื้อเอสเปรสโซคาเฟ่ตรวจทานออร์แกน จิ๊กโก๋มาราธอน เทรนด์สตรอว์เบอร์รีสตาร์ทริคเตอร์วืด หลวงปู่ครูเสดเอเซียกลาสกษัตริยาธิราช</p>
+                        <p>รายชื่อชัตเตอร์มาร์เก็ตติ้งกระดี๊กระด๊าโบ้ยมาเฟีย โปลิศพุทธศตวรรษโดมิโนกระดี๊กระด๊า แฟ้บแซมบ้าเบอร์เกอร์จีดีพีกษัตริยาธิราชเที่ยงคืน แทงกั๊ก มาราธอนคูลเลอร์ตี๋แอคทีฟเฮียจ๊อกกี้ ซันตาคลอสไฮเทคเอเซียเฟรช บ็อกซ์ห่วยเทรลเล่อร์โทร แมกกาซีนหยวนคอนเซปต์เสือโคร่งล็อบบี้ กรีนเซ่นไหว้ตู้เซฟแจ็กพอต จีดีพีโทร ต้าอ่วยสามช่าซาดิสต์ความหมายเท็กซ์สถาปัตย์ มาร์กโมเดิร์น เยอร์บีรา อุปการคุณบาร์บี้ แบล็คไฮเวย์วอลล์ดราม่าป๊อป บูติกอุปทานคอร์รัปชัน</p>
+                    </div>
+                </div>
+                <div class="end">- END OF STORY -</div>
+                <div class="feedback">
+                    <div class="write clearfix">
+                        <div class="title">Give Feedback</div>
+                        <div class="feeling">
+                            <div class="caption">How are you feeling?</div>
+                            <ul>
+                                <li><label><input type="checkbox" /> ชอบนะ</label></li>
+                                <li><label><input type="checkbox" /> หลงรักเลยล่ะ</label></li>
+                                <li><label><input type="checkbox" /> หัวเราะท้องแข็ง</label></li>
+                                <li><label><input type="checkbox" /> ได้ความรู้ใหม่</label></li>
+                                <li><label><input type="checkbox" /> มีแรงบัลดาลใจ</label></li>
+                                <li><label><input type="checkbox" /> ไม่เห็นด้วย</label></li>
+                            </ul>
+                        </div>
+                        <div class="note">
+                            <div class="caption">What is your thought?</div>
+                            <textarea></textarea>
+                            <div class="submit">
+                                <div class="counting">500 characters left</div>
+                                <a href="#" class="btn">Submit</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
 
-        <h1>ความน่าจะเป็นที่นี่จะเป็นชื่อเรื่อง</h1>
-        <div class="content-container">
-            <div class="content">
-                <p>อุตสาหการ เวสต์ มาร์ก แฟรนไชส์ลีเมอร์ตุ๊ดเอ็กซ์เพรสพุทธศตวรรษ ปิกอัพชิฟฟอนพุทโธเกย์ยิวอีแต๋น คันยิเซ็นเซอร์แบคโฮสเต็ป แหม็บ ง่าวเด้อรัมสไตล์ว้อดก้า ดีมานด์ปิยมิตรรัม บริกรไฮไลท์เพรียวบางภคันทลาพาธวาทกรรม ตังค์ สแตนดาร์ด ก๋ากั่นเบิร์ด เปเปอร์ไอติมผลไม้ซัพพลายกษัตริยาธิราชมหาอุปราชา สะเด่า คอปเตอร์ป๊อปไลฟ์ลาเต้</p>
-                <p>พาสตาเกย์ พลานุภาพแกสโซฮอล์เทปคำตอบไทม์ บูติก ไดเอ็ตเอาท์ลีเมอร์โบว์ฮิปฮอป บัสเท็กซ์ ปาสคาลซีนีเพล็กซ์ซ้อ เซ็นเซอร์ช็อคแพลน รากหญ้า โปรเจ็กต์ชาร์ตซาดิสต์แบ็กโฮ แมกกาซีนบาบูนขั้นตอนซาฟารี ไทม์ติ๋ม เยอร์บีร่าแล็บเอ็กซ์เพรส ซิงซื่อบื้อเอสเปรสโซคาเฟ่ตรวจทานออร์แกน จิ๊กโก๋มาราธอน เทรนด์สตรอว์เบอร์รีสตาร์ทริคเตอร์วืด หลวงปู่ครูเสดเอเซียกลาสกษัตริยาธิราช</p>
-                <p>รายชื่อชัตเตอร์มาร์เก็ตติ้งกระดี๊กระด๊าโบ้ยมาเฟีย โปลิศพุทธศตวรรษโดมิโนกระดี๊กระด๊า แฟ้บแซมบ้าเบอร์เกอร์จีดีพีกษัตริยาธิราชเที่ยงคืน แทงกั๊ก มาราธอนคูลเลอร์ตี๋แอคทีฟเฮียจ๊อกกี้ ซันตาคลอสไฮเทคเอเซียเฟรช บ็อกซ์ห่วยเทรลเล่อร์โทร แมกกาซีนหยวนคอนเซปต์เสือโคร่งล็อบบี้ กรีนเซ่นไหว้ตู้เซฟแจ็กพอต จีดีพีโทร ต้าอ่วยสามช่าซาดิสต์ความหมายเท็กซ์สถาปัตย์ มาร์กโมเดิร์น เยอร์บีรา อุปการคุณบาร์บี้ แบล็คไฮเวย์วอลล์ดราม่าป๊อป บูติกอุปทานคอร์รัปชัน</p>
             </div>
         </div>
     </div>
+
+    <div class="next-reading">
+        <div class="next-container">
+            <div class="container">
+                <h2>Stories from the same author</h2>
+
+                <ul class="stories">
+                    <li class="style-story story-left">
+                        <div class="story-box">
+                            <div class="cover">
+                                <img src="{{ STATIC_URL }}images/sample/covers/cover4.jpg" />
+                            </div>
+                            <div class="details">
+                                <div class="type type1">THRILLER FICTION</div>
+                                <div class="title"><a href="{% url 'view_publication' %}">ความน่าจะเป็นที่นี่จะเป็นชื่อเรื่อง</a></div>
+                                <div class="summary">โต๋เต๋ วอฟเฟิลมอยส์เจอไรเซอร์ฮอตแคมป์ติ๋ม โค้ชซะ ช็อปเจ๊าะแจ๊ะ อพาร์ทเมนต์ชัวร์สติ๊กเกอร์รองรับว้าว อิเหนาคาวบอยหม่านโถวออเดอร์เคลียร์บุ๋น บุญคุณเซ็กส์มาร์กไลน์ แลนด์ราชานุญาตแอปเปิ้ล</div>
+                                <div class="author">
+                                    <a href="#" class="avatar"><img src="{{ STATIC_URL }}images/sample/avatars/my.jpg" /></a>
+                                    <a href="#" class="name">ภาณุ ตั้งเฉลิมกุล</a>
+                                </div>
+                            </div>
+                            <div class="footer clearfix">
+                                <div class="buy">
+                                    <a href="#" class="btn button-buy"><i class="icon-shopping-cart"></i> ซื้ออ่านในราคา 20 บาท</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="extra">
+                            <span class="friend"><a href="#"><img src="{{ STATIC_URL }}images/sample/avatars/user1.jpg" /></a> Panu is laughing</span>
+                        </div>
+                    </li>
+                    <li class="style-story story-center">
+                        <div class="story-box">
+                            <div class="cover">
+                                <img src="{{ STATIC_URL }}images/sample/covers/cover4.jpg" />
+                            </div>
+                            <div class="details">
+                                <div class="type type1">THRILLER FICTION</div>
+                                <div class="title"><a href="{% url 'view_publication' %}">ความน่าจะเป็นที่นี่จะเป็นชื่อเรื่อง</a></div>
+                                <div class="summary">โต๋เต๋ วอฟเฟิลมอยส์เจอไรเซอร์ฮอตแคมป์ติ๋ม โค้ชซะ ช็อปเจ๊าะแจ๊ะ อพาร์ทเมนต์ชัวร์สติ๊กเกอร์รองรับว้าว อิเหนาคาวบอยหม่านโถวออเดอร์เคลียร์บุ๋น บุญคุณเซ็กส์มาร์กไลน์ แลนด์ราชานุญาตแอปเปิ้ล</div>
+                                <div class="author">
+                                    <a href="#" class="avatar"><img src="{{ STATIC_URL }}images/sample/avatars/my.jpg" /></a>
+                                    <a href="#" class="name">ภาณุ ตั้งเฉลิมกุล</a>
+                                </div>
+                            </div>
+                            <div class="footer clearfix">
+                                <div class="buy">
+                                    <a href="#" class="btn button-buy"><i class="icon-shopping-cart"></i> ซื้ออ่านในราคา 20 บาท</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="style-story story-right">
+                        <div class="story-box">
+                            <div class="cover">
+                                <img src="{{ STATIC_URL }}images/sample/covers/cover4.jpg" />
+                            </div>
+                            <div class="details">
+                                <div class="type type1">THRILLER FICTION</div>
+                                <div class="title"><a href="{% url 'view_publication' %}">ความน่าจะเป็นที่นี่จะเป็นชื่อเรื่อง</a></div>
+                                <div class="summary">โต๋เต๋ วอฟเฟิลมอยส์เจอไรเซอร์ฮอตแคมป์ติ๋ม โค้ชซะ ช็อปเจ๊าะแจ๊ะ อพาร์ทเมนต์ชัวร์สติ๊กเกอร์รองรับว้าว อิเหนาคาวบอยหม่านโถวออเดอร์เคลียร์บุ๋น บุญคุณเซ็กส์มาร์กไลน์ แลนด์ราชานุญาตแอปเปิ้ล</div>
+                                <div class="author">
+                                    <a href="#" class="avatar"><img src="{{ STATIC_URL }}images/sample/avatars/my.jpg" /></a>
+                                    <a href="#" class="name">ภาณุ ตั้งเฉลิมกุล</a>
+                                </div>
+                            </div>
+                            <div class="footer clearfix">
+                                <div class="buy">
+                                    <a href="#" class="btn button-buy"><i class="icon-shopping-cart"></i> ซื้ออ่านในราคา 20 บาท</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="extra">
+                            <span class="friend"><a href="#"><img src="{{ STATIC_URL }}images/sample/avatars/user1.jpg" /></a> Panu is laughing</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="next-reading">
+        <div class="next-container">
+            <div class="container">
+                <h2>Other stories you might like</h2>
+                <ul class="stories">
+                    <li class="style-story story-left">
+                        <div class="story-box">
+                            <div class="cover">
+                                <img src="{{ STATIC_URL }}images/sample/covers/cover4.jpg" />
+                            </div>
+                            <div class="details">
+                                <div class="type type1">THRILLER FICTION</div>
+                                <div class="title"><a href="{% url 'view_publication' %}">ความน่าจะเป็นที่นี่จะเป็นชื่อเรื่อง</a></div>
+                                <div class="summary">โต๋เต๋ วอฟเฟิลมอยส์เจอไรเซอร์ฮอตแคมป์ติ๋ม โค้ชซะ ช็อปเจ๊าะแจ๊ะ อพาร์ทเมนต์ชัวร์สติ๊กเกอร์รองรับว้าว อิเหนาคาวบอยหม่านโถวออเดอร์เคลียร์บุ๋น บุญคุณเซ็กส์มาร์กไลน์ แลนด์ราชานุญาตแอปเปิ้ล</div>
+                                <div class="author">
+                                    <a href="#" class="avatar"><img src="{{ STATIC_URL }}images/sample/avatars/my.jpg" /></a>
+                                    <a href="#" class="name">ภาณุ ตั้งเฉลิมกุล</a>
+                                </div>
+                            </div>
+                            <div class="footer clearfix">
+                                <div class="buy">
+                                    <a href="#" class="btn button-buy"><i class="icon-shopping-cart"></i> ซื้ออ่านในราคา 20 บาท</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="extra">
+                            <span class="friend"><a href="#"><img src="{{ STATIC_URL }}images/sample/avatars/user1.jpg" /></a> Panu is laughing</span>
+                        </div>
+                    </li>
+                    <li class="style-story story-center">
+                        <div class="story-box">
+                            <div class="cover">
+                                <img src="{{ STATIC_URL }}images/sample/covers/cover4.jpg" />
+                            </div>
+                            <div class="details">
+                                <div class="type type1">THRILLER FICTION</div>
+                                <div class="title"><a href="{% url 'view_publication' %}">ความน่าจะเป็นที่นี่จะเป็นชื่อเรื่อง</a></div>
+                                <div class="summary">โต๋เต๋ วอฟเฟิลมอยส์เจอไรเซอร์ฮอตแคมป์ติ๋ม โค้ชซะ ช็อปเจ๊าะแจ๊ะ อพาร์ทเมนต์ชัวร์สติ๊กเกอร์รองรับว้าว อิเหนาคาวบอยหม่านโถวออเดอร์เคลียร์บุ๋น บุญคุณเซ็กส์มาร์กไลน์ แลนด์ราชานุญาตแอปเปิ้ล</div>
+                                <div class="author">
+                                    <a href="#" class="avatar"><img src="{{ STATIC_URL }}images/sample/avatars/my.jpg" /></a>
+                                    <a href="#" class="name">ภาณุ ตั้งเฉลิมกุล</a>
+                                </div>
+                            </div>
+                            <div class="footer clearfix">
+                                <div class="buy">
+                                    <a href="#" class="btn button-buy"><i class="icon-shopping-cart"></i> ซื้ออ่านในราคา 20 บาท</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="style-story story-right">
+                        <div class="story-box">
+                            <div class="cover">
+                                <img src="{{ STATIC_URL }}images/sample/covers/cover4.jpg" />
+                            </div>
+                            <div class="details">
+                                <div class="type type1">THRILLER FICTION</div>
+                                <div class="title"><a href="{% url 'view_publication' %}">ความน่าจะเป็นที่นี่จะเป็นชื่อเรื่อง</a></div>
+                                <div class="summary">โต๋เต๋ วอฟเฟิลมอยส์เจอไรเซอร์ฮอตแคมป์ติ๋ม โค้ชซะ ช็อปเจ๊าะแจ๊ะ อพาร์ทเมนต์ชัวร์สติ๊กเกอร์รองรับว้าว อิเหนาคาวบอยหม่านโถวออเดอร์เคลียร์บุ๋น บุญคุณเซ็กส์มาร์กไลน์ แลนด์ราชานุญาตแอปเปิ้ล</div>
+                                <div class="author">
+                                    <a href="#" class="avatar"><img src="{{ STATIC_URL }}images/sample/avatars/my.jpg" /></a>
+                                    <a href="#" class="name">ภาณุ ตั้งเฉลิมกุล</a>
+                                </div>
+                            </div>
+                            <div class="footer clearfix">
+                                <div class="buy">
+                                    <a href="#" class="btn button-buy"><i class="icon-shopping-cart"></i> ซื้ออ่านในราคา 20 บาท</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="extra">
+                            <span class="friend"><a href="#"><img src="{{ STATIC_URL }}images/sample/avatars/user1.jpg" /></a> Panu is laughing</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
 </div>
 {% endblock %}

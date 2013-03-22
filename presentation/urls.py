@@ -15,7 +15,7 @@ urlpatterns += patterns(
     'presentation.views.user.views',
     url(r'^profile/id/(?P<user_uid>\w+)/$', 'view_user_profile_by_id', name='view_user_profile_by_id'),
     url(r'^profile/(?P<url_name>\w+)/$', 'view_user_profile_by_url_name', name='view_user_profile_by_url_name'),
-    url(r'^my/profile/$', 'view_my_profile', name='view_my_profile'),
+    url(r'^my/shelves/$', 'view_my_shelves', name='view_my_shelves'),
 )
 
 urlpatterns += patterns(
@@ -31,8 +31,8 @@ urlpatterns += patterns(
 )
 
 urlpatterns += patterns(
-    'presentation.views.user.passbook_views',
-    url(r'^my/passbook/$', 'view_my_passbook', name='view_my_passbook'),
+    'presentation.views.user.transaction_views',
+    url(r'^my/transaction/$', 'view_my_transaction', name='view_my_transaction'),
 )
 
 urlpatterns += patterns(

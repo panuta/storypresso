@@ -4,156 +4,152 @@
 <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}libs/bootstrap/css/bootstrap-responsive.css">
 {% endblock %}
 
+{% block page_class %}page-homepage{% endblock %}
+
 {% block body %}
-<div class="page-homepage">
-    <div class="block-title">
-        <div class="container">
-            <h1>a digital content store</h1>
-            <div class="subtitle">bite-size reading where you can finally enjoy</div>
-        </div>
+{% if not user.is_authenticated %}
+<div class="block-title">
+    <div class="container">
+        <h1>ร้านหนังสือดิจิตอลยุคใหม่เกิดขึ้นแล้ว</h1>
+        <div class="subtitle">มาเปลี่ยนประสบการณ์การอ่านของคุณให้มีความสุนทรีย์มากขึ้น</div>
+        <ul class="keys">
+            <li class="reading">
+                <div class="caption">อ่านได้สบายตา</div>
+                <div class="desc"></div>
+            </li><li class="price">
+                <div class="caption">ราคาเหมาะสม</div>
+                <div class="desc"></div>
+            </li><li class="conversation">
+                <div class="caption">เปิดโต๊ะกลมสนทนา</div>
+                <div class="desc"></div>
+            </li>
+        </ul>
     </div>
-    <div class="block-writers">
-        <div class="container">
-            <div class="stat">We have already published <em>300 contents</em> from <em>20 writers</em>, including</div>
-            <ul class="writers clearfix">
-                <li class="writer">
-                    <div class="avatar"><a href="#"><img src="{{ STATIC_URL }}images/sample/avatars/user1.jpg"/></a></div>
-                    <div class="name"><a href="#">Penname</a></div>
-                </li>
-                <li class="writer">
-                    <div class="avatar"><a href="#"><img src="{{ STATIC_URL }}images/sample/avatars/user2.jpg"/></a></div>
-                    <div class="name"><a href="#">ภาณุ ตั้งเฉลิมกุล</a></div>
-                </li>
-                <li class="writer">
-                    <div class="avatar"><a href="#"><img src="{{ STATIC_URL }}images/sample/avatars/user3.jpg"/></a></div>
-                    <div class="name"><a href="#">Awesome Writer</a></div>
-                </li>
-                <li class="writer">
-                    <div class="avatar"><a href="#"><img src="{{ STATIC_URL }}images/sample/avatars/user4.jpg"/></a></div>
-                    <div class="name"><a href="#">Shortname</a></div>
-                </li>
-                <li class="writer">
-                    <div class="avatar"><a href="#"><img src="{{ STATIC_URL }}images/sample/avatars/user5.jpg"/></a></div>
-                    <div class="name"><a href="#">Good Writing</a></div>
-                </li>
-            </ul>
+</div>
+
+<div class="block-signup">
+    <div class="container">
+        <div class="title">ไม่ว่าคุณจะเป็นนักอ่านหรือนักเขียน</div>
+        <div class="buttons">
+            <a href="#" class="facebook">Connect with Facebook</a>
+            <a href="#" class="twitter">Connect with Twitter</a>
         </div>
     </div>
 
-    <!-- TODO Social Login -->
+</div>
+{% endif %}
 
-    <div class="block-stories">
-        <div class="container">
-            <ul class="stories">
-                <li class="style-story story-left">
-                    <div class="story-box">
-                        <div class="cover">
-                            <img src="{{ STATIC_URL }}images/sample/covers/cover4.jpg" />
-                        </div>
-                        <div class="details">
-                            <div class="type type1">THRILLER FICTION</div>
-                            <div class="title"><a href="{% url 'view_publication' %}">ความน่าจะเป็นที่นี่จะเป็นชื่อเรื่อง</a></div>
-                            <div class="summary">โต๋เต๋ วอฟเฟิลมอยส์เจอไรเซอร์ฮอตแคมป์ติ๋ม โค้ชซะ ช็อปเจ๊าะแจ๊ะ อพาร์ทเมนต์ชัวร์สติ๊กเกอร์รองรับว้าว อิเหนาคาวบอยหม่านโถวออเดอร์เคลียร์บุ๋น บุญคุณเซ็กส์มาร์กไลน์ แลนด์ราชานุญาตแอปเปิ้ล</div>
-                            <div class="author">
-                                <a href="#" class="avatar"><img src="{{ STATIC_URL }}images/sample/avatars/my.jpg" /></a>
-                                <a href="#" class="name">ภาณุ ตั้งเฉลิมกุล</a>
-                            </div>
-                        </div>
-                        <div class="footer clearfix">
-                            <div class="buy">
-                                <a href="#" class="btn button-buy"><i class="icon-shopping-cart"></i> ซื้ออ่านในราคา 20 บาท</a>
-                            </div>
-                            <div class="recommends">
-                                <span><i class="icon-heart"></i> 14</span>
-                                <span><i class="icon-heart"></i> 14</span>
-                                <span><i class="icon-heart"></i> 14</span>
-                            </div>
+{% comment %}
+<!-- TODO When there are famous writer -->
+<div class="block-writers">
+    <div class="container">
+        <div class="stat">We have already published <em>300 contents</em> from <em>20 writers</em>, including</div>
+        <ul class="writers clearfix">
+            <li class="writer">
+                <div class="avatar"><a href="#"><img src="{{ STATIC_URL }}images/sample/avatars/user1.jpg"/></a></div>
+                <div class="name"><a href="#">Penname</a></div>
+            </li>
+            <li class="writer">
+                <div class="avatar"><a href="#"><img src="{{ STATIC_URL }}images/sample/avatars/user2.jpg"/></a></div>
+                <div class="name"><a href="#">ภาณุ ตั้งเฉลิมกุล</a></div>
+            </li>
+            <li class="writer">
+                <div class="avatar"><a href="#"><img src="{{ STATIC_URL }}images/sample/avatars/user3.jpg"/></a></div>
+                <div class="name"><a href="#">Awesome Writer</a></div>
+            </li>
+            <li class="writer">
+                <div class="avatar"><a href="#"><img src="{{ STATIC_URL }}images/sample/avatars/user4.jpg"/></a></div>
+                <div class="name"><a href="#">Shortname</a></div>
+            </li>
+            <li class="writer">
+                <div class="avatar"><a href="#"><img src="{{ STATIC_URL }}images/sample/avatars/user5.jpg"/></a></div>
+                <div class="name"><a href="#">Good Writing</a></div>
+            </li>
+        </ul>
+    </div>
+</div>
+{% endcomment %}
+
+<!-- TODO Social Login -->
+
+<div class="block-stories">
+    <div class="container">
+        <h2>Latest stories</h2>
+
+        <ul class="stories">
+            <li class="style-story story-left">
+                <div class="story-box">
+                    <div class="cover">
+                        <img src="{{ STATIC_URL }}images/sample/covers/cover4.jpg" />
+                    </div>
+                    <div class="details">
+                        <div class="type type1">THRILLER FICTION</div>
+                        <div class="title"><a href="{% url 'view_publication' %}">ความน่าจะเป็นที่นี่จะเป็นชื่อเรื่อง</a></div>
+                        <div class="summary">โต๋เต๋ วอฟเฟิลมอยส์เจอไรเซอร์ฮอตแคมป์ติ๋ม โค้ชซะ ช็อปเจ๊าะแจ๊ะ อพาร์ทเมนต์ชัวร์สติ๊กเกอร์รองรับว้าว อิเหนาคาวบอยหม่านโถวออเดอร์เคลียร์บุ๋น บุญคุณเซ็กส์มาร์กไลน์ แลนด์ราชานุญาตแอปเปิ้ล</div>
+                        <div class="author">
+                            <a href="#" class="avatar"><img src="{{ STATIC_URL }}images/sample/avatars/my.jpg" /></a>
+                            <a href="#" class="name">ภาณุ ตั้งเฉลิมกุล</a>
                         </div>
                     </div>
-                    <div class="extra">
-                        <span class="friend"><a href="#"><img src="{{ STATIC_URL }}images/sample/avatars/user1.jpg" /></a> Panu is laughing</span>
-                    </div>
-                </li>
-                <li class="style-story story-right">
-                    <div class="story-box">
-                        <div class="cover">
-                            <img src="{{ STATIC_URL }}images/sample/covers/cover4.jpg" />
-                        </div>
-                        <div class="details">
-                            <div class="type type1">THRILLER FICTION</div>
-                            <div class="title"><a href="{% url 'view_publication' %}">ความน่าจะเป็นที่นี่จะเป็นชื่อเรื่อง</a></div>
-                            <div class="summary">โต๋เต๋ วอฟเฟิลมอยส์เจอไรเซอร์ฮอตแคมป์ติ๋ม โค้ชซะ ช็อปเจ๊าะแจ๊ะ อพาร์ทเมนต์ชัวร์สติ๊กเกอร์รองรับว้าว อิเหนาคาวบอยหม่านโถวออเดอร์เคลียร์บุ๋น บุญคุณเซ็กส์มาร์กไลน์ แลนด์ราชานุญาตแอปเปิ้ล</div>
-                            <div class="author">
-                                <a href="#" class="avatar"><img src="{{ STATIC_URL }}images/sample/avatars/my.jpg" /></a>
-                                <a href="#" class="name">ภาณุ ตั้งเฉลิมกุล</a>
-                            </div>
-                        </div>
-                        <div class="footer clearfix">
-                            <div class="buy">
-                                <a href="#" class="btn button-buy"><i class="icon-shopping-cart"></i> ซื้ออ่านในราคา 20 บาท</a>
-                            </div>
-                            <div class="recommends">
-                                <span><i class="icon-heart"></i> 14</span>
-                                <span><i class="icon-heart"></i> 14</span>
-                                <span><i class="icon-heart"></i> 14</span>
-                            </div>
+                    <div class="footer clearfix">
+                        <div class="buy">
+                            <a href="#" class="btn button-buy"><i class="icon-shopping-cart"></i> ซื้ออ่านในราคา 20 บาท</a>
                         </div>
                     </div>
-                </li>
-                <li class="style-story story-left">
-                    <div class="story-box">
-                        <div class="cover">
-                            <img src="{{ STATIC_URL }}images/sample/covers/cover4.jpg" />
-                        </div>
-                        <div class="details">
-                            <div class="type type1">THRILLER FICTION</div>
-                            <div class="title"><a href="{% url 'view_publication' %}">ความน่าจะเป็นที่นี่จะเป็นชื่อเรื่อง</a></div>
-                            <div class="summary">โต๋เต๋ วอฟเฟิลมอยส์เจอไรเซอร์ฮอตแคมป์ติ๋ม โค้ชซะ ช็อปเจ๊าะแจ๊ะ อพาร์ทเมนต์ชัวร์สติ๊กเกอร์รองรับว้าว อิเหนาคาวบอยหม่านโถวออเดอร์เคลียร์บุ๋น บุญคุณเซ็กส์มาร์กไลน์ แลนด์ราชานุญาตแอปเปิ้ล</div>
-                            <div class="author">
-                                <a href="#" class="avatar"><img src="{{ STATIC_URL }}images/sample/avatars/my.jpg" /></a>
-                                <a href="#" class="name">ภาณุ ตั้งเฉลิมกุล</a>
-                            </div>
-                        </div>
-                        <div class="footer clearfix">
-                            <div class="buy">
-                                <a href="#" class="btn button-buy"><i class="icon-shopping-cart"></i> ซื้ออ่านในราคา 20 บาท</a>
-                            </div>
-                            <div class="recommends">
-                                <span><i class="icon-heart"></i> 14</span>
-                                <span><i class="icon-heart"></i> 14</span>
-                                <span><i class="icon-heart"></i> 14</span>
-                            </div>
+                </div>
+                <div class="extra">
+                    <span class="friend"><a href="#"><img src="{{ STATIC_URL }}images/sample/avatars/user1.jpg" /></a> Panu is laughing</span>
+                </div>
+            </li>
+            <li class="style-story story-center">
+                <div class="story-box">
+                    <div class="cover">
+                        <img src="{{ STATIC_URL }}images/sample/covers/cover4.jpg" />
+                    </div>
+                    <div class="details">
+                        <div class="type type1">THRILLER FICTION</div>
+                        <div class="title"><a href="{% url 'view_publication' %}">ความน่าจะเป็นที่นี่จะเป็นชื่อเรื่อง</a></div>
+                        <div class="summary">โต๋เต๋ วอฟเฟิลมอยส์เจอไรเซอร์ฮอตแคมป์ติ๋ม โค้ชซะ ช็อปเจ๊าะแจ๊ะ อพาร์ทเมนต์ชัวร์สติ๊กเกอร์รองรับว้าว อิเหนาคาวบอยหม่านโถวออเดอร์เคลียร์บุ๋น บุญคุณเซ็กส์มาร์กไลน์ แลนด์ราชานุญาตแอปเปิ้ล</div>
+                        <div class="author">
+                            <a href="#" class="avatar"><img src="{{ STATIC_URL }}images/sample/avatars/my.jpg" /></a>
+                            <a href="#" class="name">ภาณุ ตั้งเฉลิมกุล</a>
                         </div>
                     </div>
-                </li>
-                <li class="style-story story-right">
-                    <div class="story-box">
-                        <div class="cover">
-                            <img src="{{ STATIC_URL }}images/sample/covers/cover4.jpg" />
-                        </div>
-                        <div class="details">
-                            <div class="type type1">THRILLER FICTION</div>
-                            <div class="title"><a href="{% url 'view_publication' %}">ความน่าจะเป็นที่นี่จะเป็นชื่อเรื่อง</a></div>
-                            <div class="summary">โต๋เต๋ วอฟเฟิลมอยส์เจอไรเซอร์ฮอตแคมป์ติ๋ม โค้ชซะ ช็อปเจ๊าะแจ๊ะ อพาร์ทเมนต์ชัวร์สติ๊กเกอร์รองรับว้าว อิเหนาคาวบอยหม่านโถวออเดอร์เคลียร์บุ๋น บุญคุณเซ็กส์มาร์กไลน์ แลนด์ราชานุญาตแอปเปิ้ล</div>
-                            <div class="author">
-                                <a href="#" class="avatar"><img src="{{ STATIC_URL }}images/sample/avatars/my.jpg" /></a>
-                                <a href="#" class="name">ภาณุ ตั้งเฉลิมกุล</a>
-                            </div>
-                        </div>
-                        <div class="footer clearfix">
-                            <div class="buy">
-                                <a href="#" class="btn button-buy"><i class="icon-shopping-cart"></i> ซื้ออ่านในราคา 20 บาท</a>
-                            </div>
-                            <div class="recommends">
-                                <span><i class="icon-heart"></i> 14</span>
-                                <span><i class="icon-heart"></i> 14</span>
-                                <span><i class="icon-heart"></i> 14</span>
-                            </div>
+                    <div class="footer clearfix">
+                        <div class="buy">
+                            <a href="#" class="btn button-buy"><i class="icon-shopping-cart"></i> ซื้ออ่านในราคา 20 บาท</a>
                         </div>
                     </div>
-                </li>
-            </ul>
-        </div>
+                </div>
+                <div class="extra">
+                    <span class="friend"><a href="#"><img src="{{ STATIC_URL }}images/sample/avatars/user1.jpg" /></a> Panu is laughing</span>
+                </div>
+            </li>
+            <li class="style-story story-right">
+                <div class="story-box">
+                    <div class="cover">
+                        <img src="{{ STATIC_URL }}images/sample/covers/cover4.jpg" />
+                    </div>
+                    <div class="details">
+                        <div class="type type1">THRILLER FICTION</div>
+                        <div class="title"><a href="{% url 'view_publication' %}">ความน่าจะเป็นที่นี่จะเป็นชื่อเรื่อง</a></div>
+                        <div class="summary">โต๋เต๋ วอฟเฟิลมอยส์เจอไรเซอร์ฮอตแคมป์ติ๋ม โค้ชซะ ช็อปเจ๊าะแจ๊ะ อพาร์ทเมนต์ชัวร์สติ๊กเกอร์รองรับว้าว อิเหนาคาวบอยหม่านโถวออเดอร์เคลียร์บุ๋น บุญคุณเซ็กส์มาร์กไลน์ แลนด์ราชานุญาตแอปเปิ้ล</div>
+                        <div class="author">
+                            <a href="#" class="avatar"><img src="{{ STATIC_URL }}images/sample/avatars/my.jpg" /></a>
+                            <a href="#" class="name">ภาณุ ตั้งเฉลิมกุล</a>
+                        </div>
+                    </div>
+                    <div class="footer clearfix">
+                        <div class="buy">
+                            <a href="#" class="btn button-buy"><i class="icon-shopping-cart"></i> ซื้ออ่านในราคา 20 บาท</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="extra">
+                    <span class="friend"><a href="#"><img src="{{ STATIC_URL }}images/sample/avatars/user1.jpg" /></a> Panu is laughing</span>
+                </div>
+            </li>
+        </ul>
     </div>
 </div>
 

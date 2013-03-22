@@ -1,59 +1,55 @@
 #body-top {
-    background-color: @backgroundColor;
-    border-bottom: 1px solid #EEE;
+    background: url(../images/ui/bg-green.png) repeat;
+    border-bottom: 1px solid #3ea59b;
     height: 60px;
 
     .container {
+        position: relative;
         text-align: right;
 
         .logo {
             float: left;
-            margin-top: 8px;
+            margin-top: 18px;
         }
 
         .navigation {
-            border-right: 1px solid #E7E7E7;
+            border-left: 1px solid #379389;
+            border-right: 1px solid #73bcb5;
             display: inline-block;
             margin: 0px;
+            position: absolute;
+            right: 455px;
+            top: 0px;
 
             li {
                 float: left;
                 list-style: none;
 
                 a {
-                    border-left: 1px solid #E7E7E7;
-                    color: #666;
+                    border-left: 1px solid #73bcb5;
+                    border-right: 1px solid #379389;
+                    color: #EEE;
                     font-family: 'QuarkLight', sans-serif;
-                    font-size: 19px;
+                    font-size: 21px;
                     display: inline-block;
-                    line-height: 59px;
-                    height: 55px;
+                    line-height: 55px;
                     padding: 5px 20px 0px;
-
-                    &:hover {
-                        background-color: @linkColor;
-                        color: #FFF;
-                    }
                 }
             }
         }
 
         .registration {
-            background-color: #edede2;
-            border-radius: 4px;
             float: right;
-            margin: 10px 0px 0px 30px;
-            padding: 10px 12px 10px;
+            margin-top: 11px;
+            padding: 5px 10px;
 
             a {
-                color: #666;
+                color: #FFF;
                 font-size: 13px;
-                margin: 0px 6px;
-                text-decoration: underline;
+                margin: 0px 10px;
 
                 &:hover {
-                    background-color: @linkColor;
-                    color: #FFF;
+                    text-decoration: underline;
                 }
             }
         }
@@ -104,17 +100,19 @@
 
 #body-page {
     .page-header-title {
-        background: url(../images/ui/bg-green.png) repeat;
+        //background: url(../images/ui/bg-green.png) repeat;
         padding: 5px 0px 0px;
 
         h1 {
-            color: #FFF;
+            //color: #FFF;
+            color: #444;
             font-family: 'ChiangSaenRegular', serif;
             float: left;
             font-size: 36px;
             font-weight: normal;
             line-height: normal;
-            text-shadow: -1px -1px 0px #888;
+            //text-shadow: -1px -1px 0px #888;
+            text-shadow: 1px 1px 0px #EEE;
         }
 
         .page-breadcrumb {
@@ -285,34 +283,43 @@
     }
 }
 
+.style-page-header {
+    border-bottom: 1px solid #F7F7F7;
+    padding: 25px 0px 0px;
+
+    h1 {
+        border-bottom: 1px solid #d9d9c3;
+        color: #444;
+        font-family: 'QuarkBold', sans-serif;
+        font-size: 36px;
+        font-weight: normal;
+        line-height: normal;
+        margin: 0px;
+        padding-left: 48px;
+        text-shadow: 1px 1px 0px #FFF;
+    }
+}
+
 .style-story {
     padding: 0px;
-    width: 560px;
+    width: 360px;
 
     .story-box {
-        background-color: #F7F7F7;
-        border: 1px solid #DDD;
-        box-shadow: 0px 0px 2px #DDD;
+        background-color: @paperColor;
+        border: 1px solid #CCC;
+        border-radius: 4px;
+        box-shadow: 0px 1px 2px #CCC;
     }
 
     .cover {
-        position: relative;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
 
         img {
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
             height: 140px;
-            width: 560px;
-        }
-
-        .type {
-            bottom: 0px;
-            color: #EEE;
-            font-size: 13px;
-            height: 30px;
-            line-height: 30px;
-            right: 10px;
-            position: absolute;
-            text-align: right;
-            width: 550px;
+            width: 360px;
         }
     }
 
@@ -330,7 +337,7 @@
             a {
                 color: #444;
                 font-family: 'UthongBold', serif;
-                font-size: 28px;
+                font-size: 26px;
             }
         }
 
@@ -343,7 +350,7 @@
         }
 
         .author {
-            margin-top: 5px;
+            margin-top: 10px;
 
             .avatar {
                 display: inline-block;
@@ -368,7 +375,6 @@
     }
 
     .footer {
-        background-color: #F7F7F7;
         border-top: 1px dashed #DDD;
 
         .buy {
@@ -377,7 +383,7 @@
 
             .button-buy {
                 font-size: 13px;
-                padding: 6px 30px;
+                padding: 6px 20px;
                 vertical-align: middle;
             }
         }
@@ -389,7 +395,7 @@
 
             span {
                 color: #444;
-                font-size: 15px;
+                font-size: 14px;
                 font-weight: bold;
                 margin-left: 10px;
             }
@@ -427,6 +433,74 @@
                     margin-left: 3px;
                     width: 30px;
                 }
+            }
+        }
+    }
+}
+
+.style-shelf-story {
+    padding: 0px;
+    width: 315px;
+
+    .story-box {
+        background-color: @paperColor;
+        border: 1px solid #CCC;
+        border-radius: 4px;
+        //box-shadow: 0px 0px 2px #DDD;
+        box-shadow: 0px 1px 0px #999;
+    }
+
+    .cover {
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+
+        img {
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+            height: 98px;
+            width: 315px;
+
+            // 360x112
+            // 315x98
+        }
+    }
+
+    .details {
+        padding: 10px 12px 10px;
+
+        .action {
+            float: right;
+
+            a {
+                line-height: 18px;
+                padding: 0px 6px;
+            }
+        }
+
+        .type {
+            color: @skyColor;
+            font-size: 12px;
+        }
+
+        .title {
+            margin-top: 5px;
+
+            a {
+                color: #444;
+                font-family: 'UthongBold', serif;
+                font-size: 22px;
+            }
+        }
+
+        .author {
+            margin-top: 5px;
+
+            .name {
+                display: inline-block;
+                color: #666;
+                font-family: 'UthongRegular';
+                font-size: 20px;
+                vertical-align: middle;
             }
         }
     }
