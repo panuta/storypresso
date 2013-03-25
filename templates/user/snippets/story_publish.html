@@ -1,0 +1,81 @@
+<div class="container">
+<div class="style-story-publish clearfix">
+    <div class="left">
+        <div class="style-story">
+            <div class="story-box">
+                <div class="cover">
+                    <a href="{% url 'view_story' story.uid %}"><img src="{{ STATIC_URL }}images/sample/covers/cover4.jpg" /></a>
+                </div>
+                <div class="details">
+                    <div class="type type1">THRILLER FICTION</div>
+                    <div class="title"><a href="{% url 'view_story' story.uid %}">{{ story.title }}</a></div>
+                    <div class="summary">โต๋เต๋ วอฟเฟิลมอยส์เจอไรเซอร์ฮอตแคมป์ติ๋ม โค้ชซะ ช็อปเจ๊าะแจ๊ะ อพาร์ทเมนต์ชัวร์สติ๊กเกอร์รองรับว้าว อิเหนาคาวบอยหม่านโถวออเดอร์เคลียร์บุ๋น บุญคุณเซ็กส์มาร์กไลน์ แลนด์ราชานุญาตแอปเปิ้ล</div>
+                    <div class="author">
+                        <a href="#" class="avatar"><img src="{{ STATIC_URL }}images/sample/avatars/my.jpg" /></a>
+                        <a href="#" class="name">ภาณุ ตั้งเฉลิมกุล</a>
+                    </div>
+                </div>
+                <div class="footer clearfix">
+                    <div class="buy">
+                        <a href="#" class="btn button-buy"><i class="icon-shopping-cart"></i> ซื้ออ่านในราคา 20 บาท</a>
+                    </div>
+                </div>
+            </div>
+            <div class="preview">
+                <a href="#">ดูตัวอย่างแบบหน้าเต็ม</a>
+            </div>
+        </div>
+    </div>
+    <div class="right">
+        <form method="post" action="." class="form">
+            <div class="control-group control-group-cover">
+                <label class="control-label" for="id_name">ภาพประกอบ (ขนาดเล็ก)</label>
+                <div class="controls">
+                    <input type="file" />
+                </div>
+                <div class="help-block">ขนาดภาพ 360x140 พิกเซล</div>
+            </div>
+            <div class="control-group control-group-cover">
+                <label class="control-label" for="id_name">ภาพประกอบ (ขนาดเต็มหน้า)</label>
+                <div class="controls">
+                    <input type="file" />
+                </div>
+                <div class="help-block">ขนาดภาพ 1170x230 พิกเซล</div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="id_name">ประเภทเรื่อง</label>
+                <div class="controls controls-type">
+                    <select><option></option></select>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="id_name">ชื่อเรื่อง</label>
+                <div class="controls controls-title">
+                    <input type="text"/>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="id_name">คำบรรยาย</label>
+                <div class="controls controls-summary">
+                    <textarea class="summary"></textarea>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="id_name">ราคา</label>
+                <div class="controls controls-price">
+                    <input type="text" class="price" /> บาท
+                </div>
+            </div>
+            <div class="form-actions">
+                {% if story.is_draft %}
+                    <button type="submit" name="submit" value="save" class="style-button-normal button-draft">บันทึกข้อมูล</button>
+                    <button type="submit" name="submit" value="next" class="style-button-primary button-publish">บันทึกและทำต่อไป</button>
+                {% else %}
+                    <input type="submit" value="บันทึกข้อมูล" class="style-button-primary button-submit" />
+                {% endif %}
+            </div>
+        </form>
+    </div>
+</div>
+</div>

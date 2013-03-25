@@ -1,0 +1,14 @@
+{% extends 'base_backend.html' %}
+
+{% block page_class %}page-story-write{% endblock %}
+
+{% block body_header %}
+<ul class="breadcrumb">
+    <li><a href="{% url 'view_my_stories' %}">ห้องเขียนหนังสือ</a> <span class="divider">/</span></li>
+</ul>
+<div class="head"><h1>{% if not story %}เขียนงานชิ้นใหม่{% else %}แก้ไขเนื้อหา{% endif %}</h1></div>
+{% endblock %}
+
+{% block body_content %}
+{% include 'user/snippets/story_write.html' with story_uid=story.uid %}
+{% endblock %}

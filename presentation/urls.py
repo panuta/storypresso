@@ -6,23 +6,48 @@ urlpatterns = patterns(
 )
 
 urlpatterns += patterns(
-    'presentation.views.publication_views',
-    url(r'^publication/view/$', 'view_publication', name='view_publication'),
-    url(r'^publication/read/$', 'read_publication', name='read_publication'),
+    'presentation.views.story_views',
+    url(r'^story/(?P<story_uid>[\w-]+)/view/$', 'view_story', name='view_story'),
+    url(r'^story/(?P<story_uid>[\w-]+)/read/$', 'read_story', name='read_story'),
 )
 
 urlpatterns += patterns(
     'presentation.views.user.views',
     url(r'^profile/id/(?P<user_uid>\w+)/$', 'view_user_profile_by_id', name='view_user_profile_by_id'),
     url(r'^profile/(?P<url_name>\w+)/$', 'view_user_profile_by_url_name', name='view_user_profile_by_url_name'),
+)
+
+urlpatterns += patterns(
+    'presentation.views.user.shelf_views',
     url(r'^my/shelves/$', 'view_my_shelves', name='view_my_shelves'),
 )
 
 urlpatterns += patterns(
-    'presentation.views.user.works_views',
-    url(r'^my/works/$', 'view_my_works', name='view_my_works'),
-    url(r'^my/works/writing/$', 'write_my_work', name='write_my_work'),
-    url(r'^my/works/publishing/$', 'publish_my_work', name='publish_my_work'),
+    'presentation.views.user.stories_views',
+    url(r'^my/stories/$', 'view_my_stories', {'showing_stories': 'all'}, name='view_my_stories'),
+    url(r'^my/stories/draft/$', 'view_my_stories', {'showing_stories': 'draft'}, name='view_my_stories_draft'),
+    url(r'^my/stories/published/$', 'view_my_stories', {'showing_stories': 'published'}, name='view_my_stories_published'),
+
+    url(r'^my/story/write/$', 'write_my_story', {'story_uid': ''},
+        name='write_my_empty_story'),
+    url(r'^my/story/(?P<story_uid>[\w-]+)/write/$', 'write_my_story',
+        name='write_my_story'),
+    url(r'^my/story/(?P<story_uid>[\w-]+)/publishing/excerpt/$', 'publishing_my_story_excerpt',
+        name='publishing_my_story_excerpt'),
+    url(r'^my/story/(?P<story_uid>[\w-]+)/publishing/details/$', 'publishing_my_story_details',
+        name='publishing_my_story_details'),
+    url(r'^my/story/(?P<story_uid>[\w-]+)/publishing/confirm/$', 'publishing_my_story_confirm',
+        name='publishing_my_story_confirm'),
+
+    url(r'^my/story/(?P<story_uid>[\w-]+)/edit/$', 'edit_my_story_general', name='edit_my_story_general'),
+    url(r'^my/story/(?P<story_uid>[\w-]+)/content/$', 'edit_my_story_content', name='edit_my_story_content'),
+
+    url(r'^ajax/story/(?P<story_uid>[\w-]+)/autosave/$', 'ajax_autosave_editing_story',
+        name='ajax_autosave_editing_story'),
+    #url(r'^ajax/story/autosave/$', 'ajax_autosave_editing_story', name='ajax_autosave_editing_story'),
+
+    url(r'^ajax/story/image/upload/$', 'ajax_upload_image_editing_story', name='ajax_upload_image_editing_story'),
+    url(r'^ajax/story/image/recent/$', 'ajax_recent_image_editing_story', name='ajax_recent_image_editing_story'),
 )
 
 urlpatterns += patterns(

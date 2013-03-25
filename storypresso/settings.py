@@ -174,6 +174,10 @@ THUMBNAIL_ALIASES = {
         'avatar_small': {'size': (75, 75), 'crop': True},
         'avatar_smaller': {'size': (45, 45), 'crop': True},
         'avatar_tiny': {'size': (30, 30), 'crop': True},
+
+        'cover_large': {'size': (1170, 230), 'crop': True},
+        'cover_small': {'size': (360, 140), 'crop': True},
+        'cover_tiny': {'size': (162, 63), 'crop': True},
     },
 }
 
@@ -207,6 +211,11 @@ USER_AVATAR_DEFAULT_SMALL = 'avatar/default_small.png'
 USER_AVATAR_DEFAULT_SMALLER = 'avatar/default_smaller.png'
 USER_AVATAR_DEFAULT_TINY = 'avatar/default_tiny.png'
 
+# STORY COVER
+
+STORY_COVER_DEFAULT_LARGE = 'cover/default_large.png'
+STORY_COVER_DEFAULT_SMALL = 'cover/default_small.png'
+STORY_COVER_DEFAULT_TINY = 'cover/default_tiny.png'
 
 try:
     from settings_local import *

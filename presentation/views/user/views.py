@@ -7,7 +7,7 @@ from domain.models import UserAccount
 
 
 def view_user_profile_by_id(request, user_uid):
-    user = get_object_or_404(UserAccount, user_uid=user_uid)
+    user = get_object_or_404(UserAccount, uid=user_uid)
     return _view_user_profile(request, user)
 
 
@@ -22,5 +22,3 @@ def _view_user_profile(request, user):
     return render(request, 'user/profile.html', {'profile_user': user, })
 
 
-def view_my_shelves(request):
-    return render(request, 'user/shelves.html', {})

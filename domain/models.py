@@ -1,6 +1,7 @@
 # -*- encoding: utf-8 -*-
 
 import random
+import uuid
 
 from django.conf import settings
 from django.contrib.auth.models import BaseUserManager, AbstractBaseUser
@@ -15,6 +16,7 @@ import shortuuid
 from easy_thumbnails.fields import ThumbnailerImageField
 from easy_thumbnails.files import get_thumbnailer
 from common.email import send_bot_email
+from presentation.exceptions import PublishingException
 
 SHORTUUID_ALPHABETS_FOR_ID = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
 
@@ -46,11 +48,11 @@ class UserAccountManager(BaseUserManager):
 
 
 def user_image_dir(instance, filename):
-    return 'users/%s/%s' % (instance.user_uid, filename)
+    return 'users/%s/%s' % (instance.uid, filename)
 
 
 class UserAccount(AbstractBaseUser):
-    user_uid = models.CharField(max_length=50, unique=True, db_index=True)
+    uid = models.CharField(max_length=50, unique=True, db_index=True)
     email = models.EmailField(max_length=255, unique=True, db_index=True)
     url_name = models.CharField(max_length=100, db_index=True, blank=True, default='')
 
@@ -72,7 +74,7 @@ class UserAccount(AbstractBaseUser):
     REQUIRED_FIELDS = ['name']
 
     def save(self, *args, **kwargs):
-        if not self.user_uid:
+        if not self.uid:
             uuid = None
 
             while not uuid:
@@ -80,13 +82,13 @@ class UserAccount(AbstractBaseUser):
                 uuid = shortuuid.uuid()[:10]
 
                 try:
-                    UserAccount.objects.get(user_uid=uuid)
+                    UserAccount.objects.get(uid=uuid)
                 except UserAccount.DoesNotExist:
                     pass
                 else:
                     uuid = None
 
-            self.user_uid = uuid
+            self.uid = uuid
 
         models.Model.save(self, *args, **kwargs)
 
@@ -120,7 +122,7 @@ class UserAccount(AbstractBaseUser):
     def get_profile_url(self):
         if self.url_name:
             return reverse('view_user_profile_by_url_name', args=[self.url_name])
-        return reverse('view_user_profile_by_id', args=[self.user_uid])
+        return reverse('view_user_profile_by_id', args=[self.uid])
 
     # Avatars
 
@@ -184,16 +186,35 @@ class UserRegistration(models.Model):
 # PUBLICATION ##########################################################################################################
 
 def story_cover_dir(instance, filename):
-    return 'users/%s/stories/%s' % (instance.created_by.user_uid, filename)
+    return 'users/%s/stories/%s' % (instance.created_by.uid, filename)
+
+
+class StoryManager(models.Manager):
+    def generate_uuid(self):
+        uid = None
+
+        while not uid:
+            uid = str(uuid.uuid4())
+
+            try:
+                self.get(uid=uid)
+            except Story.DoesNotExist:
+                pass
+            else:
+                uid = None
+
+        return uid
 
 
 class Story(models.Model):
     uid = models.CharField(max_length=50)
-    title = models.CharField(max_length=500)
-    description = models.TextField(blank=True, default='')
+    title = models.CharField(max_length=500, blank=True, default='')
+    summary = models.TextField(blank=True, default='')
     cover_small = ThumbnailerImageField(upload_to=story_cover_dir, blank=True, null=True)
     cover_large = ThumbnailerImageField(upload_to=story_cover_dir, blank=True, null=True)
     excerpt = models.TextField(blank=True, default='')
+    primary_category = models.CharField(max_length=50, blank=True, default='')
+    secondary_category = models.CharField(max_length=50, blank=True, default='')
     price = models.DecimalField(max_digits=10, decimal_places=2, null=True)
     is_draft = models.BooleanField(default=True)
     created_by = models.ForeignKey('UserAccount', related_name='stories_created')
@@ -201,31 +222,56 @@ class Story(models.Model):
     modified_on = models.DateTimeField(default=timezone.now())
     published_on = models.DateTimeField(null=True)
 
+    objects = StoryManager()
+
     class Meta:
         ordering = ['-published_on']
 
     def save(self, *args, **kwargs):
         if not self.uid:
-            uuid = None
-
-            while not uuid:
-                shortuuid.set_alphabet(SHORTUUID_ALPHABETS_FOR_ID)
-                uuid = shortuuid.uuid()[:10]
-
-                try:
-                    Story.objects.get(uid=uuid)
-                except Story.DoesNotExist:
-                    pass
-                else:
-                    uuid = None
-
-            self.uid = uuid
+            self.uid = Story.objects.generate_uuid()
 
         models.Model.save(self, *args, **kwargs)
 
+    def large_cover_url(self):
+        if self.cover_large:
+            return get_thumbnailer(self.avatar)['cover_large'].url
+        return '%simages/%s' % (settings.STATIC_URL, settings.STORY_COVER_DEFAULT_LARGE)
+
+    def small_cover_url(self):
+        if self.cover_small:
+            return get_thumbnailer(self.avatar)['cover_small'].url
+        return '%simages/%s' % (settings.STATIC_URL, settings.STORY_COVER_DEFAULT_SMALL)
+
+    def tiny_cover_url(self):
+        if self.cover_small:
+            return get_thumbnailer(self.avatar)['cover_tiny'].url
+        return '%simages/%s' % (settings.STATIC_URL, settings.STORY_COVER_DEFAULT_TINY)
+
+    def is_ready_to_publish(self):
+        # TODO Check empty, empty HTML tag
+        # TODO Check content
+
+        if not self.title or not self.content.body:
+            raise PublishingException(u'ชื่อเรื่องหรือเนื้อหายังว่างอยู่ กรุณาใส่ให้ครบถ้วนก่อนตีพิมพ์')
+
+        return
+
+
+
 
 class StoryContent(models.Model):
-    story = models.ForeignKey('Story', related_name='contents')
+    story = models.OneToOneField('Story', related_name='content')
     body = models.TextField(blank=True, default='')
 
+
+class EditingStory(models.Model):
+    story = models.OneToOneField('Story', related_name='editing')
+    title = models.CharField(max_length=500, blank=True, default='')
+    created_on = models.DateTimeField(default=timezone.now())
+
+
+class StoryEditingContent(models.Model):
+    editing_story = models.OneToOneField('EditingStory', related_name='editing_content')
+    body = models.TextField(blank=True, default='')
 

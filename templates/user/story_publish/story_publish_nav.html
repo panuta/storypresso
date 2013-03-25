@@ -1,0 +1,5 @@
+<ul class="wizard">
+    <li{% if active_tab == 'excerpt' %} class="active"{% endif %}><a href="{% url 'publishing_my_story_excerpt' story.uid %}">ตัวอย่างเนื้อหา</a></li>
+    <li{% if active_tab == 'details' %} class="active"{% endif %}><a href="{% url 'publishing_my_story_details' story.uid %}">ข้อมูลทั่วไป</a></li>
+    <li{% if active_tab == 'confirm' %} class="active"{% endif %}><a href="{% url 'publishing_my_story_confirm' story.uid %}">ยืนยันการเผยแพร่</a></li>
+</ul>

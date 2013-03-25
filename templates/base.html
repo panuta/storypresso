@@ -42,43 +42,39 @@
     {% block html_head_scripts %}{% endblock %}
 </head>
 <body>
-<div class="{% block page_class %}{% endblock %}">
+<div class="{% block body_class %}{% endblock %}">
     <div id="body-top">
-        <div class="top-container">
-            <div class="container">
-                <div class="logo">
-                    <a href="/"><img src="{{ STATIC_URL }}images/logo.white.2.png" /></a>
-                </div>
-                {% if user.is_authenticated %}
-                <ul class="navigation">
-                    <li><a href="#">เขียนงานเขียนตัวเอง</a></li>
-                    <li><a href="{% url 'view_my_shelves' %}">ชั้นหนังสือ</a></li>
-                </ul>
-                {% endif %}
-                {% if user.is_authenticated %}
-                    <div class="account">
-                        <a href="{{ user.get_profile_url }}" class="avatar"><img src="{{ user.get_tiny_avatar_url }}" /></a>
-                        <div class="menu btn-group">
-                            <a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
-                            <ul class="dropdown-menu pull-right">
-                                <li><a href="{{ user.get_profile_url }}">โปรไฟล์</a></li>
-                                <li class="divider"></li>
-                                <li><a href="{% url 'view_my_works' %}">ห้องเขียนหนังสือ</a></li>
-                                <li><a href="{% url 'view_my_messages' %}">กล่องจดหมาย</a></li>
-                                <li><a href="{% url 'view_my_transaction' %}">สมุดบัญชี</a></li>
-                                <li><a href="{% url 'view_my_settings_profile' %}">ตั้งค่าการใช้งาน</a></li>
-                                <li class="divider"></li>
-                                <li><a href="{% url 'auth_logout' %}">ออกจากระบบ</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                {% else %}
-                    <div class="registration">
-                        <a href="{% url 'view_signup' %}" class="left">สมัครสมาชิก</a><a href="{% url 'view_login' %}" class="right">เข้าสู่ระบบ</a>
-                    </div>
-                {% endif %}
-            </div>
+        <div class="logo">
+            <a href="/"><img src="{{ STATIC_URL }}images/logo.white.2.png" /></a>
         </div>
+        {% if user.is_authenticated %}
+            <ul class="navigation">
+                <li><a href="{% url 'view_my_stories' %}">เขียนงานเขียนตัวเอง</a></li>
+                <li><a href="{% url 'view_my_shelves' %}">ชั้นหนังสือ</a></li>
+            </ul>
+        {% endif %}
+        {% if user.is_authenticated %}
+            <div class="account">
+                <a href="{{ user.get_profile_url }}" class="avatar"><img src="{{ user.get_tiny_avatar_url }}" /></a>
+                <div class="menu btn-group">
+                    <a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+                    <ul class="dropdown-menu pull-right">
+                        <li><a href="{{ user.get_profile_url }}">โปรไฟล์</a></li>
+                        <li class="divider"></li>
+                        <li><a href="{% url 'view_my_stories' %}">ห้องเขียนหนังสือ</a></li>
+                        <li><a href="{% url 'view_my_messages' %}">กล่องจดหมาย</a></li>
+                        <li><a href="{% url 'view_my_transaction' %}">สมุดบัญชี</a></li>
+                        <li><a href="{% url 'view_my_settings_profile' %}">ตั้งค่าการใช้งาน</a></li>
+                        <li class="divider"></li>
+                        <li><a href="{% url 'auth_logout' %}">ออกจากระบบ</a></li>
+                    </ul>
+                </div>
+            </div>
+        {% else %}
+            <div class="registration">
+                <a href="{% url 'view_signup' %}" class="left">สมัครสมาชิก</a><a href="{% url 'view_login' %}" class="right">เข้าสู่ระบบ</a>
+            </div>
+        {% endif %}
     </div>
     {% block body %}{% endblock %}
     <div id="body-footer">

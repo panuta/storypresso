@@ -1,0 +1,97 @@
+{% extends 'base_backend.html' %}
+{% load common_tags %}
+
+{% block page_class %}page-my-stories{% endblock %}
+
+{% block body_header %}
+<div class="head"><h1>ห้องเขียนหนังสือ</h1></div>
+<div class="stats">
+    <div class="stat_bar">
+        <div class="container">
+            <div class="stat">
+                <div class="title">ผลงานเผยแพร่แล้ว</div>
+                <div class="number"><em>5</em> ชิ้นงาน</div>
+            </div>
+            <div class="stat">
+                <div class="title">ยอดซื้อสัปดาห์นี้</div>
+                <div class="number"><em>500</em> ชิ้นงาน</div>
+            </div>
+            <div class="stat">
+                <div class="title">รายได้สัปดาห์นี้</div>
+                <div class="number"><em>500</em> บาท</div>
+            </div>
+            <div class="stat">
+                <div class="title">ขายดีที่สุดในสัปดาห์นี้</div>
+                <div class="number"><a href="#">Publication title</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="stat_footer">
+        <div class="container">
+            <span class="weekly">ข้อมูลสัปดาห์ตั้งแต่วันที่ 12 ก.พ. 2556 - 19 ก.พ. 2556</span>
+            <span class="separator">|</span>
+            <a href="#">ดูสถิติทั้งหมด</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block body_content %}
+<div class="container">
+    <div class="row">
+        <div class="span2 block-sidebar">
+            <div class="actions">
+                <a href="{% url 'write_my_empty_story' %}" class="style-button-primary button-write"><i class="icon-pencil icon-white"></i> เขียนงานชิ้นใหม่</a>
+            </div>
+            <div class="status-filter">
+                <ul>
+                    <li{% if showing_stories == 'all' %} class="active"{% endif %}><a href="{% url 'view_my_stories' %}">งานเขียนทั้งหมด</a></li>
+                    <li{% if showing_stories == 'draft' %} class="active"{% endif %}><a href="{% url 'view_my_stories_draft' %}">ยังไม่เผยแพร่</a></li>
+                    <li{% if showing_stories == 'published' %} class="active"{% endif %}><a href="{% url 'view_my_stories_published' %}">เผยแพร่แล้ว</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="span10 block-stories">
+            <h2>
+                {% if showing_stories == 'all' %}งานเขียนทั้งหมด{% endif %}
+                {% if showing_stories == 'draft' %}ยังไม่เผยแพร่{% endif %}
+                {% if showing_stories == 'published' %}เผยแพร่แล้ว{% endif %}
+                <span>({{ stories|length }})</span>
+            </h2>
+
+            {% if stories %}
+                <ul class="stories">
+                    {% for story in stories %}
+                        <li class="story clearfix">
+                            <div class="cover"><img src="{{ story.tiny_cover_url }}" /></div>
+                            <div class="right">
+                                <div class="title"><a href="{% url 'view_story' story.uid %}">{{ story.title|default:'<span class="notitle">(ไม่มีชื่อเรื่อง)</span>' }}</a></div>
+                                <div class="footer">
+                                    {% if story.is_draft %}
+                                        <a href="{% url 'write_my_story' story.uid %}" class="btn btn-small"><i class="icon-pencil"></i> แก้ไขเนื้อหา</a>
+                                        <a href="{% url 'publishing_my_story_excerpt' story.uid %}" class="btn btn-small btn-dark button-publish"><i class="icon-ok icon-white"></i> เผยแพร่</a>
+                                    {% else %}
+                                        <div class="btn-group">
+                                            <a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#">
+                                                <i class="icon-pencil"></i> แก้ไข <span class="caret"></span>
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="{% url 'edit_my_story_content' story.uid %}">แก้ไขเนื้อหา</a></li>
+                                                <li><a href="{% url 'edit_my_story_content' story.uid %}">แก้ไขตัวอย่างเนื้อหา</a></li>
+                                                <li><a href="{% url 'edit_my_story_general' story.uid %}">แก้ไขข้อมูลทั่วไป</a></li>
+                                            </ul>
+                                        </div>
+                                        <span class="status status-published">เผยแพร่เมื่อวันที่ {{ story.published_on|format_abbr_datetime }}</span>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <div class="style-no-information">ยังไม่มีผลงานเขียน</div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

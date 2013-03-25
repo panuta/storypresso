@@ -1,0 +1,9 @@
+{% extends 'user/story_publish/story_publish_base.html' %}
+
+{% block page_class %}page-story-publishing page-story-publishing-excerpt{% endblock %}
+
+{% block publishing_nav %}{% include 'user/story_publish/story_publish_nav.html' with active_tab='details' %}{% endblock %}
+
+{% block publishing_content %}
+    {% include 'user/snippets/story_publish.html' %}
+{% endblock %}

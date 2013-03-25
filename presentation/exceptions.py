@@ -1,0 +1,3 @@
+
+class PublishingException(Exception):
+    pass
