@@ -964,16 +964,12 @@
 }
 
 .page-shelves {
-    background-color: @backgroundColor;
-
     h1 {
-        background: url(../images/header/header.shelves.png) no-repeat;
+        background: url(../images/header/header.shelves.png) left 6px no-repeat;
     }
 
-    .panel-shelves {
-        float: left;
+    .block-shelves {
         margin-top: 30px;
-        width: 195px;
 
         .caption {
             color: #555;
@@ -1021,13 +1017,15 @@
         }
     }
 
-    .panel-stories {
+    .block-stories {
         margin-top: 30px;
-        float: left;
-        width: 975px;
 
         ul.stories {
             margin: 0px;
+
+            li.story {
+                list-style: none;
+            }
 
             li.style-shelf-story {
                 float: left;
@@ -1048,32 +1046,27 @@
 
 // USER STORY ##########################################################################################################
 
-.page-my-stories {
+.page-stories {
     h1 {
         background: url(../images/header/header.writing.png) left 8px no-repeat;
     }
 
-    .stats {
+    .stories-stats {
         margin-bottom: 10px;
 
-        .stat_bar {
-            border-bottom: 1px solid @lineOnPaperLighter;
-
-            .container {
-                border-bottom: 1px solid @lineOnPaperDarker;
-                padding: 10px 0px;
-            }
+        .stats-bar {
+            border-bottom: 1px solid #DDD;
 
             .stat {
                 border-right: 1px solid #E3E3E3;
                 float: left;
-                margin-right: 25px;
-                padding-right: 25px;
+                margin: 10px 5px 10px 0px;
+                padding: 0px 25px 0px 20px;
 
                 .title {
                     color: #555;
                     font-size: 14px;
-                    margin: 5px 0px 10px;
+                    margin-bottom: 10px;
                 }
 
                 .number {
@@ -1104,8 +1097,9 @@
             }
         }
 
-        .stat_footer {
-            margin-top: 8px;
+        .stats-footer {
+            border-top: 1px solid @lineOnPaperLighter;
+            padding: 8px 15px 0px 0px;
             text-align: right;
 
             .weekly {
@@ -1126,9 +1120,16 @@
     }
 
     .block-sidebar {
-        border-right: 2px solid @orangeColor;
-        padding-top: 10px;
-        width: 168px;
+        border-right: 2px solid #888;
+        float: left;
+        margin-right: 25px;
+        min-height: 1px;
+        padding: 10px 0px 0px 20px;
+        width: 180px;
+
+        .actions {
+            text-align: center;
+        }
 
         .status-filter {
             margin: 30px 0px;
@@ -1141,7 +1142,7 @@
 
                     &.active {
                         a {
-                            background-color: @orangeColor;
+                            background-color: #888;
                             border-bottom: none;
                             border-bottom-left-radius: 4px;
                             border-top-left-radius: 4px;
@@ -1169,6 +1170,11 @@
     }
 
     .block-stories {
+        float: left;
+        margin-right: 20px;
+        min-height: 1px;
+        width: 918px;
+
         h2 {
             color: @orangeColor;
             font-family: 'KunlasatriLight', sans-serif;
@@ -1209,7 +1215,7 @@
                 a {
                     color: #444;
                     font-family: 'UthongBold', serif;
-                    font-size: 24px;
+                    font-size: 22px;
                 }
             }
 
@@ -1237,10 +1243,6 @@
 .page-story-write {
     h1 {
         background: url(../images/header/header.writing.png) left 8px no-repeat;
-    }
-
-    .top-actions {
-
     }
 }
 

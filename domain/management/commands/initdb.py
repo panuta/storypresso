@@ -94,6 +94,15 @@ class Command(BaseCommand):
 
                 story_content3 = StoryContent.objects.create(story=story3, body='คอนโดแฮมเบอร์เกอร์สเปกลิมิต ดีไซน์เนอร์โบว์เซี้ยวนอร์ท บลอนด์ออร์เดอร์เวสต์ซิงอีสต์ แจม เพาเวอร์บลูเบอร์รี่เฟอร์รี่โฟน เอ๋อพิซซ่าเซ็กซ์ออดิชั่น มหาอุปราชาโพลารอยด์เบิร์น โรลออนแคมป์สงบสุขเห่ยซิลเวอร์ แต๋วรีทัชเทรลเล่อร์ตรวจทานคอนแท็คเลดี้')
 
+            StoryPurchase.objects.get_or_create(story=story1, user=writer1, price=14)
+            StoryPurchase.objects.get_or_create(story=story2, user=writer1, price=24)
+            StoryPurchase.objects.get_or_create(story=story3, user=writer1, price=34)
+
+            StoryPurchase.objects.get_or_create(story=story1, user=writer2, price=14)
+            StoryPurchase.objects.get_or_create(story=story2, user=writer2, price=24)
+
+            StoryPurchase.objects.get_or_create(story=story1, user=writer3, price=14)
+
             # Readers
             try:
                 reader1 = UserAccount.objects.get(email='reader1@example.com')

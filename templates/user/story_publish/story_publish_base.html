@@ -2,7 +2,7 @@
 
 {% block page_class %}page-story-publishing{% endblock %}
 
-{% block body_header %}
+{% block backend_header %}
 <ul class="breadcrumb">
     <li><a href="{% url 'view_my_stories' %}">ห้องเขียนหนังสือ</a> <span class="divider">/</span></li>
     <li><a href="{% url 'write_my_story' story.uid %}">แก้ไขเนื้อหา</a> <span class="divider">/</span></li>
@@ -10,7 +10,7 @@
 <div class="head"><h1>เผยแพร่ผลงาน</h1></div>
 {% endblock %}
 
-{% block body_content %}
+{% block backend_body %}
 <div class="container">
     <div class="publishing-header clearfix">
         {% block publishing_nav %}{% endblock %}

@@ -6,13 +6,13 @@
 
 {% block page_class %}page-story-edit-content{% endblock %}
 
-{% block body_header %}
+{% block backend_header %}
 <ul class="breadcrumb">
     <li><a href="{% url 'view_my_stories' %}">ห้องเขียนหนังสือ</a> <span class="divider">/</span></li>
 </ul>
 <div class="head"><h1>{{ story.title|default:'(ไม่มีชื่อเรื่อง)' }}</h1></div>
 {% endblock %}
 
-{% block body_content %}
+{% block backend_body %}
 {% include 'user/snippets/story_write.html' with story_uid=story.uid %}
 {% endblock %}

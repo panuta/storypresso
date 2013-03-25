@@ -1,49 +1,47 @@
 <form method="post" action="." class="style-story-write">
-    <div class="container">
-        <div class="content-actions">
-            {% if story.is_draft %}
-            <button type="submit" name="submit" value="draft" class="style-button-normal button-draft">บันทึกเป็นฉบับร่าง</button>
-            <button type="submit" name="submit" value="publish" class="style-button-primary button-publish">เผยแพร่ผลงาน</button>
-            {% else %}
-            <button type="submit" name="submit" value="save" class="style-button-primary button-publish">บันทึกเนื้อหา</button>
-            {% endif %}
-        </div>
+    <div class="content-actions">
+        {% if story.is_draft %}
+        <button type="submit" name="submit" value="draft" class="style-button-normal button-draft">บันทึกเป็นฉบับร่าง</button>
+        <button type="submit" name="submit" value="publish" class="style-button-primary button-publish">เผยแพร่ผลงาน</button>
+        {% else %}
+        <button type="submit" name="submit" value="save" class="style-button-primary button-publish">บันทึกเนื้อหา</button>
+        {% endif %}
+    </div>
 
-        {% csrf_token %}
-        {{ form.uid }}
+    {% csrf_token %}
+    {{ form.uid }}
 
-        <div class="content-title">{{ form.title }}</div>
-        <div class="content-body">
-            <div class="body-container">
-                {{ form.body }}
-                <link rel="stylesheet" href="{{ STATIC_URL }}libs/redactor/redactor.css" />
-                <script src="{{ STATIC_URL }}libs/redactor/redactor.min.js"></script>
-                <script type="text/javascript">
-                    $(document).ready(function() {
-                        function autosaveCallback(data, redactor_obj) {
-                            console.log(data);
-                        }
+    <div class="content-title">{{ form.title }}</div>
+    <div class="content-body">
+        <div class="body-container">
+            {{ form.body }}
+            <link rel="stylesheet" href="{{ STATIC_URL }}libs/redactor/redactor.css" />
+            <script src="{{ STATIC_URL }}libs/redactor/redactor.min.js"></script>
+            <script type="text/javascript">
+                $(document).ready(function() {
+                    function autosaveCallback(data, redactor_obj) {
+                        console.log(data);
+                    }
 
-                        $('#id_body').redactor({
-                            minHeight: 200,
-                            focus: true,
-                            fixed: true,
-                            fixedBox: true,
-                            buttons: ['html', '|', 'bold', 'italic', 'deleted', '|',
-                                'unorderedlist', 'orderedlist', 'outdent', 'indent', '|',
-                                'link', 'image'
-                            ],
+                    $('#id_body').redactor({
+                        minHeight: 200,
+                        focus: true,
+                        fixed: true,
+                        fixedBox: true,
+                        buttons: ['html', '|', 'bold', 'italic', 'deleted', '|',
+                            'unorderedlist', 'orderedlist', 'outdent', 'indent', '|',
+                            'link', 'image'
+                        ],
 
-                            /*autosave: '{% url 'ajax_autosave_editing_story' story_uid %}',
-                             interval: 60,
-                             autosaveCallback: autosaveCallback,*/
+                        /*autosave: '{% url 'ajax_autosave_editing_story' story_uid %}',
+                         interval: 60,
+                         autosaveCallback: autosaveCallback,*/
 
-                            imageUpload: '{% url 'ajax_upload_image_editing_story' %}',
-                            imageGetJson: '{% url 'ajax_recent_image_editing_story' %}'
-                        });
+                        imageUpload: '{% url 'ajax_upload_image_editing_story' %}',
+                        imageGetJson: '{% url 'ajax_recent_image_editing_story' %}'
                     });
-                </script>
-            </div>
+                });
+            </script>
         </div>
     </div>
 </form>

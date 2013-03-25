@@ -1,123 +1,50 @@
 {% extends 'base_backend.html' %}
 
-{% block html_head_before_userdefined %}
-<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}libs/bootstrap/css/bootstrap-responsive.css">
+{% block page_class %}page-shelves{% endblock %}
+
+{% block backend_header %}
+<div class="head"><h1>ชั้นหนังสือ</h1></div>
 {% endblock %}
 
-{% block html_head_scripts %}
-{% endblock %}
-
-{% block body_class %}page-shelves{% endblock %}
-
-{% block body_header %}
-    <div class="style-page-header">
-        <h1>ชั้นหนังสือ</h1>
-    </div>
-{% endblock %}
-
-{% block body_content %}
+{% block backend_body %}
 <div class="container">
-    <div class="panel-shelves">
-        <div class="caption">SHELVES</div>
-        <ul>
-            <li class="shelf clearfix"><a href="#">All</a><span class="unread">100+</span></li>
-            <li class="shelf clearfix"><a href="#">Favorites</a><span class="unread">10</span></li>
-            <li class="add"><a href="#" class="btn btn-small"><i class="icon-plus-sign"></i> Add new shelf</a></li>
-        </ul>
+    <div class="row">
+        <div class="span3 block-shelves">
+            <ul>
+                <li class="shelf clearfix"><a href="#">All</a><span class="unread">100+</span></li>
+                <li class="shelf clearfix"><a href="#">Favorites</a><span class="unread">10</span></li>
+                <li class="add"><a href="#" class="btn btn-small"><i class="icon-plus-sign"></i> Add new shelf</a></li>
+            </ul>
+        </div>
+        <div class="span9 block-stories">
+            <ul class="stories">
+            {% for purchase in purchases %}
+                <li class="story">
+                    <div class="story-box">
+                        <div class="details">
+                            <div class="action"><a href="#" class="btn btn-small"><i class="icon-chevron-down"></i></a></div>
+                            <div class="type type1">THRILLER FICTION</div>
+                            <div class="title"><a href="{% url 'view_story' purchase.story.uid %}">{{ purchase.story.title }}</a></div>
+                            <div class="author">
+                                <a href="#" class="name">ภาณุ ตั้งเฉลิมกุล</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            {% endfor %}
+            </ul>
+        </div>
     </div>
 
-    <div class="panel-stories">
+
+    <div class="block-shelves">
+        <div class="caption">ชั้นหนังสือ</div>
+
+    </div>
+
+    <div class="block-stories">
         <ul class="stories">
-            <li class="style-shelf-story">
-                <div class="story-box">
-                    <div class="cover">
-                        <img src="{{ STATIC_URL }}images/sample/covers/cover1.jpg" />
-                    </div>
-                    <div class="details">
-                        <div class="action"><a href="#" class="btn btn-small"><i class="icon-chevron-down"></i></a></div>
-                        <div class="type type1">THRILLER FICTION</div>
-                        <div class="title"><a href="{% url 'view_publication' %}">ความน่าจะเป็นที่นี่จะเป็นชื่อเรื่อง</a></div>
-                        <div class="author">
-                            <a href="#" class="name">ภาณุ ตั้งเฉลิมกุล</a>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li class="style-shelf-story">
-                <div class="story-box">
-                    <div class="cover">
-                        <img src="{{ STATIC_URL }}images/sample/covers/cover2.jpg" />
-                    </div>
-                    <div class="details">
-                        <div class="action"><a href="#" class="btn btn-small"><i class="icon-chevron-down"></i></a></div>
-                        <div class="type type1">THRILLER FICTION</div>
-                        <div class="title"><a href="{% url 'view_publication' %}">ความน่าจะเป็นที่นี่จะเป็นชื่อเรื่อง</a></div>
-                        <div class="author">
-                            <a href="#" class="name">ภาณุ ตั้งเฉลิมกุล</a>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li class="style-shelf-story">
-                <div class="story-box">
-                    <div class="cover">
-                        <img src="{{ STATIC_URL }}images/sample/covers/cover3.jpg" />
-                    </div>
-                    <div class="details">
-                        <div class="action"><a href="#" class="btn btn-small"><i class="icon-chevron-down"></i></a></div>
-                        <div class="type type1">THRILLER FICTION</div>
-                        <div class="title"><a href="{% url 'view_publication' %}">ความน่าจะเป็นที่นี่จะเป็นชื่อเรื่อง</a></div>
-                        <div class="author">
-                            <a href="#" class="name">ภาณุ ตั้งเฉลิมกุล</a>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li class="style-shelf-story">
-                <div class="story-box">
-                    <div class="cover">
-                        <img src="{{ STATIC_URL }}images/sample/covers/cover4.jpg" />
-                    </div>
-                    <div class="details">
-                        <div class="action"><a href="#" class="btn btn-small"><i class="icon-chevron-down"></i></a></div>
-                        <div class="type type1">THRILLER FICTION</div>
-                        <div class="title"><a href="{% url 'view_publication' %}">ความน่าจะเป็นที่นี่จะเป็นชื่อเรื่อง</a></div>
-                        <div class="author">
-                            <a href="#" class="name">ภาณุ ตั้งเฉลิมกุล</a>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li class="style-shelf-story">
-                <div class="story-box">
-                    <div class="cover">
-                        <img src="{{ STATIC_URL }}images/sample/covers/cover5.jpg" />
-                    </div>
-                    <div class="details">
-                        <div class="action"><a href="#" class="btn btn-small"><i class="icon-chevron-down"></i></a></div>
-                        <div class="type type1">THRILLER FICTION</div>
-                        <div class="title"><a href="{% url 'view_publication' %}">ความน่าจะเป็นที่นี่จะเป็นชื่อเรื่อง</a></div>
-                        <div class="author">
-                            <a href="#" class="name">ภาณุ ตั้งเฉลิมกุล</a>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li class="style-shelf-story">
-                <div class="story-box">
-                    <div class="cover">
-                        <img src="{{ STATIC_URL }}images/sample/covers/cover7.png" />
-                    </div>
-                    <div class="details">
-                        <div class="action"><a href="#" class="btn btn-small"><i class="icon-chevron-down"></i></a></div>
-                        <div class="type type1">THRILLER FICTION</div>
-                        <div class="title"><a href="{% url 'view_publication' %}">ความน่าจะเป็นที่นี่จะเป็นชื่อเรื่อง</a></div>
-                        <div class="author">
-                            <a href="#" class="name">ภาณุ ตั้งเฉลิมกุล</a>
-                        </div>
-                    </div>
-                </div>
-            </li>
+
         </ul>
     </div>
 

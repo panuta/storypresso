@@ -4,10 +4,16 @@
 
 {% block body %}
 <div id="body-backend" class="{% block page_class %}{% endblock %}">
-    <div class="container">
-        <div class="style-page-header">{% block body_header %}{% endblock %}</div>
-        {% if messages %}{% for message in messages %}<div class="alert alert-{% if message.tags %}{{message.tags}}{% endif %}"><p>{{message}}</p></div>{% endfor %}{% endif %}
+    <div class="backend-header">
+        <div class="container">
+            <div class="style-page-header">{% block backend_header %}{% endblock %}</div>
+            {% block backend_messages %}{% include 'snippets/messages.html' %}{% endblock %}
+        </div>
     </div>
-    <div class="body-content">{% block body_content %}{% endblock %}</div>
+    <div class="backend-body">
+        <div class="container">
+            {% block backend_body %}{% endblock %}
+        </div>
+    </div>
 </div>
 {% endblock %}

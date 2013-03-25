@@ -1,7 +1,7 @@
 #body-top {
     //background: url(../images/ui/bg-green2.png) repeat;
-    background-color: #069E9E;
-    border-bottom: 1px solid #3ea59b;
+    background-color: @greenColor;
+    //border-bottom: 1px solid #3ea59b;
     height: 60px;
     text-align: right;
 
@@ -27,8 +27,8 @@
                 font-family: 'KunlasatriLight', sans-serif;
                 font-size: 23px;
                 display: inline-block;
-                line-height: 55px;
-                padding: 5px 20px 0px;
+                line-height: 35px;
+                padding: 10px 20px 0px;
             }
         }
     }
@@ -75,7 +75,41 @@
     }
 }
 
-.body-backend {
+#body-backend {
+    .backend-container {
+        box-shadow: 0px 0px 2px #999;
+        margin-top: 20px;
+    }
+
+    .backend-header {
+        background-color: @greenColor;
+        padding-top: 20px;
+
+        .container {
+            background-color: @backgroundColor;
+            border-bottom: 1px solid @lineOnPaperDarker;
+            box-shadow: 0px 0px 2px @lineOnGreenDarker;
+
+            .style-page-header {
+                padding: 10px 20px 10px;
+            }
+        }
+    }
+
+    .backend-body {
+        .container {
+            background-color: @backgroundColor;
+            border: 1px solid @lineOnPaperDarker;
+            border-top: 1px solid #FFF;
+            box-shadow: 0px 0px 2px #DDD;
+            padding-bottom: 30px;
+        }
+    }
+
+    .alert {
+        margin: 25px 0px;
+    }
+
     .container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
         width: 1170px;
     }
@@ -282,18 +316,12 @@
     }
 }
 
-#body-backend {
-    .alert {
-        margin: 25px 0px;
-    }
-}
-
 .style-page-header {
     padding: 25px 0px 0px;
 
     .breadcrumb {
         background-color: transparent;
-        margin: 0px 0px 10px;
+        margin: 5px 0px 10px;
         padding: 0;
 
         a {
@@ -309,20 +337,15 @@
         }
     }
 
-    .head {
-        border-bottom: 1px solid @lineOnPaperLighter;
-
-        h1 {
-            border-bottom: 1px solid @lineOnPaperDarker;
-            color: #555;
-            font-family: 'KunlasatriLight', sans-serif;
-            font-size: 46px;
-            font-weight: normal;
-            line-height: normal;
-            margin: 0px;
-            padding-left: 48px;
-            text-shadow: 1px 1px 0px #FFF;
-        }
+    h1 {
+        color: #555;
+        font-family: 'KunlasatriLight', sans-serif;
+        font-size: 42px;
+        font-weight: normal;
+        line-height: normal;
+        margin: 0px;
+        padding-left: 48px;
+        text-shadow: 1px 1px 0px #FFF;
     }
 }
 
@@ -588,6 +611,7 @@
 }
 
 .style-story-write {
+    padding: 0px 20px;
 
     .content-actions {
         text-align: right;

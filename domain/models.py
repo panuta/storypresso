@@ -258,8 +258,6 @@ class Story(models.Model):
         return
 
 
-
-
 class StoryContent(models.Model):
     story = models.OneToOneField('Story', related_name='content')
     body = models.TextField(blank=True, default='')
@@ -274,4 +272,16 @@ class EditingStory(models.Model):
 class StoryEditingContent(models.Model):
     editing_story = models.OneToOneField('EditingStory', related_name='editing_content')
     body = models.TextField(blank=True, default='')
+
+
+# STORY PURCHASE #######################################################################################################
+
+class StoryPurchase(models.Model):
+    uid = models.CharField(max_length=50)
+    story = models.ForeignKey('Story', related_name='purchases')
+    user = models.ForeignKey('UserAccount', related_name='purchases')
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+    purchased_on = models.DateTimeField(default=timezone.now())
+
+
 
