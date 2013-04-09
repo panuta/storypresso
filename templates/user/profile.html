@@ -1,12 +1,82 @@
-{% extends 'base_backend.html' %}
+{% extends 'base_inner.html' %}
 
 {% block html_head_scripts %}
 
 {% endblock %}
 
-{% block backend_body %}
+{% block body_inner %}
 <div class="page-profile">
 
+    <div class="profile-head clearfix">
+        <div class="profile-box">
+            <div class="avatar"><img src="{{ STATIC_URL }}images/sample/avatars/user10.jpg" /></div>
+            <div class="right">
+                <div class="follow"><a href="#" class="style-button-primary">Follow</a></div>
+                <div class="name">Panu Tangchalermkul</div>
+                <div class="preferences">Novel, Sci-Fi, Cooking, Travel</div>
+            </div>
+            <div class="footer clearfix">
+                <div class="footer-box">
+                    Publish <em>1234</em>
+                </div>
+                <div class="footer-box">
+                    Recommend <em>1234</em>
+                </div>
+                <div class="footer-box">
+                    Followers <em>1234</em>
+                </div>
+                <div class="footer-box">
+                    Followers <em>1234</em>
+                </div>
+            </div>
 
+
+            <!-- Author name -->
+            <!-- Reading preference -->
+            <!-- Num of Authored -->
+            <!-- Num of Recommend  -->
+            <!-- Num of Following -->
+            <!-- Num of Follower -->
+
+            <!-- Follow button -->
+
+        </div>
+        <div class="profile-story">
+            <div class="inner-block">
+                <div class="story">
+                    <div class="story-inner">เทรลเลอร์สป็อตคอลเล็กชั่น แจ๊กพอตอริยสงฆ์ มอบตัวเซ็กซ์หลวงตา สารขัณฑ์แรงผลักปอดแหกเพียบแปร้เยอร์บีราเซนเซอร์ ห่วยโหงวเฮ้งแอปพริคอทโปรเต๊ะ ศากยบุตรฮาโลวีนโหงวเฮ้งไฮเทค บอร์ดชัวร์น็อกแคทวอล์ค โพสต์บรารีพอร์ทแพทเทิร์นออทิสติก โบตั๋นเปโซซี้เปโซพ่อค้า ซัพพลายโฮลวีตคอลเล็กชั่นถูกต้องโพสต์ภควัมบดี ไมเกรนเกย์ออยล์เจล สไตรค์จูเนียร์สหัสวรรษแอร์ตี๋ วัจนะตอกย้ำโปรเจคท์โปรโมทสโตน ถูกต้องดีลเลอร์เอ็นเตอร์เทนเวิร์ลด์ซีดาน โปสเตอร์คลาสสิกเวิร์กช็อปออกแบบตุ๋ย วาริชศาสตร์เกจิ เทรลเลอร์สป็อตคอลเล็กชั่น abcdefghi</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="profile-stories clearfix">
+        <h2>Published Stories</h2>
+
+        <ul class="stories">
+            {% for story in published_stories %}
+                <li class="style-story {% cycle 'story-left' 'story-center' 'story-right' %}">
+                    <div class="story-box">
+                        <div class="cover">
+                            <a href="{% url 'view_story' story.uid %}"><img src="{{ STATIC_URL }}images/sample/covers/cover4.jpg" /></a>
+                        </div>
+                        <div class="details">
+                            <div class="type type1">THRILLER FICTION</div>
+                            <div class="title"><a href="{% url 'view_story' story.uid %}">{{ story.title }}</a></div>
+                            <div class="summary">โต๋เต๋ วอฟเฟิลมอยส์เจอไรเซอร์ฮอตแคมป์ติ๋ม โค้ชซะ ช็อปเจ๊าะแจ๊ะ อพาร์ทเมนต์ชัวร์สติ๊กเกอร์รองรับว้าว อิเหนาคาวบอยหม่านโถวออเดอร์เคลียร์บุ๋น บุญคุณเซ็กส์มาร์กไลน์ แลนด์ราชานุญาตแอปเปิ้ล</div>
+                        </div>
+                        <div class="footer clearfix">
+                            <div class="buy">
+                                <a href="#" class="btn button-buy"><i class="icon-shopping-cart"></i> ซื้ออ่านในราคา 20 บาท</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="extra">
+                        <span class="friend"><a href="#"><img src="{{ STATIC_URL }}images/sample/avatars/user1.jpg" /></a> Panu is laughing</span>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
 </div>
 {% endblock %}

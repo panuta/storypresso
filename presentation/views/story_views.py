@@ -3,9 +3,9 @@
 from django.shortcuts import render
 
 
-def view_story(request):
+def view_story(request, story_uid):
     return render(request, 'story/story_view.html', {})
 
 
-def read_story(request):
+def read_story(request, story_uid):
     return render(request, 'story/story_read.html', {})

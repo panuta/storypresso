@@ -7,56 +7,49 @@
 {% endblock %}
 
 {% block backend_body %}
-<div class="container">
-    <div class="row">
-        <div class="span3 block-shelves">
-            <ul>
-                <li class="shelf clearfix"><a href="#">All</a><span class="unread">100+</span></li>
-                <li class="shelf clearfix"><a href="#">Favorites</a><span class="unread">10</span></li>
-                <li class="add"><a href="#" class="btn btn-small"><i class="icon-plus-sign"></i> Add new shelf</a></li>
-            </ul>
-        </div>
-        <div class="span9 block-stories">
-            <ul class="stories">
-            {% for purchase in purchases %}
-                <li class="story">
-                    <div class="story-box">
-                        <div class="details">
-                            <div class="action"><a href="#" class="btn btn-small"><i class="icon-chevron-down"></i></a></div>
-                            <div class="type type1">THRILLER FICTION</div>
-                            <div class="title"><a href="{% url 'view_story' purchase.story.uid %}">{{ purchase.story.title }}</a></div>
-                            <div class="author">
-                                <a href="#" class="name">ภาณุ ตั้งเฉลิมกุล</a>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-            {% endfor %}
-            </ul>
-        </div>
-    </div>
 
-
+<div class="shelves-blocks">
     <div class="block-shelves">
-        <div class="caption">ชั้นหนังสือ</div>
-
-    </div>
-
-    <div class="block-stories">
-        <ul class="stories">
-
+        <ul>
+            <li class="shelf first-shelf active clearfix">
+                <a href="#">All<span>10</span></a>
+                <!--<span class="unread">100+</span>-->
+            </li>
+            <li class="shelf last-shelf clearfix">
+                <a href="#">Favorites</a>
+                <!--<span class="unread">10</span>-->
+            </li>
         </ul>
     </div>
 
 
+        <!--<div class="add">
+            <a href="#" class="btn btn-small"><i class="icon-plus-sign"></i> Add new shelf</a>
+        </div>-->
+
+    <div class="block-stories">
+        <div class="inner-block">
+            <ul class="stories">
+                {% for purchase in purchases %}
+                    <li class="story unread clearfix{% if forloop.last %} last-story{% endif %}">
+                        <div class="actions"><a href="#" class="btn btn-small"><i class="icon-chevron-down"></i></a></div>
+                        <div class="cover"><img src="{{ purchase.story.tiny_cover_url }}" /></div>
+                        <div class="right">
+                            <div class="title"><a href="{% url 'view_story' purchase.story.uid %}">{{ purchase.story.title }}</a></div>
+                            <div class="subtitle">
+                                <span class="type">TRILLER FICTION</span>
+                                <span class="author"><span class="by">by</span> <a href="#" class="name">ภาณุ ตั้งเฉลิมกุล</a></span>
+                            </div>
+                        </div>
+
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+
     <!-- Find by type -->
     <!-- Read status -->
     <!-- Collection -->
-    <!--  -->
-    <!--  -->
-    <!--  -->
-
-
-
-    </div>
 {% endblock %}

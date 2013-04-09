@@ -5,15 +5,11 @@
 {% block body %}
 <div id="body-backend" class="{% block page_class %}{% endblock %}">
     <div class="backend-header">
-        <div class="container">
-            <div class="style-page-header">{% block backend_header %}{% endblock %}</div>
-            {% block backend_messages %}{% include 'snippets/messages.html' %}{% endblock %}
-        </div>
+        <div class="style-page-header">{% block backend_header %}{% endblock %}</div>
+        {% block backend_messages %}{% include 'snippets/messages.html' %}{% endblock %}
     </div>
     <div class="backend-body">
-        <div class="container">
-            {% block backend_body %}{% endblock %}
-        </div>
+        {% block backend_body %}{% endblock %}
     </div>
 </div>
 {% endblock %}

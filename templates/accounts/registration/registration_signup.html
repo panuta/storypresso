@@ -1,36 +1,32 @@
-{% extends 'base_single_responsive.html' %}
+{% extends 'base_inner.html' %}
 {% load presentation_tags %}
 
-{% block single_content %}
+{% block body_inner %}
 <div class="page-registration">
-    <div class="container">
+    <div class="registration">
         <h1>สมัครสมาชิก</h1>
-        <div class="registration">
-            <div class="social">
-                <div><a href="#" class="facebook">Sign-in with Facebook</a></div>
-                <div><a href="#" class="twitter">Sign-in with Twitter</a></div>
-            </div>
-            <div class="or">
-                <hr><span>หรือ</span>
-            </div>
-            <div class="email">
-                {% to_resend_registration form.email.data as to_resend_registration %}
+        <div class="login-social">
+            <a href="#" class="facebook">Sign-in with Facebook</a>
+            <a href="#" class="twitter">Sign-in with Twitter</a>
+        </div>
+        <div class="login-email">
+            <div class="note">หรือสมัครสมาชิกด้วยอีเมล</div>
+            {% to_resend_registration form.email.data as to_resend_registration %}
+            <form method="post" action="{% if to_resend_registration %}{% url 'view_signup_resend' %}{% else %}{% url 'view_signup' %}{% endif %}">
+                {% csrf_token %}
+                {{ form.non_field_errors }}
+                <div class="text-input">{{ form.email }}{{ form.email.errors }}</div>
 
-                <form method="post" action="{% if to_resend_registration %}{% url 'view_signup_resend' %}{% else %}{% url 'view_signup' %}{% endif %}">
-                    {% csrf_token %}
-                    {{ form.non_field_errors }}
-                    <div class="text-input">{{ form.email }}{{ form.email.errors }}</div>
+                <div class="button">
+                    {% if to_resend_registration %}
+                        <input type="submit" value="ส่งอีเมลยืนยันอีกครั้ง" class="btn" />
+                        <a href="{% url 'view_signup' %}" class="cancel">ยกเลิก</a>
+                    {% else %}
+                        <input type="submit" value="สมัครสมาชิก" class="btn" />
+                    {% endif %}
+                </div>
+            </form>
 
-                    <div class="button">
-                        {% if to_resend_registration %}
-                            <input type="submit" value="ส่งอีเมลยืนยันอีกครั้ง" class="btn btn-dark" />
-                            <a href="{% url 'view_signup' %}" class="cancel">ยกเลิก</a>
-                        {% else %}
-                            <input type="submit" value="สมัครสมาชิกด้วยอีเมล" class="btn btn-dark" />
-                        {% endif %}
-                    </div>
-                </form>
-            </div>
         </div>
     </div>
 </div>
