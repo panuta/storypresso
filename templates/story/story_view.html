@@ -11,10 +11,60 @@
 {% block body_inner %}
 <div class="page-publication-view">
     <div class="this-story">
-        <div class="container">
-            <div class="cover"><img src="{{ STATIC_URL }}images/sample/covers/cover7.png" /></div>
+            <div class="cover"><img src="{{ STATIC_URL }}images/sample/covers/cover4.jpg" /></div>
+            <div class="block-story clearfix">
+                <div class="left">
+                    <h1>ความน่าจะเป็นที่นี่จะเป็นชื่อเรื่อง</h1>
+                    <div class="summary">คอนโดแฮมเบอร์เกอร์สเปกลิมิต ดีไซน์เนอร์โบว์เซี้ยวนอร์ท บลอนด์ออร์เดอร์เวสต์ซิงอีสต์ แจม เพาเวอร์บลูเบอร์รี่เฟอร์รี่โฟน เอ๋อพิซซ่าเซ็กซ์ออดิชั่น มหาอุปราชาโพลารอยด์เบิร์น โรลออนแคมป์สงบสุขเห่ยซิลเวอร์ แต๋วรีทัชเทรลเล่อร์ตรวจทานคอนแท็คเลดี้</div>
+                    <div class="published">
+                        <span>เขียนเมื่อวันที่</span>
+                        <em>14 ก.พ. 2556</em>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="buy-button"><a href="#" class="arrow_box"><em>20</em> บาท</a></div>
+
+
+
+                    <div class="buy">
+
+                        <!--
+                        <a href="#" class="button-buy">ซื้ออ่านเองในราคา<em>20 บาท</em></a>
+                        <div class="or">
+                            <hr><span>โปรโมชันเพื่อนให้เพื่อน</span>
+                        </div>
+                        <a href="#" class="button-gift">ซื้อให้ตัวเองและเพื่อนในราคา<em>25 บาท</em></a>
+                        -->
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="block-author clearfix">
+                <div class="author-box">
+                    <div class="avatar"><a href="#"><img src="{{ STATIC_URL }}images/sample/avatars/my.jpg" /></a></div>
+                    <div class="name"><a href="#">ภาณุ ตั้งเฉลิมกุล</a></div>
+                </div>
+                <div class="author-story">
+                    คอนโดแฮมเบอร์เกอร์สเปกลิมิต ดีไซน์เนอร์โบว์เซี้ยวนอร์ท บลอนด์ออร์เดอร์เวสต์ซิงอีสต์ แจม เพาเวอร์บลูเบอร์รี่เฟอร์รี่โฟน เอ๋อพิซซ่าเซ็กซ์ออดิชั่น มหาอุปราชาโพลารอยด์เบิร์น
+                </div>
+            </div>
+
+
+            <div class="block-tools clearfix">
+                <a href="#">Share on Facebook</a> <a href="#">Share on Twitter</a> <a href="#">Send email</a>
+            </div>
+
+
+
+
+            {% comment %}
+
+
+
+
             <div class="title">
-                <div class="type">THRILLER FICTION</div>
+                <!--<div class="type">THRILLER FICTION</div>-->
                 <h1>ความน่าจะเป็นที่นี่จะเป็นชื่อเรื่อง</h1>
             </div>
             <div class="blocks clearfix">
@@ -41,43 +91,49 @@
                     </div>
                 </div>
             </div>
-        </div>
+            {% endcomment %}
     </div>
 
-    <div class="expression clearfix">
-        <div class="container">
-            <div class="expression-number">
-                <div class="primary-stat">
-                    <span class="number">99999</span>
-                    <span class="text"><em>People</em>gave a positive feedback for this story</span>
-                </div>
-                <div class="separator"></div>
-                <div class="stat">
-                    <img src="{{ STATIC_URL }}images/basic2-277.png" class="icon" />
-                    <span><em>12</em></span>
-                </div>
-                <div class="stat">
-                    <img src="{{ STATIC_URL }}images/basic2-278.png" class="icon" />
-                    <span><em>12</em></span>
-                </div>
-                <div class="stat">
-                    <img src="{{ STATIC_URL }}images/basic2-279.png" class="icon" />
-                    <span><em>12</em></span>
-                </div>
-                <div class="stat">
-                    <img src="{{ STATIC_URL }}images/basic2-280.png" class="icon" />
-                    <span><em>12</em></span>
-                </div>
+    <div class="recommendation clearfix">
+
+        <div class="recommendation-number">
+            <div class="total">
+                <span class="total-reader">นักอ่าน</span> <em>999</em> <span class="unit">คน</span> <span class="text">รู้สึกดีๆ หลังจากอ่านเรื่องนี้</span>
             </div>
-            <div class="expression-text">
-                <ul>
-                    <li>
-                        <a href="#" class="avatar"><img src="{{ STATIC_URL }}images/sample/avatars/user9.jpg" /></a>
-                        <div class="review">คอนโดแฮมเบอร์เกอร์สเปกลิมิต ดีไซน์เนอร์โบว์เซี้ยวนอร์ท บลอนด์ออร์เดอร์เวสต์ซิงอีสต์ แจม เพาเวอร์บลูเบอร์รี่เฟอร์รี่โฟน</div>
-                    </li>
-                </ul>
+            <div class="groups">
+                <span class="from">โดย</span>
+                <span class="feeling">
+                    <em>15</em> <span class="unit">คน</span> <span class="text">รู้สึกชอบนะ</span>
+                </span>
+                <span class="feeling">
+                    <em>15</em> <span class="unit">คน</span> <span class="text">หลงรักเลยล่ะ</span>
+                </span>
+                <span class="feeling">
+                    <em>15</em> <span class="unit">คน</span> <span class="text">หัวเราะท้องแข็ง</span>
+                </span>
+                <span class="feeling">
+                    <em>15</em> <span class="unit">คน</span> <span class="text">ได้ความรู้ใหม่</span>
+                </span>
+                <span class="feeling">
+                    <em>15</em> <span class="unit">คน</span> <span class="text">เกิดแรงบันดาลใจ</span>
+                </span>
             </div>
+
+
         </div>
+        <div class="recommendation-people">
+            <ul>
+                <li>
+                    <a href="#" class="avatar"><img src="{{ STATIC_URL }}images/sample/avatars/user9.jpg" /></a>
+                    <div class="review arrow_box">คอนโดแฮมเบอร์เกอร์สเปกลิมิต ดีไซน์เนอร์โบว์เซี้ยวนอร์ท บลอนด์ออร์เดอร์เวสต์ซิงอีสต์ แจม เพาเวอร์บลูเบอร์รี่เฟอร์รี่โฟน</div>
+                </li>
+                <li>
+                    <a href="#" class="avatar"><img src="{{ STATIC_URL }}images/sample/avatars/user10.jpg" /></a>
+                    <div class="review arrow_box">คอนโดแฮมเบอร์เกอร์สเปกลิมิต ดีไซน์เนอร์โบว์เซี้ยวนอร์ท บลอนด์ออร์เดอร์เวสต์ซิงอีสต์ แจม เพาเวอร์บลูเบอร์รี่เฟอร์รี่โฟน คอนโดแฮมเบอร์เกอร์สเปกลิมิต ดีไซน์เนอร์โบว์เซี้ยวนอร์ท บลอนด์ออร์เดอร์เวสต์ซิงอีสต์ แจม เพาเวอร์บลูเบอร์รี่เฟอร์รี่โฟน</div>
+                </li>
+            </ul>
+        </div>
+
     </div>
 
         <!-- TODO Share on Social Media -->
